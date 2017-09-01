@@ -1,16 +1,248 @@
-<h2 class="list">Overview</h2>
-Extending provenance ontologies allows GDPRov to express a ‘template’
-or ‘plan’ of what should happen (using p-plan:Plan) describing a model of all
-activities (as p-plan:Step) that can take place. This template is then instantiated
-for (using p-plan:Activity) each specific use of the activity, such as obtaining
-consent or data for a particular user. Additionally, the provenance of the activities
-themselves can be expressed (using PROV-O and P-Plan) to record how they
-change over time, making it possible to trace the change in activities along with
-how they interact with consent and data. This is beneficial in documenting the
-state of a system as a set of activities that deal with consent and data, and
-can be helpful in determining changes in consent when the interactions between
-data and an activity change over time. For example, differences in provenance
-of an activity can show that it uses personal data it did not previously use.
-Depending on the consent obtained for that particular user, this may or may not
-need additional permissions, and therefore require obtaining consent to permit
-such use.
+<h2 id="overv" class="list">The GDPR Provenance ontology: Overview <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<span class="">
+    Extending provenance ontologies allows GDPRov to express a ‘template’ 
+    or ‘plan’ of what should happen (using p-plan:Plan) describing a model of all 
+    activities (as p-plan:Step) that can take place. This template is then instantiated 
+    -
+    for (using p-plan:Activity) each specific use of the activity, such as obtaining 
+    consent or data for a particular user. Additionally, the provenance of the activities 
+    themselves can be expressed (using PROV-O and P-Plan) to record how they 
+    change over time, making it possible to trace the change in activities along with 
+    how they interact with consent and data. This is beneficial in documenting the 
+    state of a system as a set of activities that deal with consent and data, and 
+    can be helpful in determining changes in consent when the interactions between 
+    data and an activity change over time. For example, differences in provenance 
+      of an activity can show that it uses personal data it did not previously use. 
+      Depending on the consent obtained for that particular user, this may or may not 
+      need additional permissions, and therefore require obtaining consent to permit 
+      such use. 
+</span>
+<h4>Classes</h4>
+<ul class="hlist">
+   <li>
+      <a href="#AnonymisedData"
+         title="http://purl.org/adaptcentre/openscience/ontologies/gdprov#AnonymisedData">AnonymisedData</a>
+   </li>
+   <li>
+      <a href="#AnonymityLevel"
+         title="http://purl.org/adaptcentre/openscience/ontologies/gdprov#AnonymityLevel">AnonymityLevel</a>
+   </li>
+   <li>
+      <a href="#ConsentAcquisitionStep"
+         title="http://purl.org/adaptcentre/openscience/ontologies/gdprov#ConsentAcquisitionStep">ConsentAcquisitionStep</a>
+   </li>
+   <li>
+      <a href="#ConsentAgreement"
+         title="http://purl.org/adaptcentre/openscience/ontologies/gdprov#ConsentAgreement">ConsentAgreement</a>
+   </li>
+   <li>
+      <a href="#ConsentAgreementTemplate"
+         title="http://purl.org/adaptcentre/openscience/ontologies/gdprov#ConsentAgreementTemplate">ConsentAgreementTemplate</a>
+   </li>
+   <li>
+      <a href="#ConsentArchivalStep"
+         title="http://purl.org/adaptcentre/openscience/ontologies/gdprov#ConsentArchivalStep">ConsentArchivalStep</a>
+   </li>
+   <li>
+      <a href="#ConsentModificationStep"
+         title="http://purl.org/adaptcentre/openscience/ontologies/gdprov#ConsentModificationStep">ConsentModificationStep</a>
+   </li>
+   <li>
+      <a href="#ConsentStep"
+         title="http://purl.org/adaptcentre/openscience/ontologies/gdprov#ConsentStep">ConsentStep</a>
+   </li>
+   <li>
+      <a href="#ConsentWithdrawalProcess"
+         title="http://purl.org/adaptcentre/openscience/ontologies/gdprov#ConsentWithdrawalProcess">ConsentWithdrawalProcess</a>
+   </li>
+   <li>
+      <a href="#ConsentWithdrawalStep"
+         title="http://purl.org/adaptcentre/openscience/ontologies/gdprov#ConsentWithdrawalStep">ConsentWithdrawalStep</a>
+   </li>
+   <li>
+      <a href="#Data"
+         title="http://purl.org/adaptcentre/openscience/ontologies/gdprov#Data">Data</a>
+   </li>
+   <li>
+      <a href="#DataAccessProcess"
+         title="http://purl.org/adaptcentre/openscience/ontologies/gdprov#DataAccessProcess">DataAccessProcess</a>
+   </li>
+   <li>
+      <a href="#DataAnonymisationStep"
+         title="http://purl.org/adaptcentre/openscience/ontologies/gdprov#DataAnonymisationStep">DataAnonymisationStep</a>
+   </li>
+   <li>
+      <a href="#DataArchivalProcess"
+         title="http://purl.org/adaptcentre/openscience/ontologies/gdprov#DataArchivalProcess">DataArchivalProcess</a>
+   </li>
+   <li>
+      <a href="#DataArchivalStep"
+         title="http://purl.org/adaptcentre/openscience/ontologies/gdprov#DataArchivalStep">DataArchivalStep</a>
+   </li>
+   <li>
+      <a href="#DataCollectionStep"
+         title="http://purl.org/adaptcentre/openscience/ontologies/gdprov#DataCollectionStep">DataCollectionStep</a>
+   </li>
+   <li>
+      <a href="#DataDeanonymisationStep"
+         title="http://purl.org/adaptcentre/openscience/ontologies/gdprov#DataDeanonymisationStep">DataDeanonymisationStep</a>
+   </li>
+   <li>
+      <a href="#DataDeletionStep"
+         title="http://purl.org/adaptcentre/openscience/ontologies/gdprov#DataDeletionStep">DataDeletionStep</a>
+   </li>
+   <li>
+      <a href="#DataErasureProcess"
+         title="http://purl.org/adaptcentre/openscience/ontologies/gdprov#DataErasureProcess">DataErasureProcess</a>
+   </li>
+   <li>
+      <a href="#DataRectificationProcess"
+         title="http://purl.org/adaptcentre/openscience/ontologies/gdprov#DataRectificationProcess">DataRectificationProcess</a>
+   </li>
+   <li>
+      <a href="#DataSharingStep"
+         title="http://purl.org/adaptcentre/openscience/ontologies/gdprov#DataSharingStep">DataSharingStep</a>
+   </li>
+   <li>
+      <a href="#DataStep"
+         title="http://purl.org/adaptcentre/openscience/ontologies/gdprov#DataStep">DataStep</a>
+   </li>
+   <li>
+      <a href="#DataStorageStep"
+         title="http://purl.org/adaptcentre/openscience/ontologies/gdprov#DataStorageStep">DataStorageStep</a>
+   </li>
+   <li>
+      <a href="#DataTransformationStep"
+         title="http://purl.org/adaptcentre/openscience/ontologies/gdprov#DataTransformationStep">DataTransformationStep</a>
+   </li>
+   <li>
+      <a href="#DataUsageStep"
+         title="http://purl.org/adaptcentre/openscience/ontologies/gdprov#DataUsageStep">DataUsageStep</a>
+   </li>
+   <li>
+      <a href="#HandleDataBreachProcess"
+         title="http://purl.org/adaptcentre/openscience/ontologies/gdprov#HandleDataBreachProcess">HandleDataBreachProcess</a>
+   </li>
+   <li>
+      <a href="#PersonalData"
+         title="http://purl.org/adaptcentre/openscience/ontologies/gdprov#PersonalData">PersonalData</a>
+   </li>
+   <li>
+      <a href="#Process"
+         title="http://purl.org/adaptcentre/openscience/ontologies/gdprov#Process">Process</a>
+   </li>
+   <li>
+      <a href="#TermsAndConditions"
+         title="http://purl.org/adaptcentre/openscience/ontologies/gdprov#TermsAndConditions">TermsAndConditions</a>
+   </li>
+   <li>
+      <a href="#ThirdParty"
+         title="http://purl.org/adaptcentre/openscience/ontologies/gdprov#ThirdParty">ThirdParty</a>
+   </li>
+   <li>
+      <a href="#ThirdPartyDataController"
+         title="http://purl.org/adaptcentre/openscience/ontologies/gdprov#ThirdPartyDataController">ThirdPartyDataController</a>
+   </li>
+   <li>
+      <a href="#ThirdPartyDataProcessor"
+         title="http://purl.org/adaptcentre/openscience/ontologies/gdprov#ThirdPartyDataProcessor">ThirdPartyDataProcessor</a>
+   </li>
+   <li>
+      <a href="#UserIdentifier"
+         title="http://purl.org/adaptcentre/openscience/ontologies/gdprov#UserIdentifier">UserIdentifier</a>
+   </li>
+</ul><h4>Object Properties</h4><ul class="hlist">
+   <li>
+      <a href="#collectsData"
+         title="http://purl.org/adaptcentre/openscience/ontologies/gdprov#collectsData">collectsData</a>
+   </li>
+   <li>
+      <a href="#generatesAnonymisedData"
+         title="http://purl.org/adaptcentre/openscience/ontologies/gdprov#generatesAnonymisedData">generatesAnonymisedData</a>
+   </li>
+   <li>
+      <a href="#generatesConsentAgreement"
+         title="http://purl.org/adaptcentre/openscience/ontologies/gdprov#generatesConsentAgreement">generatesConsentAgreement</a>
+   </li>
+   <li>
+      <a href="#generatesData"
+         title="http://purl.org/adaptcentre/openscience/ontologies/gdprov#generatesData">generatesData</a>
+   </li>
+   <li>
+      <a href="#hasAnonymityLevel"
+         title="http://purl.org/adaptcentre/openscience/ontologies/gdprov#hasAnonymityLevel">hasAnonymityLevel</a>
+   </li>
+   <li>
+      <a href="#isAnonymisedByStep"
+         title="http://purl.org/adaptcentre/openscience/ontologies/gdprov#isAnonymisedByStep">isAnonymisedByStep</a>
+   </li>
+   <li>
+      <a href="#isConsentAgreementTemplateForStep"
+         title="http://purl.org/adaptcentre/openscience/ontologies/gdprov#isConsentAgreementTemplateForStep">isConsentAgreementTemplateForStep</a>
+   </li>
+   <li>
+      <a href="#isDataCollectedByStep"
+         title="http://purl.org/adaptcentre/openscience/ontologies/gdprov#isDataCollectedByStep">isDataCollectedByStep</a>
+   </li>
+   <li>
+      <a href="#isDataGeneratedBy"
+         title="http://purl.org/adaptcentre/openscience/ontologies/gdprov#isDataGeneratedBy">isDataGeneratedByStep</a>
+   </li>
+   <li>
+      <a href="#isGeneratedByStep"
+         title="http://purl.org/adaptcentre/openscience/ontologies/gdprov#isGeneratedByStep">isGeneratedByStep</a>
+   </li>
+   <li>
+      <a href="#isJustificationForDataStep"
+         title="http://purl.org/adaptcentre/openscience/ontologies/gdprov#isJustificationForDataStep">isJustificationForDataStep</a>
+   </li>
+   <li>
+      <a href="#isJustifiedUsingConsentAgreement"
+         title="http://purl.org/adaptcentre/openscience/ontologies/gdprov#isJustifiedUsingConsentAgreement">isJustifiedUsingConsentAgreement</a>
+   </li>
+   <li>
+      <a href="#isTermsAndConditionsForStep"
+         title="http://purl.org/adaptcentre/openscience/ontologies/gdprov#isTermsAndConditionsForStep">isTermsAndConditionsForStep</a>
+   </li>
+   <li>
+      <a href="#isUsedByStep"
+         title="http://purl.org/adaptcentre/openscience/ontologies/gdprov#isUsedByStep">isUsedByStep</a>
+   </li>
+   <li>
+      <a href="#sharesData"
+         title="http://purl.org/adaptcentre/openscience/ontologies/gdprov#sharesData">sharesData</a>
+   </li>
+   <li>
+      <a href="#sharesDataWithThirdParty"
+         title="http://purl.org/adaptcentre/openscience/ontologies/gdprov#sharesDataWithThirdParty">sharesDataWithThirdParty</a>
+   </li>
+   <li>
+      <a href="#usesConsentAgreementTemplate"
+         title="http://purl.org/adaptcentre/openscience/ontologies/gdprov#usesConsentAgreementTemplate">usesConsentAgreementTemplate</a>
+   </li>
+   <li>
+      <a href="#usesData"
+         title="http://purl.org/adaptcentre/openscience/ontologies/gdprov#usesData">usesData</a>
+   </li>
+   <li>
+      <a href="#usesTermsAndConditions"
+         title="http://purl.org/adaptcentre/openscience/ontologies/gdprov#usesTermsAndConditions">usesTermsAndConditions</a>
+   </li>
+</ul><h4>Named Individuals</h4><ul class="hlist">
+   <li>
+      <a href="#Anonymised"
+         title="http://purl.org/adaptcentre/openscience/ontologies/gdprov#Anonymised">Anonymised</a>
+   </li>
+   <li>
+      <a href="#DeAnonymised"
+         title="http://purl.org/adaptcentre/openscience/ontologies/gdprov#DeAnonymised">DeAnonymised</a>
+   </li>
+   <li>
+      <a href="#PseudoAnonymised"
+         title="http://purl.org/adaptcentre/openscience/ontologies/gdprov#PseudoAnonymised">PseudoAnonymised</a>
+   </li>
+   <li>
+      <a href="#PseudoOrganisationalAnonymised"
+         title="http://purl.org/adaptcentre/openscience/ontologies/gdprov#PseudoOrganisationalAnonymised">PseudoOrganisationalOrganised</a>
+   </li>
+</ul><iframe align="center" width="100%" height ="500px" src="webvowl/index.html#ontology"></iframe> 
