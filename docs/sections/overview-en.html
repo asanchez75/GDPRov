@@ -1,0 +1,16 @@
+<h2 class="list">Overview</h2>
+Extending provenance ontologies allows GDPRov to express a ‘template’
+or ‘plan’ of what should happen (using p-plan:Plan) describing a model of all
+activities (as p-plan:Step) that can take place. This template is then instantiated
+for (using p-plan:Activity) each specific use of the activity, such as obtaining
+consent or data for a particular user. Additionally, the provenance of the activities
+themselves can be expressed (using PROV-O and P-Plan) to record how they
+change over time, making it possible to trace the change in activities along with
+how they interact with consent and data. This is beneficial in documenting the
+state of a system as a set of activities that deal with consent and data, and
+can be helpful in determining changes in consent when the interactions between
+data and an activity change over time. For example, differences in provenance
+of an activity can show that it uses personal data it did not previously use.
+Depending on the consent obtained for that particular user, this may or may not
+need additional permissions, and therefore require obtaining consent to permit
+such use.

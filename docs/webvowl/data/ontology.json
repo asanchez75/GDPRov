@@ -1,0 +1,1398 @@
+{
+  "_comment" : "Created with OWL2VOWL (version 0.3.2-SNAPSHOT), http://vowl.visualdataweb.org",
+  "header" : {
+    "languages" : [ "en", "undefined" ],
+    "baseIris" : [ "http://purl.org/net/p-plan", "http://www.w3.org/1999/02/22-rdf-syntax-ns", "http://purl.org/adaptcentre/openscience/ontologies/gdprov", "http://www.w3.org/2000/01/rdf-schema", "http://www.w3.org/ns/prov", "http://www.w3.org/2001/XMLSchema" ],
+    "title" : {
+      "undefined" : "The GDPR Provenance ontology"
+    },
+    "iri" : "http://purl.org/adaptcentre/openscience/ontologies/gdprov#",
+    "version" : "0.1",
+    "author" : [ "http://purl.org/adaptcentre/people/harshvardhan_pandit", "http://purl.org/adaptcentre/people/dave_lewis" ],
+    "description" : {
+      "undefined" : "GDPRov is an OWL2 ontology to express provenance metadata of consent and data lifecycles towards documenting compliance for GDPR."
+    },
+    "comments" : {
+      "undefined" : "PROV and P-Plan extension for representing provenance of consent and data lifecycles. Created by Harshvardhan J. Pandit and Dave Lewis."
+    },
+    "other" : {
+      "versionIRI" : [ {
+        "identifier" : "versionIRI",
+        "language" : "undefined",
+        "value" : "https://openscience.adaptcentre.ie/ontologies/gdprov/gdprov.0.1.owl",
+        "type" : "label"
+      } ],
+      "license" : [ {
+        "identifier" : "license",
+        "language" : "undefined",
+        "value" : "https://creativecommons.org/licenses/by/4.0/",
+        "type" : "label"
+      } ],
+      "creator" : [ {
+        "identifier" : "creator",
+        "language" : "undefined",
+        "value" : "http://purl.org/adaptcentre/people/harshvardhan_pandit",
+        "type" : "label"
+      }, {
+        "identifier" : "creator",
+        "language" : "undefined",
+        "value" : "http://purl.org/adaptcentre/people/dave_lewis",
+        "type" : "label"
+      } ],
+      "created" : [ {
+        "identifier" : "created",
+        "language" : "undefined",
+        "value" : "2017-08-01",
+        "type" : "label"
+      } ],
+      "preferredNamespacePrefix" : [ {
+        "identifier" : "preferredNamespacePrefix",
+        "language" : "undefined",
+        "value" : "gdprov",
+        "type" : "label"
+      } ],
+      "modified" : [ {
+        "identifier" : "modified",
+        "language" : "undefined",
+        "value" : "2017-08-01",
+        "type" : "label"
+      } ],
+      "abstract" : [ {
+        "identifier" : "abstract",
+        "language" : "undefined",
+        "value" : "The upcoming General Data Protection Regulation (GDPR) requires justification of data activities to acquire, use, share, and store data using consent obtained from the user. Failure to comply may result in significant heavy fines which incentivises creation and maintenance of records for all activities involving consent and data. Compliance documentation therefore requires provenance information outlining consent and data lifecycles to demonstrate correct usage of data in accordance with the related consent provided and updated by the user. GDPRov (pronounced GDPR-Prov) is a linked data ontology for expressing provenance of consent and data lifecycles with a view towards documenting compliance. GDPRov is an OWL2 ontology that extends PROV-O and P-Plan to model the provenance.",
+        "type" : "label"
+      } ],
+      "versionInfo" : [ {
+        "identifier" : "versionInfo",
+        "language" : "undefined",
+        "value" : "0.1",
+        "type" : "label"
+      } ],
+      "preferredNamespaceUri" : [ {
+        "identifier" : "preferredNamespaceUri",
+        "language" : "undefined",
+        "value" : "http://purl.org/adaptcentre/openscience/ontologies/gdprov#",
+        "type" : "label"
+      } ],
+      "title" : [ {
+        "identifier" : "title",
+        "language" : "undefined",
+        "value" : "The GDPR Provenance ontology",
+        "type" : "label"
+      } ]
+    }
+  },
+  "namespace" : [ ],
+  "metrics" : {
+    "classCount" : 37,
+    "objectPropertyCount" : 23,
+    "datatypePropertyCount" : 0,
+    "individualCount" : 4
+  },
+  "class" : [ {
+    "id" : "0",
+    "type" : "owl:Class"
+  }, {
+    "id" : "3",
+    "type" : "owl:Class"
+  }, {
+    "id" : "12",
+    "type" : "owl:Class"
+  }, {
+    "id" : "14",
+    "type" : "owl:Class"
+  }, {
+    "id" : "18",
+    "type" : "owl:Class"
+  }, {
+    "id" : "39",
+    "type" : "owl:Class"
+  }, {
+    "id" : "19",
+    "type" : "owl:Class"
+  }, {
+    "id" : "32",
+    "type" : "owl:Class"
+  }, {
+    "id" : "36",
+    "type" : "owl:Class"
+  }, {
+    "id" : "2",
+    "type" : "owl:Class"
+  }, {
+    "id" : "26",
+    "type" : "owl:Class"
+  }, {
+    "id" : "66",
+    "type" : "owl:Class"
+  }, {
+    "id" : "8",
+    "type" : "owl:Class"
+  }, {
+    "id" : "5",
+    "type" : "owl:Class"
+  }, {
+    "id" : "70",
+    "type" : "owl:Class"
+  }, {
+    "id" : "77",
+    "type" : "owl:Class"
+  }, {
+    "id" : "41",
+    "type" : "owl:Class"
+  }, {
+    "id" : "78",
+    "type" : "owl:Class"
+  }, {
+    "id" : "29",
+    "type" : "owl:Class"
+  }, {
+    "id" : "13",
+    "type" : "owl:Class"
+  }, {
+    "id" : "34",
+    "type" : "owl:Class"
+  }, {
+    "id" : "4",
+    "type" : "owl:Class"
+  }, {
+    "id" : "58",
+    "type" : "owl:Class"
+  }, {
+    "id" : "56",
+    "type" : "owl:Class"
+  }, {
+    "id" : "38",
+    "type" : "owl:Class"
+  }, {
+    "id" : "60",
+    "type" : "owl:Class"
+  }, {
+    "id" : "31",
+    "type" : "owl:Class"
+  }, {
+    "id" : "50",
+    "type" : "owl:Class"
+  }, {
+    "id" : "7",
+    "type" : "owl:Class"
+  }, {
+    "id" : "10",
+    "type" : "owl:Thing"
+  }, {
+    "id" : "85",
+    "type" : "owl:Thing"
+  }, {
+    "id" : "21",
+    "type" : "owl:Class"
+  }, {
+    "id" : "63",
+    "type" : "owl:Class"
+  }, {
+    "id" : "91",
+    "type" : "owl:Class"
+  }, {
+    "id" : "17",
+    "type" : "owl:Class"
+  }, {
+    "id" : "49",
+    "type" : "owl:Class"
+  }, {
+    "id" : "1",
+    "type" : "owl:Class"
+  }, {
+    "id" : "72",
+    "type" : "owl:Class"
+  }, {
+    "id" : "45",
+    "type" : "owl:Class"
+  } ],
+  "classAttribute" : [ {
+    "iri" : "http://purl.org/adaptcentre/openscience/ontologies/gdprov#ConsentModificationStep",
+    "baseIri" : "http://purl.org/adaptcentre/openscience/ontologies/gdprov",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "ConsentModificationStep",
+      "en" : "ConsentModificationStep"
+    },
+    "subClasses" : [ "2" ],
+    "comment" : {
+      "en" : "ConsentModificationStep deals with modifications to the consent by the user. It invalidates the previous consent object and produces a new updated consent object that represents the modified consent."
+    },
+    "id" : "0",
+    "superClasses" : [ "1" ]
+  }, {
+    "iri" : "http://purl.org/adaptcentre/openscience/ontologies/gdprov#DataArchivalStep",
+    "baseIri" : "http://purl.org/adaptcentre/openscience/ontologies/gdprov",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "DataArchivalStep",
+      "en" : "DataArchivalStep"
+    },
+    "comment" : {
+      "en" : "DataArchivalStep archives data by transforming it and storing it"
+    },
+    "id" : "3",
+    "superClasses" : [ "4", "5" ]
+  }, {
+    "iri" : "http://purl.org/adaptcentre/openscience/ontologies/gdprov#DataErasureProcess",
+    "baseIri" : "http://purl.org/adaptcentre/openscience/ontologies/gdprov",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "DataErasureProcess",
+      "en" : "DataErasureProcess"
+    },
+    "comment" : {
+      "en" : "A DataErasureProcess is responsible for handling the data erasure of a data subject."
+    },
+    "id" : "12",
+    "superClasses" : [ "13" ]
+  }, {
+    "iri" : "http://purl.org/adaptcentre/openscience/ontologies/gdprov#ConsentWithdrawalProcess",
+    "baseIri" : "http://purl.org/adaptcentre/openscience/ontologies/gdprov",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "ConsentWithdrawalProcess",
+      "en" : "ConsentWithdrawalProcess"
+    },
+    "comment" : {
+      "en" : "A ConsentWithdrawalProcess deals with the withdrawal of consent by the user and the corresponding activity carried out within the system"
+    },
+    "id" : "14",
+    "superClasses" : [ "13" ]
+  }, {
+    "iri" : "http://purl.org/adaptcentre/openscience/ontologies/gdprov#AnonymisedData",
+    "baseIri" : "http://purl.org/adaptcentre/openscience/ontologies/gdprov",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "AnonymisedData",
+      "undefined" : "AnonymisedData"
+    },
+    "comment" : {
+      "undefined" : "Represents data that has been Anonymised at some level reflected by the hasAnonymityLevel object property"
+    },
+    "id" : "18",
+    "superClasses" : [ "19" ]
+  }, {
+    "iri" : "http://purl.org/adaptcentre/openscience/ontologies/gdprov#DataAnonymisationStep",
+    "baseIri" : "http://purl.org/adaptcentre/openscience/ontologies/gdprov",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "DataAnonymisationStep",
+      "en" : "DataAnonymisationStep"
+    },
+    "comment" : {
+      "en" : "DataAnonymisationStep anonymises data by transforming it from one form to another along the anonymisation chain.\nAnonymisation can be represented as a spectrum going from raw user data to pseudo-anonymised data that can be de-anonymised by the same agent/organisation to pseudo-anonymous data that cannot be deanonymised internally, but may be done by external agents who have access to other data, and finally to completely anonymised data."
+    },
+    "id" : "39",
+    "superClasses" : [ "4" ]
+  }, {
+    "iri" : "http://purl.org/adaptcentre/openscience/ontologies/gdprov#PersonalData",
+    "baseIri" : "http://purl.org/adaptcentre/openscience/ontologies/gdprov",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "PersonalData",
+      "en" : "PersonalData"
+    },
+    "subClasses" : [ "41", "18" ],
+    "comment" : {
+      "en" : "PersonalData is any data pertaining to the user which can contain personally identifiable information or a data set generated by the system using personally identifiable information acquired through direct or indirect means"
+    },
+    "id" : "19",
+    "superClasses" : [ "38" ]
+  }, {
+    "iri" : "http://purl.org/adaptcentre/openscience/ontologies/gdprov#ThirdParty",
+    "baseIri" : "http://purl.org/adaptcentre/openscience/ontologies/gdprov",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "ThirdParty",
+      "en" : "ThirdParty"
+    },
+    "subClasses" : [ "34", "31" ],
+    "comment" : {
+      "en" : "A ThirdParty is any external entitiy associated with some internal activity"
+    },
+    "id" : "32",
+    "superClasses" : [ "36" ]
+  }, {
+    "iri" : "http://www.w3.org/ns/prov#Agent",
+    "baseIri" : "http://www.w3.org/ns/prov",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Agent"
+    },
+    "subClasses" : [ "32" ],
+    "attributes" : [ "external" ],
+    "id" : "36"
+  }, {
+    "iri" : "http://purl.org/adaptcentre/openscience/ontologies/gdprov#ConsentWithdrawalStep",
+    "baseIri" : "http://purl.org/adaptcentre/openscience/ontologies/gdprov",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "ConsentWithdrawalStep",
+      "en" : "ConsentWithdrawalStep"
+    },
+    "comment" : {
+      "en" : "ConsentWithdrawalStep deals with withdrawal of consent"
+    },
+    "id" : "2",
+    "superClasses" : [ "0" ]
+  }, {
+    "iri" : "http://purl.org/adaptcentre/openscience/ontologies/gdprov#DataUsageStep",
+    "baseIri" : "http://purl.org/adaptcentre/openscience/ontologies/gdprov",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "DataUsageStep",
+      "en" : "DataUsageStep"
+    },
+    "comment" : {
+      "en" : "A DataUsageStep is a DataStep that uses existing data present within the system"
+    },
+    "id" : "26",
+    "superClasses" : [ "7" ]
+  }, {
+    "iri" : "http://purl.org/adaptcentre/openscience/ontologies/gdprov#AnonymityLevel",
+    "baseIri" : "http://purl.org/adaptcentre/openscience/ontologies/gdprov",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "AnonymityLevel",
+      "undefined" : "AnonymityLevel"
+    },
+    "comment" : {
+      "undefined" : "Provides a way to express the Anonymity Level of AnonymisedData objects through the object property hasAnonymityLevel"
+    },
+    "id" : "66"
+  }, {
+    "iri" : "http://purl.org/net/p-plan#Step",
+    "baseIri" : "http://purl.org/net/p-plan",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Step"
+    },
+    "subClasses" : [ "7", "1" ],
+    "attributes" : [ "external" ],
+    "id" : "8"
+  }, {
+    "iri" : "http://purl.org/adaptcentre/openscience/ontologies/gdprov#DataStorageStep",
+    "baseIri" : "http://purl.org/adaptcentre/openscience/ontologies/gdprov",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "DataStorageStep",
+      "en" : "DataStorageStep"
+    },
+    "subClasses" : [ "3" ],
+    "comment" : {
+      "en" : "DataStorageStep stores data within the system"
+    },
+    "id" : "5",
+    "superClasses" : [ "7" ]
+  }, {
+    "iri" : "http://purl.org/adaptcentre/openscience/ontologies/gdprov#DataAccessProcess",
+    "baseIri" : "http://purl.org/adaptcentre/openscience/ontologies/gdprov",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "DataAccessProcess",
+      "en" : "DataAccessProcess"
+    },
+    "comment" : {
+      "en" : "A DataAccessProcess corresponds to the request made by an user for access to their data within the system. This process is responsible for handling the request process and providing the appropriate data to the end user."
+    },
+    "id" : "70",
+    "superClasses" : [ "13" ]
+  }, {
+    "iri" : "http://purl.org/net/p-plan#Variable",
+    "baseIri" : "http://purl.org/net/p-plan",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Variable"
+    },
+    "subClasses" : [ "78", "38", "63", "50" ],
+    "attributes" : [ "external" ],
+    "id" : "77"
+  }, {
+    "iri" : "http://purl.org/adaptcentre/openscience/ontologies/gdprov#UserIdentifier",
+    "baseIri" : "http://purl.org/adaptcentre/openscience/ontologies/gdprov",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "UserIdentifier",
+      "en" : "UserIdentifier"
+    },
+    "comment" : {
+      "en" : "An UserIdentifier is a specific way to identify the user through a unique ID or a combination of other attributes"
+    },
+    "id" : "41",
+    "superClasses" : [ "19" ]
+  }, {
+    "iri" : "http://purl.org/adaptcentre/openscience/ontologies/gdprov#ConsentAgreement",
+    "baseIri" : "http://purl.org/adaptcentre/openscience/ontologies/gdprov",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "ConsentAgreement",
+      "en" : "ConsentAgreement"
+    },
+    "comment" : {
+      "en" : "ConsentAgreement reflects the consent provided by the user based on the provided Terms and Conditions and Consent Agreement Templates. It is the set of permissions the user has specifically provided or refused to provide. This consent is useful to provide justification of activities that use user data."
+    },
+    "id" : "78",
+    "superClasses" : [ "77" ]
+  }, {
+    "iri" : "http://purl.org/adaptcentre/openscience/ontologies/gdprov#DataSharingStep",
+    "baseIri" : "http://purl.org/adaptcentre/openscience/ontologies/gdprov",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "DataSharingStep",
+      "en" : "DataSharingStep"
+    },
+    "comment" : {
+      "en" : "DataSharingStep shares data with another agent/organisation. These may be internal or external entities."
+    },
+    "id" : "29",
+    "superClasses" : [ "7" ]
+  }, {
+    "iri" : "http://purl.org/adaptcentre/openscience/ontologies/gdprov#Process",
+    "baseIri" : "http://purl.org/adaptcentre/openscience/ontologies/gdprov",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Process",
+      "en" : "Process"
+    },
+    "subClasses" : [ "70", "56", "60", "58", "12", "14" ],
+    "comment" : {
+      "en" : "A Process describes a 'Plan' of action for carrying out a particular activity that uses or is related to Data or Consent"
+    },
+    "id" : "13",
+    "superClasses" : [ "72" ]
+  }, {
+    "iri" : "http://purl.org/adaptcentre/openscience/ontologies/gdprov#ThirdPartyDataProcessor",
+    "baseIri" : "http://purl.org/adaptcentre/openscience/ontologies/gdprov",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "ThirdPartyDataProcessor",
+      "en" : "ThirdPartyDataProcessor"
+    },
+    "comment" : {
+      "en" : "A ThirdPartyDataProcessor is a Third Party entity that acts as a Data Processor"
+    },
+    "id" : "34",
+    "superClasses" : [ "32" ]
+  }, {
+    "iri" : "http://purl.org/adaptcentre/openscience/ontologies/gdprov#DataTransformationStep",
+    "baseIri" : "http://purl.org/adaptcentre/openscience/ontologies/gdprov",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "DataTransformationStep",
+      "en" : "DataTransformationStep"
+    },
+    "subClasses" : [ "3", "39", "45" ],
+    "comment" : {
+      "en" : "DataTransformationStep transforms data from one form into another."
+    },
+    "id" : "4",
+    "superClasses" : [ "7" ]
+  }, {
+    "iri" : "http://purl.org/adaptcentre/openscience/ontologies/gdprov#DataRectificationProcess",
+    "baseIri" : "http://purl.org/adaptcentre/openscience/ontologies/gdprov",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "DataRectificationProcess",
+      "en" : "DataRectificationProcess"
+    },
+    "comment" : {
+      "en" : "A DataRectificationProcess describes the process of data rectification, which is the correction of data already present within the system"
+    },
+    "id" : "58",
+    "superClasses" : [ "13" ]
+  }, {
+    "iri" : "http://purl.org/adaptcentre/openscience/ontologies/gdprov#HandleDataBreachProcess",
+    "baseIri" : "http://purl.org/adaptcentre/openscience/ontologies/gdprov",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "HandleDataBreachProcess",
+      "undefined" : "HandleDataBreachProcess"
+    },
+    "comment" : {
+      "undefined" : "A process that defines the actions that should be undertaken in event of a data breach"
+    },
+    "id" : "56",
+    "superClasses" : [ "13" ]
+  }, {
+    "iri" : "http://purl.org/adaptcentre/openscience/ontologies/gdprov#Data",
+    "baseIri" : "http://purl.org/adaptcentre/openscience/ontologies/gdprov",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Data",
+      "en" : "Data"
+    },
+    "subClasses" : [ "19" ],
+    "comment" : {
+      "en" : "Represents class of data collected or generated through various activities"
+    },
+    "id" : "38",
+    "superClasses" : [ "77" ]
+  }, {
+    "iri" : "http://purl.org/adaptcentre/openscience/ontologies/gdprov#DataArchivalProcess",
+    "baseIri" : "http://purl.org/adaptcentre/openscience/ontologies/gdprov",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "DataArchivalProcess",
+      "en" : "DataArchivalProcess"
+    },
+    "comment" : {
+      "en" : "A DataArchivalProcess describes the process of data archival"
+    },
+    "id" : "60",
+    "superClasses" : [ "13" ]
+  }, {
+    "iri" : "http://purl.org/adaptcentre/openscience/ontologies/gdprov#ThirdPartyDataController",
+    "baseIri" : "http://purl.org/adaptcentre/openscience/ontologies/gdprov",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "ThirdPartyDataController",
+      "en" : "ThirdPartyDataController"
+    },
+    "comment" : {
+      "en" : "A ThirdPartyDataController is a Third Party entity that acts as a Data Controller"
+    },
+    "id" : "31",
+    "superClasses" : [ "32" ]
+  }, {
+    "iri" : "http://purl.org/adaptcentre/openscience/ontologies/gdprov#TermsAndConditions",
+    "baseIri" : "http://purl.org/adaptcentre/openscience/ontologies/gdprov",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "TermsAndConditions",
+      "en" : "TermsAndConditions"
+    },
+    "comment" : {
+      "en" : "Terms and Conditions of usage as provided to the user in agreement of provided service"
+    },
+    "id" : "50",
+    "superClasses" : [ "77" ]
+  }, {
+    "iri" : "http://purl.org/adaptcentre/openscience/ontologies/gdprov#DataStep",
+    "baseIri" : "http://purl.org/adaptcentre/openscience/ontologies/gdprov",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "DataStep",
+      "en" : "DataStep"
+    },
+    "subClasses" : [ "26", "21", "29", "4", "17", "5" ],
+    "comment" : {
+      "en" : "A DataStep deals with data"
+    },
+    "id" : "7",
+    "superClasses" : [ "8" ]
+  }, {
+    "iri" : "http://www.w3.org/2002/07/owl#Thing",
+    "baseIri" : "http://owl2vowl.de",
+    "id" : "10",
+    "label" : {
+      "undefined" : "Thing"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2002/07/owl#Thing",
+    "baseIri" : "http://owl2vowl.de",
+    "id" : "85",
+    "label" : {
+      "undefined" : "Thing"
+    }
+  }, {
+    "iri" : "http://purl.org/adaptcentre/openscience/ontologies/gdprov#DataCollectionStep",
+    "baseIri" : "http://purl.org/adaptcentre/openscience/ontologies/gdprov",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "DataCollectionStep",
+      "en" : "DataCollectionStep"
+    },
+    "comment" : {
+      "en" : "DataCollectionStep collects data from the user"
+    },
+    "id" : "21",
+    "superClasses" : [ "7" ]
+  }, {
+    "iri" : "http://purl.org/adaptcentre/openscience/ontologies/gdprov#ConsentAgreementTemplate",
+    "baseIri" : "http://purl.org/adaptcentre/openscience/ontologies/gdprov",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "ConsentAgreementTemplate",
+      "en" : "ConsentAgreementTemplate"
+    },
+    "comment" : {
+      "en" : "This is a template for consent requested from the user."
+    },
+    "id" : "63",
+    "superClasses" : [ "77" ]
+  }, {
+    "iri" : "http://purl.org/adaptcentre/openscience/ontologies/gdprov#ConsentArchivalStep",
+    "baseIri" : "http://purl.org/adaptcentre/openscience/ontologies/gdprov",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "ConsentArchivalStep",
+      "en" : "ConsentArchivalStep"
+    },
+    "comment" : {
+      "en" : "ConsentArchivalStep archives acquired consent to form a record of the consent given by the user."
+    },
+    "id" : "91",
+    "superClasses" : [ "1" ]
+  }, {
+    "iri" : "http://purl.org/adaptcentre/openscience/ontologies/gdprov#DataDeletionStep",
+    "baseIri" : "http://purl.org/adaptcentre/openscience/ontologies/gdprov",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "DataDeletionStep",
+      "en" : "DataDeletionStep"
+    },
+    "comment" : {
+      "en" : "DataDeletionStep deletes data from within the system;\nThe deletion is expressed as prov:invalidated over the dataset."
+    },
+    "id" : "17",
+    "superClasses" : [ "7" ]
+  }, {
+    "iri" : "http://purl.org/adaptcentre/openscience/ontologies/gdprov#ConsentAcquisitionStep",
+    "baseIri" : "http://purl.org/adaptcentre/openscience/ontologies/gdprov",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "ConsentAcquisitionStep",
+      "en" : "ConsentAcquisitionStep"
+    },
+    "comment" : {
+      "en" : "ConsentAcquisitionStep deals with acquiring consent from the user. It uses Terms and Conditions along with the appropriate Consent Model as the basis of obtaining consent from the user. The output of this step is the consent object agreed upon by the user."
+    },
+    "id" : "49",
+    "superClasses" : [ "1" ]
+  }, {
+    "iri" : "http://purl.org/adaptcentre/openscience/ontologies/gdprov#ConsentStep",
+    "baseIri" : "http://purl.org/adaptcentre/openscience/ontologies/gdprov",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "ConsentStep",
+      "en" : "ConsentStep"
+    },
+    "subClasses" : [ "91", "0", "49" ],
+    "comment" : {
+      "en" : "A ConsentStep acts/interacts with/uses Consent"
+    },
+    "id" : "1",
+    "superClasses" : [ "8" ]
+  }, {
+    "iri" : "http://purl.org/net/p-plan#Plan",
+    "baseIri" : "http://purl.org/net/p-plan",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Plan"
+    },
+    "subClasses" : [ "13" ],
+    "attributes" : [ "external" ],
+    "id" : "72"
+  }, {
+    "iri" : "http://purl.org/adaptcentre/openscience/ontologies/gdprov#DataDeanonymisationStep",
+    "baseIri" : "http://purl.org/adaptcentre/openscience/ontologies/gdprov",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "DataDeanonymisationStep",
+      "en" : "DataDeanonymisationStep"
+    },
+    "comment" : {
+      "en" : "DataDeanonymisationStep deanonymises data by transforming it from one form to another along the anonymisation chain."
+    },
+    "id" : "45",
+    "superClasses" : [ "4" ]
+  } ],
+  "property" : [ {
+    "id" : "6",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "9",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "15",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "16",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "20",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "22",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "25",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "27",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "28",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "30",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "33",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "35",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "37",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "40",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "42",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "43",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "44",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "46",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "47",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "48",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "52",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "53",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "54",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "55",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "57",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "59",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "61",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "23",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "51",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "65",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "67",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "68",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "71",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "73",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "69",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "79",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "80",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "81",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "82",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "83",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "84",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "86",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "87",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "88",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "89",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "90",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "76",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "62",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "75",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "11",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "24",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "74",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "92",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "93",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "64",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "94",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "95",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "96",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "97",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "98",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "99",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "100",
+    "type" : "owl:disjointWith"
+  } ],
+  "propertyAttribute" : [ {
+    "range" : "8",
+    "domain" : "7",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "6"
+  }, {
+    "iri" : "http://purl.org/adaptcentre/openscience/ontologies/gdprov#isDataCollectedByStep",
+    "baseIri" : "http://purl.org/adaptcentre/openscience/ontologies/gdprov",
+    "range" : "10",
+    "label" : {
+      "IRI-based" : "isDataCollectedByStep",
+      "undefined" : "isDataCollectedByStep"
+    },
+    "superproperty" : [ "11" ],
+    "domain" : "10",
+    "attributes" : [ "object" ],
+    "id" : "9"
+  }, {
+    "range" : "7",
+    "domain" : "5",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "15"
+  }, {
+    "range" : "7",
+    "domain" : "17",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "16"
+  }, {
+    "range" : "7",
+    "domain" : "21",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "20"
+  }, {
+    "iri" : "http://purl.org/adaptcentre/openscience/ontologies/gdprov#isConsentAgreementTemplateForStep",
+    "inverse" : "23",
+    "baseIri" : "http://purl.org/adaptcentre/openscience/ontologies/gdprov",
+    "range" : "10",
+    "label" : {
+      "IRI-based" : "isConsentAgreementTemplateForStep",
+      "undefined" : "isConsentAgreementTemplateForStep"
+    },
+    "superproperty" : [ "24" ],
+    "domain" : "10",
+    "attributes" : [ "object" ],
+    "id" : "22"
+  }, {
+    "range" : "7",
+    "domain" : "26",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "25"
+  }, {
+    "range" : "7",
+    "domain" : "4",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "27"
+  }, {
+    "range" : "7",
+    "domain" : "29",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "28"
+  }, {
+    "range" : "32",
+    "domain" : "31",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "30"
+  }, {
+    "range" : "32",
+    "domain" : "34",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "33"
+  }, {
+    "range" : "36",
+    "domain" : "32",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "35"
+  }, {
+    "range" : "38",
+    "domain" : "19",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "37"
+  }, {
+    "iri" : "http://purl.org/adaptcentre/openscience/ontologies/gdprov#sharesDataWithThirdParty",
+    "baseIri" : "http://purl.org/adaptcentre/openscience/ontologies/gdprov",
+    "range" : "32",
+    "label" : {
+      "IRI-based" : "sharesDataWithThirdParty",
+      "undefined" : "sharesDataWithThirdParty"
+    },
+    "domain" : "29",
+    "comment" : {
+      "undefined" : "Shares data with a third party"
+    },
+    "attributes" : [ "object" ],
+    "id" : "40"
+  }, {
+    "iri" : "http://purl.org/adaptcentre/openscience/ontologies/gdprov#isGeneratedByStep",
+    "baseIri" : "http://purl.org/adaptcentre/openscience/ontologies/gdprov",
+    "range" : "10",
+    "label" : {
+      "IRI-based" : "isGeneratedByStep",
+      "undefined" : "isGeneratedByStep"
+    },
+    "superproperty" : [ "11" ],
+    "domain" : "10",
+    "attributes" : [ "object" ],
+    "id" : "42"
+  }, {
+    "range" : "19",
+    "domain" : "41",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "43"
+  }, {
+    "range" : "4",
+    "domain" : "45",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "44"
+  }, {
+    "range" : "19",
+    "domain" : "18",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "46"
+  }, {
+    "range" : "13",
+    "domain" : "14",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "47"
+  }, {
+    "iri" : "http://purl.org/adaptcentre/openscience/ontologies/gdprov#usesTermsAndConditions",
+    "baseIri" : "http://purl.org/adaptcentre/openscience/ontologies/gdprov",
+    "range" : "50",
+    "label" : {
+      "IRI-based" : "usesTermsAndConditions",
+      "undefined" : "usesTermsAndConditions"
+    },
+    "superproperty" : [ "51" ],
+    "domain" : "49",
+    "comment" : {
+      "undefined" : "Links a Consent Acquisition Step with the Terms and Conditions presented to the user when acquiring Consent"
+    },
+    "attributes" : [ "object" ],
+    "id" : "48"
+  }, {
+    "range" : "13",
+    "domain" : "12",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "52"
+  }, {
+    "range" : "4",
+    "domain" : "39",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "53"
+  }, {
+    "range" : "4",
+    "domain" : "3",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "54"
+  }, {
+    "range" : "13",
+    "domain" : "56",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "55"
+  }, {
+    "range" : "13",
+    "domain" : "58",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "57"
+  }, {
+    "range" : "13",
+    "domain" : "60",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "59"
+  }, {
+    "iri" : "http://purl.org/adaptcentre/openscience/ontologies/gdprov#isUsedByStep",
+    "inverse" : "62",
+    "baseIri" : "http://purl.org/adaptcentre/openscience/ontologies/gdprov",
+    "range" : "10",
+    "label" : {
+      "IRI-based" : "isUsedByStep",
+      "undefined" : "isUsedByStep"
+    },
+    "superproperty" : [ "24" ],
+    "domain" : "10",
+    "attributes" : [ "object" ],
+    "id" : "61"
+  }, {
+    "iri" : "http://purl.org/adaptcentre/openscience/ontologies/gdprov#usesConsentAgreementTemplate",
+    "baseIri" : "http://purl.org/adaptcentre/openscience/ontologies/gdprov",
+    "range" : "63",
+    "label" : {
+      "IRI-based" : "usesConsentAgreementTemplate",
+      "undefined" : "usesConsentAgreementTemplate"
+    },
+    "superproperty" : [ "51" ],
+    "domain" : "49",
+    "comment" : {
+      "undefined" : "links a Consent Acquisition Step with the Consent Agreement Template used to acquire consent"
+    },
+    "attributes" : [ "object" ],
+    "id" : "23"
+  }, {
+    "iri" : "http://purl.org/net/p-plan#hasInputVar",
+    "baseIri" : "http://purl.org/net/p-plan",
+    "range" : "10",
+    "label" : {
+      "IRI-based" : "hasInputVar"
+    },
+    "domain" : "10",
+    "subproperty" : [ "23", "64", "62", "48" ],
+    "attributes" : [ "object", "external" ],
+    "id" : "51"
+  }, {
+    "iri" : "http://purl.org/adaptcentre/openscience/ontologies/gdprov#isJustificationForDataStep",
+    "inverse" : "64",
+    "baseIri" : "http://purl.org/adaptcentre/openscience/ontologies/gdprov",
+    "range" : "10",
+    "label" : {
+      "IRI-based" : "isJustificationForDataStep",
+      "undefined" : "isJustificationForDataStep"
+    },
+    "superproperty" : [ "24" ],
+    "domain" : "10",
+    "attributes" : [ "object" ],
+    "id" : "65"
+  }, {
+    "iri" : "http://purl.org/adaptcentre/openscience/ontologies/gdprov#isTermsAndConditionsForStep",
+    "inverse" : "48",
+    "baseIri" : "http://purl.org/adaptcentre/openscience/ontologies/gdprov",
+    "range" : "10",
+    "label" : {
+      "IRI-based" : "isTermsAndConditionsForStep",
+      "undefined" : "isTermsAndConditionsForStep"
+    },
+    "superproperty" : [ "24" ],
+    "domain" : "10",
+    "attributes" : [ "object" ],
+    "id" : "67"
+  }, {
+    "iri" : "http://purl.org/adaptcentre/openscience/ontologies/gdprov#collectsData",
+    "inverse" : "9",
+    "baseIri" : "http://purl.org/adaptcentre/openscience/ontologies/gdprov",
+    "range" : "38",
+    "label" : {
+      "IRI-based" : "collectsData",
+      "undefined" : "collectsData"
+    },
+    "superproperty" : [ "69" ],
+    "domain" : "7",
+    "comment" : {
+      "undefined" : "Links data obtained (collected) by the step/activity that acquired it"
+    },
+    "attributes" : [ "object" ],
+    "id" : "68"
+  }, {
+    "range" : "72",
+    "domain" : "13",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "71"
+  }, {
+    "iri" : "http://purl.org/adaptcentre/openscience/ontologies/gdprov#generatesAnonymisedData",
+    "inverse" : "74",
+    "baseIri" : "http://purl.org/adaptcentre/openscience/ontologies/gdprov",
+    "range" : "18",
+    "label" : {
+      "IRI-based" : "generatesAnonymisedData",
+      "undefined" : "generatesAnonymisedData"
+    },
+    "superproperty" : [ "75" ],
+    "domain" : "39",
+    "comment" : {
+      "undefined" : "Indicates that an DataAnonymisationStep transforms a Data object into AnonymisedData"
+    },
+    "attributes" : [ "object" ],
+    "id" : "73"
+  }, {
+    "iri" : "http://purl.org/net/p-plan#hasOutputVar",
+    "baseIri" : "http://purl.org/net/p-plan",
+    "range" : "10",
+    "label" : {
+      "IRI-based" : "hasOutputVar"
+    },
+    "domain" : "10",
+    "subproperty" : [ "76", "68", "75" ],
+    "attributes" : [ "object", "external" ],
+    "id" : "69"
+  }, {
+    "range" : "77",
+    "domain" : "50",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "79"
+  }, {
+    "range" : "77",
+    "domain" : "78",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "80"
+  }, {
+    "range" : "1",
+    "domain" : "49",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "81"
+  }, {
+    "range" : "77",
+    "domain" : "63",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "82"
+  }, {
+    "range" : "77",
+    "domain" : "38",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "83"
+  }, {
+    "iri" : "http://purl.org/adaptcentre/openscience/ontologies/gdprov#hasAnonymityLevel",
+    "baseIri" : "http://purl.org/adaptcentre/openscience/ontologies/gdprov",
+    "range" : "85",
+    "label" : {
+      "IRI-based" : "hasAnonymityLevel",
+      "undefined" : "hasAnonymityLevel"
+    },
+    "domain" : "19",
+    "comment" : {
+      "undefined" : "Indicates the anonymity level of an AnonymisedData object using instances of the AnonymityLevel class"
+    },
+    "attributes" : [ "object" ],
+    "id" : "84"
+  }, {
+    "range" : "5",
+    "domain" : "3",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "86"
+  }, {
+    "range" : "8",
+    "domain" : "1",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "87"
+  }, {
+    "iri" : "http://purl.org/adaptcentre/openscience/ontologies/gdprov#sharesData",
+    "baseIri" : "http://purl.org/adaptcentre/openscience/ontologies/gdprov",
+    "range" : "38",
+    "label" : {
+      "IRI-based" : "sharesData",
+      "undefined" : "sharesData"
+    },
+    "domain" : "29",
+    "comment" : {
+      "undefined" : "Indicates sharing of Data through a DataStep"
+    },
+    "attributes" : [ "object" ],
+    "id" : "88"
+  }, {
+    "range" : "1",
+    "domain" : "0",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "89"
+  }, {
+    "range" : "1",
+    "domain" : "91",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "90"
+  }, {
+    "iri" : "http://purl.org/adaptcentre/openscience/ontologies/gdprov#generatesConsentAgreement",
+    "inverse" : "42",
+    "baseIri" : "http://purl.org/adaptcentre/openscience/ontologies/gdprov",
+    "range" : "78",
+    "label" : {
+      "IRI-based" : "generatesConsentAgreement",
+      "undefined" : "generatesConsentAgreement"
+    },
+    "superproperty" : [ "69" ],
+    "domain" : "49",
+    "comment" : {
+      "undefined" : "Generates ConsentAgreement which is a the consent granted by the user based on the ConsentAgreementTemplate through a ConsentAcquisitionStep"
+    },
+    "attributes" : [ "object" ],
+    "id" : "76"
+  }, {
+    "iri" : "http://purl.org/adaptcentre/openscience/ontologies/gdprov#usesData",
+    "baseIri" : "http://purl.org/adaptcentre/openscience/ontologies/gdprov",
+    "range" : "38",
+    "label" : {
+      "IRI-based" : "usesData",
+      "undefined" : "usesData"
+    },
+    "superproperty" : [ "51" ],
+    "domain" : "7",
+    "comment" : {
+      "undefined" : "links step with data used"
+    },
+    "attributes" : [ "object" ],
+    "id" : "62"
+  }, {
+    "iri" : "http://purl.org/adaptcentre/openscience/ontologies/gdprov#generatesData",
+    "inverse" : "92",
+    "baseIri" : "http://purl.org/adaptcentre/openscience/ontologies/gdprov",
+    "range" : "38",
+    "label" : {
+      "IRI-based" : "generatesData",
+      "undefined" : "generatesData"
+    },
+    "superproperty" : [ "69" ],
+    "domain" : "7",
+    "subproperty" : [ "73" ],
+    "comment" : {
+      "undefined" : "produces data"
+    },
+    "attributes" : [ "object" ],
+    "id" : "75"
+  }, {
+    "iri" : "http://purl.org/net/p-plan#isOutputVarOf",
+    "baseIri" : "http://purl.org/net/p-plan",
+    "range" : "10",
+    "label" : {
+      "IRI-based" : "isOutputVarOf"
+    },
+    "domain" : "10",
+    "subproperty" : [ "9", "92", "42" ],
+    "attributes" : [ "object", "external" ],
+    "id" : "11"
+  }, {
+    "iri" : "http://purl.org/net/p-plan#isInputVarOf",
+    "baseIri" : "http://purl.org/net/p-plan",
+    "range" : "10",
+    "label" : {
+      "IRI-based" : "isInputVarOf"
+    },
+    "domain" : "10",
+    "subproperty" : [ "67", "61", "22", "65" ],
+    "attributes" : [ "object", "external" ],
+    "id" : "24"
+  }, {
+    "iri" : "http://purl.org/adaptcentre/openscience/ontologies/gdprov#isAnonymisedByStep",
+    "baseIri" : "http://purl.org/adaptcentre/openscience/ontologies/gdprov",
+    "range" : "10",
+    "label" : {
+      "IRI-based" : "isAnonymisedByStep",
+      "undefined" : "isAnonymisedByStep"
+    },
+    "superproperty" : [ "92" ],
+    "domain" : "10",
+    "attributes" : [ "object" ],
+    "id" : "74"
+  }, {
+    "iri" : "http://purl.org/adaptcentre/openscience/ontologies/gdprov#isDataGeneratedBy",
+    "baseIri" : "http://purl.org/adaptcentre/openscience/ontologies/gdprov",
+    "range" : "10",
+    "label" : {
+      "IRI-based" : "isDataGeneratedBy",
+      "undefined" : "isDataGeneratedByStep"
+    },
+    "superproperty" : [ "11" ],
+    "domain" : "10",
+    "subproperty" : [ "74" ],
+    "attributes" : [ "object" ],
+    "id" : "92"
+  }, {
+    "range" : "63",
+    "domain" : "78",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "93"
+  }, {
+    "iri" : "http://purl.org/adaptcentre/openscience/ontologies/gdprov#isJustifiedUsingConsentAgreement",
+    "baseIri" : "http://purl.org/adaptcentre/openscience/ontologies/gdprov",
+    "range" : "78",
+    "label" : {
+      "IRI-based" : "isJustifiedUsingConsentAgreement",
+      "undefined" : "isJustifiedUsingConsentAgreement"
+    },
+    "superproperty" : [ "51" ],
+    "domain" : "7",
+    "comment" : {
+      "undefined" : "justifies use of data by step through specified consent agreement"
+    },
+    "attributes" : [ "object" ],
+    "id" : "64"
+  }, {
+    "range" : "50",
+    "domain" : "63",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "94"
+  }, {
+    "range" : "63",
+    "domain" : "38",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "95"
+  }, {
+    "range" : "50",
+    "domain" : "38",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "96"
+  }, {
+    "range" : "0",
+    "domain" : "2",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "97"
+  }, {
+    "range" : "13",
+    "domain" : "70",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "98"
+  }, {
+    "range" : "50",
+    "domain" : "78",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "99"
+  }, {
+    "range" : "38",
+    "domain" : "78",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "100"
+  } ]
+}

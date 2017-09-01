@@ -1,0 +1,427 @@
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#> <http://purl.org/dc/terms/abstract> "The upcoming General Data Protection Regulation (GDPR) requires justification of data activities to acquire, use, share, and store data using consent obtained from the user. Failure to comply may result in significant heavy fines which incentivises creation and maintenance of records for all activities involving consent and data. Compliance documentation therefore requires provenance information outlining consent and data lifecycles to demonstrate correct usage of data in accordance with the related consent provided and updated by the user. GDPRov (pronounced GDPR-Prov) is a linked data ontology for expressing provenance of consent and data lifecycles with a view towards documenting compliance. GDPRov is an OWL2 ontology that extends PROV-O and P-Plan to model the provenance." .
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#> <http://purl.org/dc/terms/created> "2017-08-01"^^<http://www.w3.org/2001/XMLSchema#date> .
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#> <http://purl.org/dc/terms/creator> "http://purl.org/adaptcentre/people/dave_lewis"^^<http://www.w3.org/2001/XMLSchema#anyURI> .
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#> <http://purl.org/dc/terms/creator> "http://purl.org/adaptcentre/people/harshvardhan_pandit"^^<http://www.w3.org/2001/XMLSchema#anyURI> .
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#> <http://purl.org/dc/terms/description> "GDPRov is an OWL2 ontology to express provenance metadata of consent and data lifecycles towards documenting compliance for GDPR." .
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#> <http://purl.org/dc/terms/license> "https://creativecommons.org/licenses/by/4.0/" .
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#> <http://purl.org/dc/terms/modified> "2017-08-01"^^<http://www.w3.org/2001/XMLSchema#date> .
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#> <http://purl.org/dc/terms/title> "The GDPR Provenance ontology" .
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#> <http://purl.org/vocab/vann/preferredNamespacePrefix> "gdprov" .
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#> <http://purl.org/vocab/vann/preferredNamespaceUri> "http://purl.org/adaptcentre/openscience/ontologies/gdprov#" .
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#> <http://www.w3.org/2000/01/rdf-schema#comment> "PROV and P-Plan extension for representing provenance of consent and data lifecycles. Created by Harshvardhan J. Pandit and Dave Lewis." .
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#> <http://www.w3.org/2002/07/owl#versionIRI> "https://openscience.adaptcentre.ie/ontologies/gdprov/gdprov.0.1.owl" .
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#> <http://www.w3.org/2002/07/owl#versionInfo> "0.1" .
+# 
+# 
+# #################################################################
+# #
+# #    Object Properties
+# #
+# #################################################################
+# 
+# 
+# http://purl.org/adaptcentre/openscience/ontologies/gdprov#collectsData
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#collectsData> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#collectsData> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://purl.org/net/p-plan#hasOutputVar> .
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#collectsData> <http://www.w3.org/2002/07/owl#inverseOf> <http://purl.org/adaptcentre/openscience/ontologies/gdprov#isDataCollectedByStep> .
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#collectsData> <http://www.w3.org/2000/01/rdf-schema#domain> <http://purl.org/adaptcentre/openscience/ontologies/gdprov#DataStep> .
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#collectsData> <http://www.w3.org/2000/01/rdf-schema#range> <http://purl.org/adaptcentre/openscience/ontologies/gdprov#Data> .
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#collectsData> <http://www.w3.org/2000/01/rdf-schema#comment> "Links data obtained (collected) by the step/activity that acquired it" .
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#collectsData> <http://www.w3.org/2000/01/rdf-schema#label> "collectsData" .
+# 
+# http://purl.org/adaptcentre/openscience/ontologies/gdprov#generatesAnonymisedData
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#generatesAnonymisedData> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#generatesAnonymisedData> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://purl.org/adaptcentre/openscience/ontologies/gdprov#generatesData> .
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#generatesAnonymisedData> <http://www.w3.org/2002/07/owl#inverseOf> <http://purl.org/adaptcentre/openscience/ontologies/gdprov#isAnonymisedByStep> .
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#generatesAnonymisedData> <http://www.w3.org/2000/01/rdf-schema#domain> <http://purl.org/adaptcentre/openscience/ontologies/gdprov#DataAnonymisationStep> .
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#generatesAnonymisedData> <http://www.w3.org/2000/01/rdf-schema#range> <http://purl.org/adaptcentre/openscience/ontologies/gdprov#AnonymisedData> .
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#generatesAnonymisedData> <http://www.w3.org/2000/01/rdf-schema#comment> "Indicates that an DataAnonymisationStep transforms a Data object into AnonymisedData" .
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#generatesAnonymisedData> <http://www.w3.org/2000/01/rdf-schema#label> "generatesAnonymisedData" .
+# 
+# http://purl.org/adaptcentre/openscience/ontologies/gdprov#generatesConsentAgreement
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#generatesConsentAgreement> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#generatesConsentAgreement> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://purl.org/net/p-plan#hasOutputVar> .
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#generatesConsentAgreement> <http://www.w3.org/2002/07/owl#inverseOf> <http://purl.org/adaptcentre/openscience/ontologies/gdprov#isGeneratedByStep> .
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#generatesConsentAgreement> <http://www.w3.org/2000/01/rdf-schema#domain> <http://purl.org/adaptcentre/openscience/ontologies/gdprov#ConsentAcquisitionStep> .
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#generatesConsentAgreement> <http://www.w3.org/2000/01/rdf-schema#range> <http://purl.org/adaptcentre/openscience/ontologies/gdprov#ConsentAgreement> .
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#generatesConsentAgreement> <http://www.w3.org/2000/01/rdf-schema#comment> "Generates ConsentAgreement which is a the consent granted by the user based on the ConsentAgreementTemplate through a ConsentAcquisitionStep" .
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#generatesConsentAgreement> <http://www.w3.org/2000/01/rdf-schema#label> "generatesConsentAgreement" .
+# 
+# http://purl.org/adaptcentre/openscience/ontologies/gdprov#generatesData
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#generatesData> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#generatesData> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://purl.org/net/p-plan#hasOutputVar> .
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#generatesData> <http://www.w3.org/2002/07/owl#inverseOf> <http://purl.org/adaptcentre/openscience/ontologies/gdprov#isDataGeneratedBy> .
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#generatesData> <http://www.w3.org/2000/01/rdf-schema#domain> <http://purl.org/adaptcentre/openscience/ontologies/gdprov#DataStep> .
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#generatesData> <http://www.w3.org/2000/01/rdf-schema#range> <http://purl.org/adaptcentre/openscience/ontologies/gdprov#Data> .
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#generatesData> <http://www.w3.org/2000/01/rdf-schema#comment> "produces data" .
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#generatesData> <http://www.w3.org/2000/01/rdf-schema#label> "generatesData" .
+# 
+# http://purl.org/adaptcentre/openscience/ontologies/gdprov#hasAnonymityLevel
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#hasAnonymityLevel> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#hasAnonymityLevel> <http://www.w3.org/2000/01/rdf-schema#domain> <http://purl.org/adaptcentre/openscience/ontologies/gdprov#PersonalData> .
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#hasAnonymityLevel> <http://www.w3.org/2000/01/rdf-schema#range> _:genid1 .
+_:genid1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid1 <http://www.w3.org/2002/07/owl#onProperty> <http://purl.org/adaptcentre/openscience/ontologies/gdprov#hasAnonymityLevel> .
+_:genid1 <http://www.w3.org/2002/07/owl#qualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid1 <http://www.w3.org/2002/07/owl#onClass> <http://purl.org/adaptcentre/openscience/ontologies/gdprov#AnonymityLevel> .
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#hasAnonymityLevel> <http://www.w3.org/2000/01/rdf-schema#comment> "Indicates the anonymity level of an AnonymisedData object using instances of the AnonymityLevel class" .
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#hasAnonymityLevel> <http://www.w3.org/2000/01/rdf-schema#label> "hasAnonymityLevel" .
+# 
+# http://purl.org/adaptcentre/openscience/ontologies/gdprov#isAnonymisedByStep
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#isAnonymisedByStep> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#isAnonymisedByStep> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://purl.org/adaptcentre/openscience/ontologies/gdprov#isDataGeneratedBy> .
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#isAnonymisedByStep> <http://www.w3.org/2000/01/rdf-schema#label> "isAnonymisedByStep" .
+# 
+# http://purl.org/adaptcentre/openscience/ontologies/gdprov#isConsentAgreementTemplateForStep
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#isConsentAgreementTemplateForStep> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#isConsentAgreementTemplateForStep> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://purl.org/net/p-plan#isInputVarOf> .
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#isConsentAgreementTemplateForStep> <http://www.w3.org/2002/07/owl#inverseOf> <http://purl.org/adaptcentre/openscience/ontologies/gdprov#usesConsentAgreementTemplate> .
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#isConsentAgreementTemplateForStep> <http://www.w3.org/2000/01/rdf-schema#label> "isConsentAgreementTemplateForStep" .
+# 
+# http://purl.org/adaptcentre/openscience/ontologies/gdprov#isDataCollectedByStep
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#isDataCollectedByStep> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#isDataCollectedByStep> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://purl.org/net/p-plan#isOutputVarOf> .
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#isDataCollectedByStep> <http://www.w3.org/2000/01/rdf-schema#label> "isDataCollectedByStep" .
+# 
+# http://purl.org/adaptcentre/openscience/ontologies/gdprov#isDataGeneratedBy
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#isDataGeneratedBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#isDataGeneratedBy> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://purl.org/net/p-plan#isOutputVarOf> .
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#isDataGeneratedBy> <http://www.w3.org/2000/01/rdf-schema#label> "isDataGeneratedByStep" .
+# 
+# http://purl.org/adaptcentre/openscience/ontologies/gdprov#isGeneratedByStep
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#isGeneratedByStep> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#isGeneratedByStep> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://purl.org/net/p-plan#isOutputVarOf> .
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#isGeneratedByStep> <http://www.w3.org/2000/01/rdf-schema#label> "isGeneratedByStep" .
+# 
+# http://purl.org/adaptcentre/openscience/ontologies/gdprov#isJustificationForDataStep
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#isJustificationForDataStep> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#isJustificationForDataStep> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://purl.org/net/p-plan#isInputVarOf> .
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#isJustificationForDataStep> <http://www.w3.org/2002/07/owl#inverseOf> <http://purl.org/adaptcentre/openscience/ontologies/gdprov#isJustifiedUsingConsentAgreement> .
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#isJustificationForDataStep> <http://www.w3.org/2000/01/rdf-schema#label> "isJustificationForDataStep" .
+# 
+# http://purl.org/adaptcentre/openscience/ontologies/gdprov#isJustifiedUsingConsentAgreement
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#isJustifiedUsingConsentAgreement> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#isJustifiedUsingConsentAgreement> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://purl.org/net/p-plan#hasInputVar> .
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#isJustifiedUsingConsentAgreement> <http://www.w3.org/2000/01/rdf-schema#domain> <http://purl.org/adaptcentre/openscience/ontologies/gdprov#DataStep> .
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#isJustifiedUsingConsentAgreement> <http://www.w3.org/2000/01/rdf-schema#range> <http://purl.org/adaptcentre/openscience/ontologies/gdprov#ConsentAgreement> .
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#isJustifiedUsingConsentAgreement> <http://www.w3.org/2000/01/rdf-schema#comment> "justifies use of data by step through specified consent agreement" .
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#isJustifiedUsingConsentAgreement> <http://www.w3.org/2000/01/rdf-schema#label> "isJustifiedUsingConsentAgreement" .
+# 
+# http://purl.org/adaptcentre/openscience/ontologies/gdprov#isTermsAndConditionsForStep
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#isTermsAndConditionsForStep> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#isTermsAndConditionsForStep> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://purl.org/net/p-plan#isInputVarOf> .
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#isTermsAndConditionsForStep> <http://www.w3.org/2002/07/owl#inverseOf> <http://purl.org/adaptcentre/openscience/ontologies/gdprov#usesTermsAndConditions> .
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#isTermsAndConditionsForStep> <http://www.w3.org/2000/01/rdf-schema#label> "isTermsAndConditionsForStep" .
+# 
+# http://purl.org/adaptcentre/openscience/ontologies/gdprov#isUsedByStep
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#isUsedByStep> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#isUsedByStep> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://purl.org/net/p-plan#isInputVarOf> .
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#isUsedByStep> <http://www.w3.org/2002/07/owl#inverseOf> <http://purl.org/adaptcentre/openscience/ontologies/gdprov#usesData> .
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#isUsedByStep> <http://www.w3.org/2000/01/rdf-schema#label> "isUsedByStep" .
+# 
+# http://purl.org/adaptcentre/openscience/ontologies/gdprov#sharesData
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#sharesData> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#sharesData> <http://www.w3.org/2000/01/rdf-schema#domain> <http://purl.org/adaptcentre/openscience/ontologies/gdprov#DataSharingStep> .
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#sharesData> <http://www.w3.org/2000/01/rdf-schema#range> <http://purl.org/adaptcentre/openscience/ontologies/gdprov#Data> .
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#sharesData> <http://www.w3.org/2000/01/rdf-schema#comment> "Indicates sharing of Data through a DataStep" .
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#sharesData> <http://www.w3.org/2000/01/rdf-schema#label> "sharesData" .
+# 
+# http://purl.org/adaptcentre/openscience/ontologies/gdprov#sharesDataWithThirdParty
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#sharesDataWithThirdParty> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#sharesDataWithThirdParty> <http://www.w3.org/2000/01/rdf-schema#domain> <http://purl.org/adaptcentre/openscience/ontologies/gdprov#DataSharingStep> .
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#sharesDataWithThirdParty> <http://www.w3.org/2000/01/rdf-schema#range> <http://purl.org/adaptcentre/openscience/ontologies/gdprov#ThirdParty> .
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#sharesDataWithThirdParty> <http://www.w3.org/2000/01/rdf-schema#comment> "Shares data with a third party" .
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#sharesDataWithThirdParty> <http://www.w3.org/2000/01/rdf-schema#label> "sharesDataWithThirdParty" .
+# 
+# http://purl.org/adaptcentre/openscience/ontologies/gdprov#usesConsentAgreementTemplate
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#usesConsentAgreementTemplate> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#usesConsentAgreementTemplate> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://purl.org/net/p-plan#hasInputVar> .
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#usesConsentAgreementTemplate> <http://www.w3.org/2000/01/rdf-schema#domain> <http://purl.org/adaptcentre/openscience/ontologies/gdprov#ConsentAcquisitionStep> .
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#usesConsentAgreementTemplate> <http://www.w3.org/2000/01/rdf-schema#range> <http://purl.org/adaptcentre/openscience/ontologies/gdprov#ConsentAgreementTemplate> .
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#usesConsentAgreementTemplate> <http://www.w3.org/2000/01/rdf-schema#comment> "links a Consent Acquisition Step with the Consent Agreement Template used to acquire consent" .
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#usesConsentAgreementTemplate> <http://www.w3.org/2000/01/rdf-schema#label> "usesConsentAgreementTemplate" .
+# 
+# http://purl.org/adaptcentre/openscience/ontologies/gdprov#usesData
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#usesData> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#usesData> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://purl.org/net/p-plan#hasInputVar> .
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#usesData> <http://www.w3.org/2000/01/rdf-schema#domain> <http://purl.org/adaptcentre/openscience/ontologies/gdprov#DataStep> .
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#usesData> <http://www.w3.org/2000/01/rdf-schema#range> <http://purl.org/adaptcentre/openscience/ontologies/gdprov#Data> .
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#usesData> <http://www.w3.org/2000/01/rdf-schema#comment> "links step with data used" .
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#usesData> <http://www.w3.org/2000/01/rdf-schema#label> "usesData" .
+# 
+# http://purl.org/adaptcentre/openscience/ontologies/gdprov#usesTermsAndConditions
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#usesTermsAndConditions> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#usesTermsAndConditions> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://purl.org/net/p-plan#hasInputVar> .
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#usesTermsAndConditions> <http://www.w3.org/2000/01/rdf-schema#domain> <http://purl.org/adaptcentre/openscience/ontologies/gdprov#ConsentAcquisitionStep> .
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#usesTermsAndConditions> <http://www.w3.org/2000/01/rdf-schema#range> <http://purl.org/adaptcentre/openscience/ontologies/gdprov#TermsAndConditions> .
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#usesTermsAndConditions> <http://www.w3.org/2000/01/rdf-schema#comment> "Links a Consent Acquisition Step with the Terms and Conditions presented to the user when acquiring Consent" .
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#usesTermsAndConditions> <http://www.w3.org/2000/01/rdf-schema#label> "usesTermsAndConditions" .
+# 
+# http://purl.org/net/p-plan#hasInputVar
+<http://purl.org/net/p-plan#hasInputVar> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+# 
+# http://purl.org/net/p-plan#hasOutputVar
+<http://purl.org/net/p-plan#hasOutputVar> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+# 
+# http://purl.org/net/p-plan#isInputVarOf
+<http://purl.org/net/p-plan#isInputVarOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+# 
+# http://purl.org/net/p-plan#isOutputVarOf
+<http://purl.org/net/p-plan#isOutputVarOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Classes
+# #
+# #################################################################
+# 
+# 
+# http://purl.org/adaptcentre/openscience/ontologies/gdprov#AnonymisedData
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#AnonymisedData> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#AnonymisedData> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/adaptcentre/openscience/ontologies/gdprov#PersonalData> .
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#AnonymisedData> <http://www.w3.org/2000/01/rdf-schema#comment> "Represents data that has been Anonymised at some level reflected by the hasAnonymityLevel object property" .
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#AnonymisedData> <http://www.w3.org/2000/01/rdf-schema#label> "AnonymisedData" .
+# 
+# http://purl.org/adaptcentre/openscience/ontologies/gdprov#AnonymityLevel
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#AnonymityLevel> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#AnonymityLevel> <http://www.w3.org/2000/01/rdf-schema#comment> "Provides a way to express the Anonymity Level of AnonymisedData objects through the object property hasAnonymityLevel" .
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#AnonymityLevel> <http://www.w3.org/2000/01/rdf-schema#label> "AnonymityLevel" .
+# 
+# http://purl.org/adaptcentre/openscience/ontologies/gdprov#ConsentAcquisitionStep
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#ConsentAcquisitionStep> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#ConsentAcquisitionStep> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/adaptcentre/openscience/ontologies/gdprov#ConsentStep> .
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#ConsentAcquisitionStep> <http://www.w3.org/2000/01/rdf-schema#comment> "ConsentAcquisitionStep deals with acquiring consent from the user. It uses Terms and Conditions along with the appropriate Consent Model as the basis of obtaining consent from the user. The output of this step is the consent object agreed upon by the user."@en .
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#ConsentAcquisitionStep> <http://www.w3.org/2000/01/rdf-schema#label> "ConsentAcquisitionStep"@en .
+# 
+# http://purl.org/adaptcentre/openscience/ontologies/gdprov#ConsentAgreement
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#ConsentAgreement> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#ConsentAgreement> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/net/p-plan#Variable> .
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#ConsentAgreement> <http://www.w3.org/2002/07/owl#disjointWith> <http://purl.org/adaptcentre/openscience/ontologies/gdprov#ConsentAgreementTemplate> .
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#ConsentAgreement> <http://www.w3.org/2002/07/owl#disjointWith> <http://purl.org/adaptcentre/openscience/ontologies/gdprov#Data> .
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#ConsentAgreement> <http://www.w3.org/2002/07/owl#disjointWith> <http://purl.org/adaptcentre/openscience/ontologies/gdprov#TermsAndConditions> .
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#ConsentAgreement> <http://www.w3.org/2000/01/rdf-schema#comment> "ConsentAgreement reflects the consent provided by the user based on the provided Terms and Conditions and Consent Agreement Templates. It is the set of permissions the user has specifically provided or refused to provide. This consent is useful to provide justification of activities that use user data."@en .
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#ConsentAgreement> <http://www.w3.org/2000/01/rdf-schema#label> "ConsentAgreement"@en .
+# 
+# http://purl.org/adaptcentre/openscience/ontologies/gdprov#ConsentAgreementTemplate
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#ConsentAgreementTemplate> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#ConsentAgreementTemplate> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/net/p-plan#Variable> .
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#ConsentAgreementTemplate> <http://www.w3.org/2002/07/owl#disjointWith> <http://purl.org/adaptcentre/openscience/ontologies/gdprov#Data> .
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#ConsentAgreementTemplate> <http://www.w3.org/2002/07/owl#disjointWith> <http://purl.org/adaptcentre/openscience/ontologies/gdprov#TermsAndConditions> .
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#ConsentAgreementTemplate> <http://www.w3.org/2000/01/rdf-schema#comment> "This is a template for consent requested from the user."@en .
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#ConsentAgreementTemplate> <http://www.w3.org/2000/01/rdf-schema#label> "ConsentAgreementTemplate"@en .
+# 
+# http://purl.org/adaptcentre/openscience/ontologies/gdprov#ConsentArchivalStep
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#ConsentArchivalStep> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#ConsentArchivalStep> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/adaptcentre/openscience/ontologies/gdprov#ConsentStep> .
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#ConsentArchivalStep> <http://www.w3.org/2000/01/rdf-schema#comment> "ConsentArchivalStep archives acquired consent to form a record of the consent given by the user."@en .
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#ConsentArchivalStep> <http://www.w3.org/2000/01/rdf-schema#label> "ConsentArchivalStep"@en .
+# 
+# http://purl.org/adaptcentre/openscience/ontologies/gdprov#ConsentModificationStep
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#ConsentModificationStep> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#ConsentModificationStep> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/adaptcentre/openscience/ontologies/gdprov#ConsentStep> .
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#ConsentModificationStep> <http://www.w3.org/2000/01/rdf-schema#comment> "ConsentModificationStep deals with modifications to the consent by the user. It invalidates the previous consent object and produces a new updated consent object that represents the modified consent."@en .
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#ConsentModificationStep> <http://www.w3.org/2000/01/rdf-schema#label> "ConsentModificationStep"@en .
+# 
+# http://purl.org/adaptcentre/openscience/ontologies/gdprov#ConsentStep
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#ConsentStep> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#ConsentStep> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/net/p-plan#Step> .
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#ConsentStep> <http://www.w3.org/2000/01/rdf-schema#comment> "A ConsentStep acts/interacts with/uses Consent"@en .
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#ConsentStep> <http://www.w3.org/2000/01/rdf-schema#label> "ConsentStep"@en .
+# 
+# http://purl.org/adaptcentre/openscience/ontologies/gdprov#ConsentWithdrawalProcess
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#ConsentWithdrawalProcess> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#ConsentWithdrawalProcess> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/adaptcentre/openscience/ontologies/gdprov#Process> .
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#ConsentWithdrawalProcess> <http://www.w3.org/2000/01/rdf-schema#comment> "A ConsentWithdrawalProcess deals with the withdrawal of consent by the user and the corresponding activity carried out within the system"@en .
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#ConsentWithdrawalProcess> <http://www.w3.org/2000/01/rdf-schema#label> "ConsentWithdrawalProcess"@en .
+# 
+# http://purl.org/adaptcentre/openscience/ontologies/gdprov#ConsentWithdrawalStep
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#ConsentWithdrawalStep> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#ConsentWithdrawalStep> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/adaptcentre/openscience/ontologies/gdprov#ConsentModificationStep> .
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#ConsentWithdrawalStep> <http://www.w3.org/2000/01/rdf-schema#comment> "ConsentWithdrawalStep deals with withdrawal of consent"@en .
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#ConsentWithdrawalStep> <http://www.w3.org/2000/01/rdf-schema#label> "ConsentWithdrawalStep"@en .
+# 
+# http://purl.org/adaptcentre/openscience/ontologies/gdprov#Data
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#Data> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#Data> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/net/p-plan#Variable> .
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#Data> <http://www.w3.org/2002/07/owl#disjointWith> <http://purl.org/adaptcentre/openscience/ontologies/gdprov#TermsAndConditions> .
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#Data> <http://www.w3.org/2000/01/rdf-schema#comment> "Represents class of data collected or generated through various activities"@en .
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#Data> <http://www.w3.org/2000/01/rdf-schema#label> "Data"@en .
+# 
+# http://purl.org/adaptcentre/openscience/ontologies/gdprov#DataAccessProcess
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#DataAccessProcess> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#DataAccessProcess> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/adaptcentre/openscience/ontologies/gdprov#Process> .
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#DataAccessProcess> <http://www.w3.org/2000/01/rdf-schema#comment> "A DataAccessProcess corresponds to the request made by an user for access to their data within the system. This process is responsible for handling the request process and providing the appropriate data to the end user."@en .
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#DataAccessProcess> <http://www.w3.org/2000/01/rdf-schema#label> "DataAccessProcess"@en .
+# 
+# http://purl.org/adaptcentre/openscience/ontologies/gdprov#DataAnonymisationStep
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#DataAnonymisationStep> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#DataAnonymisationStep> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/adaptcentre/openscience/ontologies/gdprov#DataTransformationStep> .
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#DataAnonymisationStep> <http://www.w3.org/2000/01/rdf-schema#comment> "DataAnonymisationStep anonymises data by transforming it from one form to another along the anonymisation chain.\nAnonymisation can be represented as a spectrum going from raw user data to pseudo-anonymised data that can be de-anonymised by the same agent/organisation to pseudo-anonymous data that cannot be deanonymised internally, but may be done by external agents who have access to other data, and finally to completely anonymised data."@en .
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#DataAnonymisationStep> <http://www.w3.org/2000/01/rdf-schema#label> "DataAnonymisationStep"@en .
+# 
+# http://purl.org/adaptcentre/openscience/ontologies/gdprov#DataArchivalProcess
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#DataArchivalProcess> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#DataArchivalProcess> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/adaptcentre/openscience/ontologies/gdprov#Process> .
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#DataArchivalProcess> <http://www.w3.org/2000/01/rdf-schema#comment> "A DataArchivalProcess describes the process of data archival"@en .
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#DataArchivalProcess> <http://www.w3.org/2000/01/rdf-schema#label> "DataArchivalProcess"@en .
+# 
+# http://purl.org/adaptcentre/openscience/ontologies/gdprov#DataArchivalStep
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#DataArchivalStep> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#DataArchivalStep> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/adaptcentre/openscience/ontologies/gdprov#DataStorageStep> .
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#DataArchivalStep> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/adaptcentre/openscience/ontologies/gdprov#DataTransformationStep> .
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#DataArchivalStep> <http://www.w3.org/2000/01/rdf-schema#comment> "DataArchivalStep archives data by transforming it and storing it"@en .
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#DataArchivalStep> <http://www.w3.org/2000/01/rdf-schema#label> "DataArchivalStep"@en .
+# 
+# http://purl.org/adaptcentre/openscience/ontologies/gdprov#DataCollectionStep
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#DataCollectionStep> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#DataCollectionStep> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/adaptcentre/openscience/ontologies/gdprov#DataStep> .
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#DataCollectionStep> <http://www.w3.org/2000/01/rdf-schema#comment> "DataCollectionStep collects data from the user"@en .
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#DataCollectionStep> <http://www.w3.org/2000/01/rdf-schema#label> "DataCollectionStep"@en .
+# 
+# http://purl.org/adaptcentre/openscience/ontologies/gdprov#DataDeanonymisationStep
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#DataDeanonymisationStep> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#DataDeanonymisationStep> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/adaptcentre/openscience/ontologies/gdprov#DataTransformationStep> .
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#DataDeanonymisationStep> <http://www.w3.org/2000/01/rdf-schema#comment> "DataDeanonymisationStep deanonymises data by transforming it from one form to another along the anonymisation chain."@en .
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#DataDeanonymisationStep> <http://www.w3.org/2000/01/rdf-schema#label> "DataDeanonymisationStep"@en .
+# 
+# http://purl.org/adaptcentre/openscience/ontologies/gdprov#DataDeletionStep
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#DataDeletionStep> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#DataDeletionStep> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/adaptcentre/openscience/ontologies/gdprov#DataStep> .
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#DataDeletionStep> <http://www.w3.org/2000/01/rdf-schema#comment> "DataDeletionStep deletes data from within the system;\nThe deletion is expressed as prov:invalidated over the dataset."@en .
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#DataDeletionStep> <http://www.w3.org/2000/01/rdf-schema#label> "DataDeletionStep"@en .
+# 
+# http://purl.org/adaptcentre/openscience/ontologies/gdprov#DataErasureProcess
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#DataErasureProcess> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#DataErasureProcess> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/adaptcentre/openscience/ontologies/gdprov#Process> .
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#DataErasureProcess> <http://www.w3.org/2000/01/rdf-schema#comment> "A DataErasureProcess is responsible for handling the data erasure of a data subject."@en .
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#DataErasureProcess> <http://www.w3.org/2000/01/rdf-schema#label> "DataErasureProcess"@en .
+# 
+# http://purl.org/adaptcentre/openscience/ontologies/gdprov#DataRectificationProcess
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#DataRectificationProcess> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#DataRectificationProcess> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/adaptcentre/openscience/ontologies/gdprov#Process> .
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#DataRectificationProcess> <http://www.w3.org/2000/01/rdf-schema#comment> "A DataRectificationProcess describes the process of data rectification, which is the correction of data already present within the system"@en .
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#DataRectificationProcess> <http://www.w3.org/2000/01/rdf-schema#label> "DataRectificationProcess"@en .
+# 
+# http://purl.org/adaptcentre/openscience/ontologies/gdprov#DataSharingStep
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#DataSharingStep> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#DataSharingStep> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/adaptcentre/openscience/ontologies/gdprov#DataStep> .
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#DataSharingStep> <http://www.w3.org/2000/01/rdf-schema#comment> "DataSharingStep shares data with another agent/organisation. These may be internal or external entities."@en .
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#DataSharingStep> <http://www.w3.org/2000/01/rdf-schema#label> "DataSharingStep"@en .
+# 
+# http://purl.org/adaptcentre/openscience/ontologies/gdprov#DataStep
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#DataStep> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#DataStep> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/net/p-plan#Step> .
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#DataStep> <http://www.w3.org/2000/01/rdf-schema#comment> "A DataStep deals with data"@en .
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#DataStep> <http://www.w3.org/2000/01/rdf-schema#label> "DataStep"@en .
+# 
+# http://purl.org/adaptcentre/openscience/ontologies/gdprov#DataStorageStep
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#DataStorageStep> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#DataStorageStep> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/adaptcentre/openscience/ontologies/gdprov#DataStep> .
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#DataStorageStep> <http://www.w3.org/2000/01/rdf-schema#comment> "DataStorageStep stores data within the system"@en .
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#DataStorageStep> <http://www.w3.org/2000/01/rdf-schema#label> "DataStorageStep"@en .
+# 
+# http://purl.org/adaptcentre/openscience/ontologies/gdprov#DataTransformationStep
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#DataTransformationStep> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#DataTransformationStep> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/adaptcentre/openscience/ontologies/gdprov#DataStep> .
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#DataTransformationStep> <http://www.w3.org/2000/01/rdf-schema#comment> "DataTransformationStep transforms data from one form into another."@en .
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#DataTransformationStep> <http://www.w3.org/2000/01/rdf-schema#label> "DataTransformationStep"@en .
+# 
+# http://purl.org/adaptcentre/openscience/ontologies/gdprov#DataUsageStep
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#DataUsageStep> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#DataUsageStep> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/adaptcentre/openscience/ontologies/gdprov#DataStep> .
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#DataUsageStep> <http://www.w3.org/2000/01/rdf-schema#comment> "A DataUsageStep is a DataStep that uses existing data present within the system"@en .
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#DataUsageStep> <http://www.w3.org/2000/01/rdf-schema#label> "DataUsageStep"@en .
+# 
+# http://purl.org/adaptcentre/openscience/ontologies/gdprov#HandleDataBreachProcess
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#HandleDataBreachProcess> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#HandleDataBreachProcess> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/adaptcentre/openscience/ontologies/gdprov#Process> .
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#HandleDataBreachProcess> <http://www.w3.org/2000/01/rdf-schema#comment> "A process that defines the actions that should be undertaken in event of a data breach" .
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#HandleDataBreachProcess> <http://www.w3.org/2000/01/rdf-schema#label> "HandleDataBreachProcess" .
+# 
+# http://purl.org/adaptcentre/openscience/ontologies/gdprov#PersonalData
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#PersonalData> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#PersonalData> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/adaptcentre/openscience/ontologies/gdprov#Data> .
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#PersonalData> <http://www.w3.org/2000/01/rdf-schema#comment> "PersonalData is any data pertaining to the user which can contain personally identifiable information or a data set generated by the system using personally identifiable information acquired through direct or indirect means"@en .
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#PersonalData> <http://www.w3.org/2000/01/rdf-schema#label> "PersonalData"@en .
+# 
+# http://purl.org/adaptcentre/openscience/ontologies/gdprov#Process
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#Process> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#Process> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/net/p-plan#Plan> .
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#Process> <http://www.w3.org/2000/01/rdf-schema#comment> "A Process describes a 'Plan' of action for carrying out a particular activity that uses or is related to Data or Consent"@en .
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#Process> <http://www.w3.org/2000/01/rdf-schema#label> "Process"@en .
+# 
+# http://purl.org/adaptcentre/openscience/ontologies/gdprov#TermsAndConditions
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#TermsAndConditions> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#TermsAndConditions> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/net/p-plan#Variable> .
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#TermsAndConditions> <http://www.w3.org/2000/01/rdf-schema#comment> "Terms and Conditions of usage as provided to the user in agreement of provided service"@en .
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#TermsAndConditions> <http://www.w3.org/2000/01/rdf-schema#label> "TermsAndConditions"@en .
+# 
+# http://purl.org/adaptcentre/openscience/ontologies/gdprov#ThirdParty
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#ThirdParty> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#ThirdParty> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/ns/prov#Agent> .
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#ThirdParty> <http://www.w3.org/2000/01/rdf-schema#comment> "A ThirdParty is any external entitiy associated with some internal activity"@en .
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#ThirdParty> <http://www.w3.org/2000/01/rdf-schema#label> "ThirdParty"@en .
+# 
+# http://purl.org/adaptcentre/openscience/ontologies/gdprov#ThirdPartyDataController
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#ThirdPartyDataController> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#ThirdPartyDataController> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/adaptcentre/openscience/ontologies/gdprov#ThirdParty> .
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#ThirdPartyDataController> <http://www.w3.org/2000/01/rdf-schema#comment> "A ThirdPartyDataController is a Third Party entity that acts as a Data Controller"@en .
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#ThirdPartyDataController> <http://www.w3.org/2000/01/rdf-schema#label> "ThirdPartyDataController"@en .
+# 
+# http://purl.org/adaptcentre/openscience/ontologies/gdprov#ThirdPartyDataProcessor
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#ThirdPartyDataProcessor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#ThirdPartyDataProcessor> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/adaptcentre/openscience/ontologies/gdprov#ThirdParty> .
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#ThirdPartyDataProcessor> <http://www.w3.org/2000/01/rdf-schema#comment> "A ThirdPartyDataProcessor is a Third Party entity that acts as a Data Processor"@en .
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#ThirdPartyDataProcessor> <http://www.w3.org/2000/01/rdf-schema#label> "ThirdPartyDataProcessor"@en .
+# 
+# http://purl.org/adaptcentre/openscience/ontologies/gdprov#UserIdentifier
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#UserIdentifier> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#UserIdentifier> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/adaptcentre/openscience/ontologies/gdprov#PersonalData> .
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#UserIdentifier> <http://www.w3.org/2000/01/rdf-schema#comment> "An UserIdentifier is a specific way to identify the user through a unique ID or a combination of other attributes"@en .
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#UserIdentifier> <http://www.w3.org/2000/01/rdf-schema#label> "UserIdentifier"@en .
+# 
+# http://purl.org/net/p-plan#Plan
+<http://purl.org/net/p-plan#Plan> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+# 
+# http://purl.org/net/p-plan#Step
+<http://purl.org/net/p-plan#Step> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+# 
+# http://purl.org/net/p-plan#Variable
+<http://purl.org/net/p-plan#Variable> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+# 
+# http://www.w3.org/ns/prov#Agent
+<http://www.w3.org/ns/prov#Agent> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Individuals
+# #
+# #################################################################
+# 
+# 
+# http://purl.org/adaptcentre/openscience/ontologies/gdprov#Anonymised
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#Anonymised> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#Anonymised> <http://www.w3.org/2000/01/rdf-schema#comment> "Anonymised represents the Anonymisation level where the data cannot be de-anonymised to retrieve personally identifiable information." .
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#Anonymised> <http://www.w3.org/2000/01/rdf-schema#label> "Anonymised" .
+# 
+# http://purl.org/adaptcentre/openscience/ontologies/gdprov#DeAnonymised
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#DeAnonymised> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#DeAnonymised> <http://www.w3.org/2000/01/rdf-schema#comment> "DeAnonymised represents the Anonymisation level where the data is completely de-anonymised and contains directly accessible personally identifiable information." .
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#DeAnonymised> <http://www.w3.org/2000/01/rdf-schema#label> "DeAnonymised" .
+# 
+# http://purl.org/adaptcentre/openscience/ontologies/gdprov#PseudoAnonymised
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#PseudoAnonymised> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#PseudoAnonymised> <http://www.w3.org/2000/01/rdf-schema#comment> "PseudoAnonymised represents the Anonymisation level where the data is anonymised but cannot be de-anonymised without additional data which is NOT accessible to the data-holding organisation to retrieve personally identifiable information." .
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#PseudoAnonymised> <http://www.w3.org/2000/01/rdf-schema#label> "PseudoAnonymised" .
+# 
+# http://purl.org/adaptcentre/openscience/ontologies/gdprov#PseudoOrganisationalAnonymised
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#PseudoOrganisationalAnonymised> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#PseudoOrganisationalAnonymised> <http://www.w3.org/2000/01/rdf-schema#comment> "PseudoOrganisationalAnonymised represents the Anonymisation level where the data is anonymised but cannot be de-anonymised without additional data which is accessible to the data-holding organisation to recreate the de-anonymised information." .
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#PseudoOrganisationalAnonymised> <http://www.w3.org/2000/01/rdf-schema#label> "PseudoOrganisationalOrganised" .
+# 
+# Generated by the OWL API (version 5.1.0) https://github.com/owlcs/owlapi/
