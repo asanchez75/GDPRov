@@ -1,13 +1,14 @@
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix dc: <http://purl.org/dc/terms/> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
-<http://purl.org/adaptcentre/openscience/ontologies/gdprov.0.1.owl> a prov:Entity;
+<https://openscience.adaptcentre.ie/ontologies/gdprov/v/gdprov_v0.4.owl> a prov:Entity;
 	 dc:title "The GDPR Provenance ontology";
-	 prov:wasAttributedTo <http://purl.org/adaptcentre/people/harshvardhan_pandit>;
-	 dc:creator <http://purl.org/adaptcentre/people/harshvardhan_pandit>;
 	 prov:wasAttributedTo <http://purl.org/adaptcentre/people/dave_lewis>;
 	 dc:creator <http://purl.org/adaptcentre/people/dave_lewis>;
+	 prov:wasAttributedTo <http://purl.org/adaptcentre/people/harshvardhan_pandit>;
+	 dc:creator <http://purl.org/adaptcentre/people/harshvardhan_pandit>;
 	 prov:wasAttributedTo <https://github.com/dgarijo/Widoco/>,<http://www.essepuntato.it/lode/>;
-	 prov:specializationOf <http://purl.org/adaptcentre/openscience/ontologies/gdprov>;
-	 prov:wasGeneratedAt "2017-08-01";
+	 prov:specializationOf <http://purl.org/adaptcentre/openscience/ontologies/gdprov#>;
+	 prov:wasRevisionOf <https://openscience.adaptcentre.ie/ontologies/gdprov/v/gdprov_v0.1.owl>;
+	 prov:wasGeneratedAt "2017-10-20";
 .

@@ -7,23 +7,30 @@
 @base <http://purl.org/adaptcentre/openscience/ontologies/gdprov#> .
 
 <http://purl.org/adaptcentre/openscience/ontologies/gdprov#> rdf:type owl:Ontology ;
+                                                              owl:versionIRI <https://openscience.adaptcentre.ie/ontologies/gdprov/v/gdprov_v0.4.owl> ;
                                                               <http://purl.org/dc/terms/abstract> "The upcoming General Data Protection Regulation (GDPR) requires justification of data activities to acquire, use, share, and store data using consent obtained from the user. Failure to comply may result in significant heavy fines which incentivises creation and maintenance of records for all activities involving consent and data. Compliance documentation therefore requires provenance information outlining consent and data lifecycles to demonstrate correct usage of data in accordance with the related consent provided and updated by the user. GDPRov (pronounced GDPR-Prov) is a linked data ontology for expressing provenance of consent and data lifecycles with a view towards documenting compliance. GDPRov is an OWL2 ontology that extends PROV-O and P-Plan to model the provenance."^^xsd:string ;
                                                               <http://purl.org/dc/terms/created> "2017-08-01"^^xsd:date ;
                                                               <http://purl.org/dc/terms/creator> "http://purl.org/adaptcentre/people/dave_lewis"^^xsd:anyURI ,
                                                                                                  "http://purl.org/adaptcentre/people/harshvardhan_pandit"^^xsd:anyURI ;
                                                               <http://purl.org/dc/terms/description> "GDPRov is an OWL2 ontology to express provenance metadata of consent and data lifecycles towards documenting compliance for GDPR."^^xsd:string ;
                                                               <http://purl.org/dc/terms/license> "https://creativecommons.org/licenses/by/4.0/"^^xsd:string ;
-                                                              <http://purl.org/dc/terms/modified> "2017-08-01"^^xsd:date ;
+                                                              <http://purl.org/dc/terms/modified> "2017-10-20"^^xsd:string ;
                                                               <http://purl.org/dc/terms/title> "The GDPR Provenance ontology"^^xsd:string ;
                                                               <http://purl.org/vocab/vann/preferredNamespacePrefix> "gdprov"^^xsd:string ;
                                                               <http://purl.org/vocab/vann/preferredNamespaceUri> "http://purl.org/adaptcentre/openscience/ontologies/gdprov#"^^xsd:string ;
                                                               rdfs:comment "PROV and P-Plan extension for representing provenance of consent and data lifecycles. Created by Harshvardhan J. Pandit and Dave Lewis."^^xsd:string ;
-                                                              owl:versionIRI "https://openscience.adaptcentre.ie/ontologies/gdprov/gdprov.0.1.owl"^^xsd:string ;
-                                                              owl:versionInfo "0.1"^^xsd:string .
+                                                              owl:versionIRI "https://openscience.adaptcentre.ie/ontologies/gdprov/v/gdprov.0.4.owl"^^xsd:string ;
+                                                              owl:versionInfo 0.4 .
 
 #################################################################
 #    Object Properties
 #################################################################
+
+###  http://purl.org/adaptcentre/openscience/ontologies/gdprov#anonymityLevel
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#anonymityLevel> rdf:type owl:ObjectProperty ;
+                                                                           rdfs:domain <http://purl.org/adaptcentre/openscience/ontologies/gdprov#DataEntity> ;
+                                                                           rdfs:range <http://purl.org/adaptcentre/openscience/ontologies/gdprov#AnonymityLevel> .
+
 
 ###  http://purl.org/adaptcentre/openscience/ontologies/gdprov#collectsData
 <http://purl.org/adaptcentre/openscience/ontologies/gdprov#collectsData> rdf:type owl:ObjectProperty ;
@@ -68,11 +75,7 @@
 ###  http://purl.org/adaptcentre/openscience/ontologies/gdprov#hasAnonymityLevel
 <http://purl.org/adaptcentre/openscience/ontologies/gdprov#hasAnonymityLevel> rdf:type owl:ObjectProperty ;
                                                                               rdfs:domain <http://purl.org/adaptcentre/openscience/ontologies/gdprov#PersonalData> ;
-                                                                              rdfs:range [ rdf:type owl:Restriction ;
-                                                                                           owl:onProperty <http://purl.org/adaptcentre/openscience/ontologies/gdprov#hasAnonymityLevel> ;
-                                                                                           owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                                                                           owl:onClass <http://purl.org/adaptcentre/openscience/ontologies/gdprov#AnonymityLevel>
-                                                                                         ] ;
+                                                                              rdfs:range <http://purl.org/adaptcentre/openscience/ontologies/gdprov#AnonymityLevel> ;
                                                                               rdfs:comment "Indicates the anonymity level of an AnonymisedData object using instances of the AnonymityLevel class"^^xsd:string ;
                                                                               rdfs:label "hasAnonymityLevel"^^xsd:string .
 
@@ -140,6 +143,8 @@
 
 ###  http://purl.org/adaptcentre/openscience/ontologies/gdprov#sharesData
 <http://purl.org/adaptcentre/openscience/ontologies/gdprov#sharesData> rdf:type owl:ObjectProperty ;
+                                                                       rdfs:subPropertyOf <http://purl.org/net/p-plan#hasInputVar> ;
+                                                                       owl:inverseOf <http://purl.org/adaptcentre/openscience/ontologies/gdprov#wasSharedBy> ;
                                                                        rdfs:domain <http://purl.org/adaptcentre/openscience/ontologies/gdprov#DataSharingStep> ;
                                                                        rdfs:range <http://purl.org/adaptcentre/openscience/ontologies/gdprov#Data> ;
                                                                        rdfs:comment "Indicates sharing of Data through a DataStep"^^xsd:string ;
@@ -148,6 +153,7 @@
 
 ###  http://purl.org/adaptcentre/openscience/ontologies/gdprov#sharesDataWithThirdParty
 <http://purl.org/adaptcentre/openscience/ontologies/gdprov#sharesDataWithThirdParty> rdf:type owl:ObjectProperty ;
+                                                                                     rdfs:subPropertyOf <http://purl.org/net/p-plan#hasInputVar> ;
                                                                                      rdfs:domain <http://purl.org/adaptcentre/openscience/ontologies/gdprov#DataSharingStep> ;
                                                                                      rdfs:range <http://purl.org/adaptcentre/openscience/ontologies/gdprov#ThirdParty> ;
                                                                                      rdfs:comment "Shares data with a third party"^^xsd:string ;
@@ -181,6 +187,18 @@
                                                                                    rdfs:label "usesTermsAndConditions"^^xsd:string .
 
 
+###  http://purl.org/adaptcentre/openscience/ontologies/gdprov#wasSharedBy
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#wasSharedBy> rdf:type owl:ObjectProperty ;
+                                                                        rdfs:subPropertyOf <http://purl.org/net/p-plan#isInputVarOf> .
+
+
+###  http://purl.org/adaptcentre/openscience/ontologies/gdprov#wasSharedWithThirdParty
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#wasSharedWithThirdParty> rdf:type owl:ObjectProperty ;
+                                                                                    rdfs:subPropertyOf <http://purl.org/net/p-plan#isInputVarOf> ;
+                                                                                    rdfs:domain <http://purl.org/adaptcentre/openscience/ontologies/gdprov#Data> ;
+                                                                                    rdfs:range <http://purl.org/adaptcentre/openscience/ontologies/gdprov#ThirdParty> .
+
+
 ###  http://purl.org/net/p-plan#hasInputVar
 <http://purl.org/net/p-plan#hasInputVar> rdf:type owl:ObjectProperty .
 
@@ -201,24 +219,83 @@
 #    Classes
 #################################################################
 
+###  http://purl.org/adaptcentre/openscience/ontologies/gdprov#AcquireConsentActivity
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#AcquireConsentActivity> rdf:type owl:Class ;
+                                                                                   rdfs:subClassOf <http://purl.org/adaptcentre/openscience/ontologies/gdprov#ConsentActivity> ;
+                                                                                   rdfs:comment "Is an activity that acquires consent."^^xsd:string ;
+                                                                                   rdfs:isDefinedBy <http://purl.org/adaptcentre/openscience/ontologies/GDPRtEXT#ObtainingConsent> ;
+                                                                                   rdfs:label "Acquire Consent Activity"^^xsd:string ;
+                                                                                   rdfs:seeAlso <http://purl.org/adaptcentre/openscience/ontologies/gdprov#ConsentAcquisitionStep> .
+
+
+###  http://purl.org/adaptcentre/openscience/ontologies/gdprov#AnonymisationActivity
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#AnonymisationActivity> rdf:type owl:Class ;
+                                                                                  rdfs:subClassOf <http://purl.org/adaptcentre/openscience/ontologies/gdprov#DataTransformationActivity> ;
+                                                                                  rdfs:comment "Is an activity that anonymises data."^^xsd:string ;
+                                                                                  rdfs:label "Anonymisation Activity"^^xsd:string ;
+                                                                                  rdfs:seeAlso <http://purl.org/adaptcentre/openscience/ontologies/gdprov#DataAnonymisationStep> .
+
+
 ###  http://purl.org/adaptcentre/openscience/ontologies/gdprov#AnonymisedData
 <http://purl.org/adaptcentre/openscience/ontologies/gdprov#AnonymisedData> rdf:type owl:Class ;
                                                                            rdfs:subClassOf <http://purl.org/adaptcentre/openscience/ontologies/gdprov#PersonalData> ;
                                                                            rdfs:comment "Represents data that has been Anonymised at some level reflected by the hasAnonymityLevel object property"^^xsd:string ;
-                                                                           rdfs:label "AnonymisedData"^^xsd:string .
+                                                                           rdfs:isDefinedBy <http://purl.org/adaptcentre/openscience/ontologies/GDPRtEXT#AnonymousData> ,
+                                                                                            <http://purl.org/adaptcentre/openscience/ontologies/GDPRtEXT#PseudoAnonymousData> ;
+                                                                           rdfs:label "AnonymisedData"^^xsd:string ;
+                                                                           rdfs:seeAlso <http://purl.org/adaptcentre/openscience/ontologies/gdprov#AnonymisedDataEntity> .
+
+
+###  http://purl.org/adaptcentre/openscience/ontologies/gdprov#AnonymisedDataEntity
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#AnonymisedDataEntity> rdf:type owl:Class ;
+                                                                                 rdfs:subClassOf <http://purl.org/adaptcentre/openscience/ontologies/gdprov#PersonalDataEntity> ;
+                                                                                 rdfs:comment "Is an entity where personal data has been anonymised to some extent."^^xsd:string ;
+                                                                                 rdfs:isDefinedBy <http://purl.org/adaptcentre/openscience/ontologies/GDPRtEXT#AnonymousData> ,
+                                                                                                  <http://purl.org/adaptcentre/openscience/ontologies/GDPRtEXT#PseudoAnonymousData> ;
+                                                                                 rdfs:label "Anonymised Data Entity"^^xsd:string ;
+                                                                                 rdfs:seeAlso <http://purl.org/adaptcentre/openscience/ontologies/gdprov#AnonymisedData> .
 
 
 ###  http://purl.org/adaptcentre/openscience/ontologies/gdprov#AnonymityLevel
 <http://purl.org/adaptcentre/openscience/ontologies/gdprov#AnonymityLevel> rdf:type owl:Class ;
                                                                            rdfs:comment "Provides a way to express the Anonymity Level of AnonymisedData objects through the object property hasAnonymityLevel"^^xsd:string ;
+                                                                           rdfs:isDefinedBy <http://purl.org/adaptcentre/openscience/ontologies/GDPRtEXT#AnonymousData> ,
+                                                                                            <http://purl.org/adaptcentre/openscience/ontologies/GDPRtEXT#PseudoAnonymousData> ;
                                                                            rdfs:label "AnonymityLevel"^^xsd:string .
+
+
+###  http://purl.org/adaptcentre/openscience/ontologies/gdprov#AppointProcessor
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#AppointProcessor> rdf:type owl:Class ;
+                                                                             rdfs:subClassOf <http://purl.org/adaptcentre/openscience/ontologies/gdprov#Process> ;
+                                                                             rdfs:comment "Reflects the process(es) used to appoint processors"^^xsd:string ;
+                                                                             rdfs:isDefinedBy <http://purl.org/adaptcentre/openscience/ontologies/GDPRtEXT#AppointmentOfProcessors> ;
+                                                                             rdfs:label "Appoint Processor"^^xsd:string .
+
+
+###  http://purl.org/adaptcentre/openscience/ontologies/gdprov#ArchiveConsentActivity
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#ArchiveConsentActivity> rdf:type owl:Class ;
+                                                                                   rdfs:subClassOf <http://purl.org/adaptcentre/openscience/ontologies/gdprov#ConsentActivity> ;
+                                                                                   rdfs:label "An activity that archives given/acquired consent for storage."^^xsd:string ,
+                                                                                              "Archive Consent Activity"^^xsd:string ;
+                                                                                   rdfs:seeAlso <http://purl.org/adaptcentre/openscience/ontologies/gdprov#ConsentArchivalStep> .
 
 
 ###  http://purl.org/adaptcentre/openscience/ontologies/gdprov#ConsentAcquisitionStep
 <http://purl.org/adaptcentre/openscience/ontologies/gdprov#ConsentAcquisitionStep> rdf:type owl:Class ;
                                                                                    rdfs:subClassOf <http://purl.org/adaptcentre/openscience/ontologies/gdprov#ConsentStep> ;
                                                                                    rdfs:comment "ConsentAcquisitionStep deals with acquiring consent from the user. It uses Terms and Conditions along with the appropriate Consent Model as the basis of obtaining consent from the user. The output of this step is the consent object agreed upon by the user."@en ;
-                                                                                   rdfs:label "ConsentAcquisitionStep"@en .
+                                                                                   rdfs:isDefinedBy <http://purl.org/adaptcentre/openscience/ontologies/GDPRtEXT#ObtainingConsent> ;
+                                                                                   rdfs:label "Consent Acquisition Step"@en ;
+                                                                                   rdfs:seeAlso <http://purl.org/adaptcentre/openscience/ontologies/gdprov#AcquireConsentActivity> .
+
+
+###  http://purl.org/adaptcentre/openscience/ontologies/gdprov#ConsentActivity
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#ConsentActivity> rdf:type owl:Class ;
+                                                                            rdfs:subClassOf <http://purl.org/net/p-plan#Activity> ;
+                                                                            rdfs:comment "Is an activity dealing with consent."^^xsd:string ;
+                                                                            rdfs:isDefinedBy <http://purl.org/adaptcentre/openscience/ontologies/GDPRtEXT#ConsentActivity> ;
+                                                                            rdfs:label "Consent Activity"^^xsd:string ;
+                                                                            rdfs:seeAlso <http://purl.org/adaptcentre/openscience/ontologies/gdprov#ConsentStep> .
 
 
 ###  http://purl.org/adaptcentre/openscience/ontologies/gdprov#ConsentAgreement
@@ -228,7 +305,9 @@
                                                                                               <http://purl.org/adaptcentre/openscience/ontologies/gdprov#Data> ,
                                                                                               <http://purl.org/adaptcentre/openscience/ontologies/gdprov#TermsAndConditions> ;
                                                                              rdfs:comment "ConsentAgreement reflects the consent provided by the user based on the provided Terms and Conditions and Consent Agreement Templates. It is the set of permissions the user has specifically provided or refused to provide. This consent is useful to provide justification of activities that use user data."@en ;
-                                                                             rdfs:label "ConsentAgreement"@en .
+                                                                             rdfs:isDefinedBy <http://purl.org/adaptcentre/openscience/ontologies/GDPRtEXT#GivenConsent> ;
+                                                                             rdfs:label "ConsentAgreement"@en ;
+                                                                             rdfs:seeAlso <http://purl.org/adaptcentre/openscience/ontologies/gdprov#GivenConsent> .
 
 
 ###  http://purl.org/adaptcentre/openscience/ontologies/gdprov#ConsentAgreementTemplate
@@ -237,42 +316,99 @@
                                                                                      owl:disjointWith <http://purl.org/adaptcentre/openscience/ontologies/gdprov#Data> ,
                                                                                                       <http://purl.org/adaptcentre/openscience/ontologies/gdprov#TermsAndConditions> ;
                                                                                      rdfs:comment "This is a template for consent requested from the user."@en ;
-                                                                                     rdfs:label "ConsentAgreementTemplate"@en .
+                                                                                     rdfs:isDefinedBy <http://purl.org/adaptcentre/openscience/ontologies/GDPRtEXT#Consent> ,
+                                                                                                      <http://purl.org/adaptcentre/openscience/ontologies/GDPRtEXT#ObligationForObtainingConsent> ,
+                                                                                                      <http://purl.org/adaptcentre/openscience/ontologies/GDPRtEXT#ValidConsent> ;
+                                                                                     rdfs:label "ConsentAgreementTemplate"@en ;
+                                                                                     rdfs:seeAlso <http://purl.org/adaptcentre/openscience/ontologies/gdprov#GivenConsentTemplate> .
 
 
 ###  http://purl.org/adaptcentre/openscience/ontologies/gdprov#ConsentArchivalStep
 <http://purl.org/adaptcentre/openscience/ontologies/gdprov#ConsentArchivalStep> rdf:type owl:Class ;
                                                                                 rdfs:subClassOf <http://purl.org/adaptcentre/openscience/ontologies/gdprov#ConsentStep> ;
                                                                                 rdfs:comment "ConsentArchivalStep archives acquired consent to form a record of the consent given by the user."@en ;
-                                                                                rdfs:label "ConsentArchivalStep"@en .
+                                                                                rdfs:isDefinedBy <http://purl.org/adaptcentre/openscience/ontologies/GDPRtEXT#DemonstratingConsent> ;
+                                                                                rdfs:label "Consent Archival Step"@en ;
+                                                                                rdfs:seeAlso <http://purl.org/adaptcentre/openscience/ontologies/gdprov#ArchiveConsentActivity> .
 
 
 ###  http://purl.org/adaptcentre/openscience/ontologies/gdprov#ConsentModificationStep
 <http://purl.org/adaptcentre/openscience/ontologies/gdprov#ConsentModificationStep> rdf:type owl:Class ;
                                                                                     rdfs:subClassOf <http://purl.org/adaptcentre/openscience/ontologies/gdprov#ConsentStep> ;
                                                                                     rdfs:comment "ConsentModificationStep deals with modifications to the consent by the user. It invalidates the previous consent object and produces a new updated consent object that represents the modified consent."@en ;
-                                                                                    rdfs:label "ConsentModificationStep"@en .
+                                                                                    rdfs:isDefinedBy <http://purl.org/adaptcentre/openscience/ontologies/GDPRtEXT#ObligationForObtainingConsent> ;
+                                                                                    rdfs:label "Consent Modification Step"@en ;
+                                                                                    rdfs:seeAlso <http://purl.org/adaptcentre/openscience/ontologies/gdprov#ModifyConsentActivity> .
 
 
 ###  http://purl.org/adaptcentre/openscience/ontologies/gdprov#ConsentStep
 <http://purl.org/adaptcentre/openscience/ontologies/gdprov#ConsentStep> rdf:type owl:Class ;
                                                                         rdfs:subClassOf <http://purl.org/net/p-plan#Step> ;
                                                                         rdfs:comment "A ConsentStep acts/interacts with/uses Consent"@en ;
-                                                                        rdfs:label "ConsentStep"@en .
+                                                                        rdfs:isDefinedBy <http://purl.org/adaptcentre/openscience/ontologies/GDPRtEXT#ConsentActivity> ;
+                                                                        rdfs:label "Consent Step"@en ;
+                                                                        rdfs:seeAlso <http://purl.org/adaptcentre/openscience/ontologies/gdprov#ConsentActivity> .
 
 
 ###  http://purl.org/adaptcentre/openscience/ontologies/gdprov#ConsentWithdrawalProcess
 <http://purl.org/adaptcentre/openscience/ontologies/gdprov#ConsentWithdrawalProcess> rdf:type owl:Class ;
                                                                                      rdfs:subClassOf <http://purl.org/adaptcentre/openscience/ontologies/gdprov#Process> ;
                                                                                      rdfs:comment "A ConsentWithdrawalProcess deals with the withdrawal of consent by the user and the corresponding activity carried out within the system"@en ;
-                                                                                     rdfs:label "ConsentWithdrawalProcess"@en .
+                                                                                     rdfs:isDefinedBy <http://purl.org/adaptcentre/openscience/ontologies/GDPRtEXT#WithdrawingConsent> ;
+                                                                                     rdfs:label "Consent Withdrawal Process"@en ;
+                                                                                     rdfs:seeAlso <http://purl.org/adaptcentre/openscience/ontologies/gdprov#ConsentWithdrawalStep> .
 
 
 ###  http://purl.org/adaptcentre/openscience/ontologies/gdprov#ConsentWithdrawalStep
 <http://purl.org/adaptcentre/openscience/ontologies/gdprov#ConsentWithdrawalStep> rdf:type owl:Class ;
                                                                                   rdfs:subClassOf <http://purl.org/adaptcentre/openscience/ontologies/gdprov#ConsentModificationStep> ;
                                                                                   rdfs:comment "ConsentWithdrawalStep deals with withdrawal of consent"@en ;
-                                                                                  rdfs:label "ConsentWithdrawalStep"@en .
+                                                                                  rdfs:isDefinedBy <http://purl.org/adaptcentre/openscience/ontologies/GDPRtEXT#CanBeWithdrawnEasilyConsentObligation> ,
+                                                                                                   <http://purl.org/adaptcentre/openscience/ontologies/GDPRtEXT#WithdrawingConsent> ;
+                                                                                  rdfs:label "Consent Withdrawal Step"@en ;
+                                                                                  rdfs:seeAlso <http://purl.org/adaptcentre/openscience/ontologies/gdprov#WithdrawConsentActivity> .
+
+
+###  http://purl.org/adaptcentre/openscience/ontologies/gdprov#Controller
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#Controller> rdf:type owl:Class ;
+                                                                       rdfs:subClassOf <http://purl.org/adaptcentre/openscience/ontologies/gdprov#ThirdParty> ;
+                                                                       rdfs:comment "A ThirdPartyDataController is a Third Party entity that acts as a Data Controller"@en ;
+                                                                       rdfs:label <http://purl.org/adaptcentre/openscience/ontologies/GDPRtEXT#Controller> ,
+                                                                                  "Controller"@en .
+
+
+###  http://purl.org/adaptcentre/openscience/ontologies/gdprov#ControllerRepresentative
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#ControllerRepresentative> rdf:type owl:Class ;
+                                                                                     rdfs:subClassOf <http://www.w3.org/ns/prov#Agent> ;
+                                                                                     rdfs:comment "A Representative of the Controller"^^xsd:string ;
+                                                                                     rdfs:isDefinedBy <http://purl.org/adaptcentre/openscience/ontologies/GDPRtEXT#ControllerRepresentative> ;
+                                                                                     rdfs:label "Controller Representative"^^xsd:string .
+
+
+###  http://purl.org/adaptcentre/openscience/ontologies/gdprov#CrossBorderDataTransfer
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#CrossBorderDataTransfer> rdf:type owl:Class ;
+                                                                                    rdfs:subClassOf <http://purl.org/adaptcentre/openscience/ontologies/gdprov#DataStep> ;
+                                                                                    rdfs:comment "Reflects cross-border transfer of data"^^xsd:string ;
+                                                                                    rdfs:isDefinedBy <http://purl.org/adaptcentre/openscience/ontologies/GDPRtEXT#CrossBorderTransfer> ;
+                                                                                    rdfs:label "Cross-border Data Transfer"^^xsd:string ;
+                                                                                    rdfs:seeAlso <http://purl.org/adaptcentre/openscience/ontologies/gdprov#CrossBorderTransferActivity> .
+
+
+###  http://purl.org/adaptcentre/openscience/ontologies/gdprov#CrossBorderTransferActivity
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#CrossBorderTransferActivity> rdf:type owl:Class ;
+                                                                                        rdfs:subClassOf <http://purl.org/adaptcentre/openscience/ontologies/gdprov#DataActivity> ;
+                                                                                        rdfs:comment "Is an activity that transfer data across borders (as defined in the GDPR)."^^xsd:string ;
+                                                                                        rdfs:isDefinedBy <http://purl.org/adaptcentre/openscience/ontologies/GDPRtEXT#CrossBorderTransfer> ;
+                                                                                        rdfs:label "Cross Border Transfer Activity"^^xsd:string ;
+                                                                                        rdfs:seeAlso <http://purl.org/adaptcentre/openscience/ontologies/gdprov#CrossBorderDataTransfer> .
+
+
+###  http://purl.org/adaptcentre/openscience/ontologies/gdprov#DPO
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#DPO> rdf:type owl:Class ;
+                                                                rdfs:subClassOf <http://www.w3.org/ns/prov#Agent> ;
+                                                                rdfs:comment "The Data Protection Officer appointed to an organisation."^^xsd:string ;
+                                                                rdfs:isDefinedBy <http://purl.org/adaptcentre/openscience/ontologies/GDPRtEXT#DPO> ;
+                                                                rdfs:label "Data Protection Officer (DPO)"^^xsd:string .
 
 
 ###  http://purl.org/adaptcentre/openscience/ontologies/gdprov#Data
@@ -280,14 +416,26 @@
                                                                  rdfs:subClassOf <http://purl.org/net/p-plan#Variable> ;
                                                                  owl:disjointWith <http://purl.org/adaptcentre/openscience/ontologies/gdprov#TermsAndConditions> ;
                                                                  rdfs:comment "Represents class of data collected or generated through various activities"@en ;
-                                                                 rdfs:label "Data"@en .
+                                                                 rdfs:isDefinedBy <http://purl.org/adaptcentre/openscience/ontologies/GDPRtEXT#Data> ;
+                                                                 rdfs:label "Data"@en ;
+                                                                 rdfs:seeAlso <http://purl.org/adaptcentre/openscience/ontologies/gdprov#DataEntity> .
 
 
 ###  http://purl.org/adaptcentre/openscience/ontologies/gdprov#DataAccessProcess
 <http://purl.org/adaptcentre/openscience/ontologies/gdprov#DataAccessProcess> rdf:type owl:Class ;
                                                                               rdfs:subClassOf <http://purl.org/adaptcentre/openscience/ontologies/gdprov#Process> ;
                                                                               rdfs:comment "A DataAccessProcess corresponds to the request made by an user for access to their data within the system. This process is responsible for handling the request process and providing the appropriate data to the end user."@en ;
-                                                                              rdfs:label "DataAccessProcess"@en .
+                                                                              rdfs:isDefinedBy <http://purl.org/adaptcentre/openscience/ontologies/GDPRtEXT#ProvideCopyOfPersonalData> ;
+                                                                              rdfs:label "Data Access Process"@en .
+
+
+###  http://purl.org/adaptcentre/openscience/ontologies/gdprov#DataActivity
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#DataActivity> rdf:type owl:Class ;
+                                                                         rdfs:subClassOf <http://purl.org/net/p-plan#Activity> ;
+                                                                         rdfs:comment "Is an activity involving data."^^xsd:string ;
+                                                                         rdfs:isDefinedBy <http://purl.org/adaptcentre/openscience/ontologies/GDPRtEXT#DataActivity> ;
+                                                                         rdfs:label "Data Activity"^^xsd:string ;
+                                                                         rdfs:seeAlso <http://purl.org/adaptcentre/openscience/ontologies/gdprov#DataStep> .
 
 
 ###  http://purl.org/adaptcentre/openscience/ontologies/gdprov#DataAnonymisationStep
@@ -295,14 +443,26 @@
                                                                                   rdfs:subClassOf <http://purl.org/adaptcentre/openscience/ontologies/gdprov#DataTransformationStep> ;
                                                                                   rdfs:comment """DataAnonymisationStep anonymises data by transforming it from one form to another along the anonymisation chain.
 Anonymisation can be represented as a spectrum going from raw user data to pseudo-anonymised data that can be de-anonymised by the same agent/organisation to pseudo-anonymous data that cannot be deanonymised internally, but may be done by external agents who have access to other data, and finally to completely anonymised data."""@en ;
-                                                                                  rdfs:label "DataAnonymisationStep"@en .
+                                                                                  rdfs:label "Data Anonymisation Step"@en ;
+                                                                                  rdfs:seeAlso <http://purl.org/adaptcentre/openscience/ontologies/gdprov#AnonymisationActivity> .
+
+
+###  http://purl.org/adaptcentre/openscience/ontologies/gdprov#DataArchivalActivity
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#DataArchivalActivity> rdf:type owl:Class ;
+                                                                                 rdfs:subClassOf <http://purl.org/adaptcentre/openscience/ontologies/gdprov#DataStorageActivity> ,
+                                                                                                 <http://purl.org/adaptcentre/openscience/ontologies/gdprov#DataTransformationActivity> ;
+                                                                                 rdfs:comment "Is an activity that archives data. Archival is transformation of data into some form for storage."^^xsd:string ;
+                                                                                 rdfs:isDefinedBy <http://purl.org/adaptcentre/openscience/ontologies/GDPRtEXT#ArchiveData> ;
+                                                                                 rdfs:label "Data Archival Activity"^^xsd:string ;
+                                                                                 rdfs:seeAlso <http://purl.org/adaptcentre/openscience/ontologies/gdprov#DataArchivalStep> .
 
 
 ###  http://purl.org/adaptcentre/openscience/ontologies/gdprov#DataArchivalProcess
 <http://purl.org/adaptcentre/openscience/ontologies/gdprov#DataArchivalProcess> rdf:type owl:Class ;
                                                                                 rdfs:subClassOf <http://purl.org/adaptcentre/openscience/ontologies/gdprov#Process> ;
                                                                                 rdfs:comment "A DataArchivalProcess describes the process of data archival"@en ;
-                                                                                rdfs:label "DataArchivalProcess"@en .
+                                                                                rdfs:isDefinedBy <http://purl.org/adaptcentre/openscience/ontologies/GDPRtEXT#ArchiveData> ;
+                                                                                rdfs:label "Data Archival Process"@en .
 
 
 ###  http://purl.org/adaptcentre/openscience/ontologies/gdprov#DataArchivalStep
@@ -310,21 +470,70 @@ Anonymisation can be represented as a spectrum going from raw user data to pseud
                                                                              rdfs:subClassOf <http://purl.org/adaptcentre/openscience/ontologies/gdprov#DataStorageStep> ,
                                                                                              <http://purl.org/adaptcentre/openscience/ontologies/gdprov#DataTransformationStep> ;
                                                                              rdfs:comment "DataArchivalStep archives data by transforming it and storing it"@en ;
-                                                                             rdfs:label "DataArchivalStep"@en .
+                                                                             rdfs:isDefinedBy <http://purl.org/adaptcentre/openscience/ontologies/GDPRtEXT#ArchiveData> ;
+                                                                             rdfs:label "Data Archival Step"@en ;
+                                                                             rdfs:seeAlso <http://purl.org/adaptcentre/openscience/ontologies/gdprov#DataArchivalActivity> .
+
+
+###  http://purl.org/adaptcentre/openscience/ontologies/gdprov#DataBreachActivity
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#DataBreachActivity> rdf:type owl:Class ;
+                                                                               rdfs:subClassOf <http://purl.org/net/p-plan#Activity> ;
+                                                                               rdfs:comment "Is an activity dealing with data breach."^^xsd:string ;
+                                                                               rdfs:isDefinedBy <http://purl.org/adaptcentre/openscience/ontologies/GDPRtEXT#ReportDataBreach> ;
+                                                                               rdfs:label "Data Breach Activity"^^xsd:string ;
+                                                                               rdfs:seeAlso <http://purl.org/adaptcentre/openscience/ontologies/gdprov#DataBreachStep> .
+
+
+###  http://purl.org/adaptcentre/openscience/ontologies/gdprov#DataBreachRecord
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#DataBreachRecord> rdf:type owl:Class ;
+                                                                             rdfs:subClassOf <http://purl.org/net/p-plan#Variable> ;
+                                                                             rdfs:comment "A record of a data breach."^^xsd:string ;
+                                                                             rdfs:isDefinedBy <http://purl.org/adaptcentre/openscience/ontologies/GDPRtEXT#MaintainRecordOfBreach> ;
+                                                                             rdfs:label "Data Breach Record"^^xsd:string .
+
+
+###  http://purl.org/adaptcentre/openscience/ontologies/gdprov#DataBreachStep
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#DataBreachStep> rdf:type owl:Class ;
+                                                                           rdfs:subClassOf <http://purl.org/net/p-plan#Step> ;
+                                                                           rdfs:comment "Step representing an action associated with data breach."^^xsd:string ;
+                                                                           rdfs:isDefinedBy <http://purl.org/adaptcentre/openscience/ontologies/GDPRtEXT#ReportDataBreach> ;
+                                                                           rdfs:label "Data Breach Step"^^xsd:string ;
+                                                                           rdfs:seeAlso <http://purl.org/adaptcentre/openscience/ontologies/gdprov#DataBreachActivity> .
+
+
+###  http://purl.org/adaptcentre/openscience/ontologies/gdprov#DataCollectionActivity
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#DataCollectionActivity> rdf:type owl:Class ;
+                                                                                   rdfs:subClassOf <http://purl.org/adaptcentre/openscience/ontologies/gdprov#DataActivity> ;
+                                                                                   rdfs:comment "Is an activity that collects or acquires data."^^xsd:string ;
+                                                                                   rdfs:isDefinedBy <http://purl.org/adaptcentre/openscience/ontologies/GDPRtEXT#CollectionOfPersonalData> ;
+                                                                                   rdfs:label "Data Collection Activity"^^xsd:string ;
+                                                                                   rdfs:seeAlso <http://purl.org/adaptcentre/openscience/ontologies/gdprov#DataCollectionStep> .
 
 
 ###  http://purl.org/adaptcentre/openscience/ontologies/gdprov#DataCollectionStep
 <http://purl.org/adaptcentre/openscience/ontologies/gdprov#DataCollectionStep> rdf:type owl:Class ;
                                                                                rdfs:subClassOf <http://purl.org/adaptcentre/openscience/ontologies/gdprov#DataStep> ;
                                                                                rdfs:comment "DataCollectionStep collects data from the user"@en ;
-                                                                               rdfs:label "DataCollectionStep"@en .
+                                                                               rdfs:isDefinedBy <http://purl.org/adaptcentre/openscience/ontologies/GDPRtEXT#CollectionOfPersonalData> ;
+                                                                               rdfs:label "Data Collection Step"@en ;
+                                                                               rdfs:seeAlso <http://purl.org/adaptcentre/openscience/ontologies/gdprov#DataCollectionActivity> .
 
 
 ###  http://purl.org/adaptcentre/openscience/ontologies/gdprov#DataDeanonymisationStep
 <http://purl.org/adaptcentre/openscience/ontologies/gdprov#DataDeanonymisationStep> rdf:type owl:Class ;
                                                                                     rdfs:subClassOf <http://purl.org/adaptcentre/openscience/ontologies/gdprov#DataTransformationStep> ;
                                                                                     rdfs:comment "DataDeanonymisationStep deanonymises data by transforming it from one form to another along the anonymisation chain."@en ;
-                                                                                    rdfs:label "DataDeanonymisationStep"@en .
+                                                                                    rdfs:label "Data Deanonymisation Step"@en ;
+                                                                                    rdfs:seeAlso <http://purl.org/adaptcentre/openscience/ontologies/gdprov#DeAnonymisationActivity> .
+
+
+###  http://purl.org/adaptcentre/openscience/ontologies/gdprov#DataDeletionActivity
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#DataDeletionActivity> rdf:type owl:Class ;
+                                                                                 rdfs:subClassOf <http://purl.org/adaptcentre/openscience/ontologies/gdprov#DataActivity> ;
+                                                                                 rdfs:comment "Is an activity that deletes or erases data."^^xsd:string ;
+                                                                                 rdfs:isDefinedBy <http://purl.org/adaptcentre/openscience/ontologies/GDPRtEXT#EraseData> ;
+                                                                                 rdfs:label "Data Deletion Activity"^^xsd:string ;
+                                                                                 rdfs:seeAlso <http://purl.org/adaptcentre/openscience/ontologies/gdprov#DataDeletionStep> .
 
 
 ###  http://purl.org/adaptcentre/openscience/ontologies/gdprov#DataDeletionStep
@@ -332,70 +541,355 @@ Anonymisation can be represented as a spectrum going from raw user data to pseud
                                                                              rdfs:subClassOf <http://purl.org/adaptcentre/openscience/ontologies/gdprov#DataStep> ;
                                                                              rdfs:comment """DataDeletionStep deletes data from within the system;
 The deletion is expressed as prov:invalidated over the dataset."""@en ;
-                                                                             rdfs:label "DataDeletionStep"@en .
+                                                                             rdfs:isDefinedBy <http://purl.org/adaptcentre/openscience/ontologies/GDPRtEXT#EraseData> ;
+                                                                             rdfs:label "Data Deletion Step"@en ;
+                                                                             rdfs:seeAlso <http://purl.org/adaptcentre/openscience/ontologies/gdprov#DataDeletionActivity> .
+
+
+###  http://purl.org/adaptcentre/openscience/ontologies/gdprov#DataEntity
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#DataEntity> rdf:type owl:Class ;
+                                                                       rdfs:subClassOf <http://purl.org/net/p-plan#Entity> ;
+                                                                       rdfs:comment "Represents a data entity."^^xsd:string ;
+                                                                       rdfs:isDefinedBy <http://purl.org/adaptcentre/openscience/ontologies/GDPRtEXT#Data> ;
+                                                                       rdfs:label "Data Entity"^^xsd:string ;
+                                                                       rdfs:seeAlso <http://purl.org/adaptcentre/openscience/ontologies/gdprov#Data> .
 
 
 ###  http://purl.org/adaptcentre/openscience/ontologies/gdprov#DataErasureProcess
 <http://purl.org/adaptcentre/openscience/ontologies/gdprov#DataErasureProcess> rdf:type owl:Class ;
                                                                                rdfs:subClassOf <http://purl.org/adaptcentre/openscience/ontologies/gdprov#Process> ;
                                                                                rdfs:comment "A DataErasureProcess is responsible for handling the data erasure of a data subject."@en ;
-                                                                               rdfs:label "DataErasureProcess"@en .
+                                                                               rdfs:isDefinedBy <http://purl.org/adaptcentre/openscience/ontologies/GDPRtEXT#EraseData> ;
+                                                                               rdfs:label "Data Erasure Process"@en .
 
 
 ###  http://purl.org/adaptcentre/openscience/ontologies/gdprov#DataRectificationProcess
 <http://purl.org/adaptcentre/openscience/ontologies/gdprov#DataRectificationProcess> rdf:type owl:Class ;
                                                                                      rdfs:subClassOf <http://purl.org/adaptcentre/openscience/ontologies/gdprov#Process> ;
                                                                                      rdfs:comment "A DataRectificationProcess describes the process of data rectification, which is the correction of data already present within the system"@en ;
-                                                                                     rdfs:label "DataRectificationProcess"@en .
+                                                                                     rdfs:isDefinedBy <http://purl.org/adaptcentre/openscience/ontologies/GDPRtEXT#RectifyData> ;
+                                                                                     rdfs:label "Data Rectification Process"@en .
+
+
+###  http://purl.org/adaptcentre/openscience/ontologies/gdprov#DataSharingActivity
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#DataSharingActivity> rdf:type owl:Class ;
+                                                                                rdfs:subClassOf <http://purl.org/adaptcentre/openscience/ontologies/gdprov#DataActivity> ;
+                                                                                rdfs:comment "Is an activity that shares data."^^xsd:string ;
+                                                                                rdfs:isDefinedBy <http://purl.org/adaptcentre/openscience/ontologies/GDPRtEXT#ShareDataWithThirdParty> ;
+                                                                                rdfs:label "Data Sharing Activity"^^xsd:string ;
+                                                                                rdfs:seeAlso <http://purl.org/adaptcentre/openscience/ontologies/gdprov#DataSharingStep> .
 
 
 ###  http://purl.org/adaptcentre/openscience/ontologies/gdprov#DataSharingStep
 <http://purl.org/adaptcentre/openscience/ontologies/gdprov#DataSharingStep> rdf:type owl:Class ;
                                                                             rdfs:subClassOf <http://purl.org/adaptcentre/openscience/ontologies/gdprov#DataStep> ;
                                                                             rdfs:comment "DataSharingStep shares data with another agent/organisation. These may be internal or external entities."@en ;
-                                                                            rdfs:label "DataSharingStep"@en .
+                                                                            rdfs:isDefinedBy <http://purl.org/adaptcentre/openscience/ontologies/GDPRtEXT#ShareDataWithThirdParty> ;
+                                                                            rdfs:label "Data Sharing Step"@en ;
+                                                                            rdfs:seeAlso <http://purl.org/adaptcentre/openscience/ontologies/gdprov#DataSharingActivity> .
 
 
 ###  http://purl.org/adaptcentre/openscience/ontologies/gdprov#DataStep
 <http://purl.org/adaptcentre/openscience/ontologies/gdprov#DataStep> rdf:type owl:Class ;
                                                                      rdfs:subClassOf <http://purl.org/net/p-plan#Step> ;
                                                                      rdfs:comment "A DataStep deals with data"@en ;
-                                                                     rdfs:label "DataStep"@en .
+                                                                     rdfs:isDefinedBy <http://purl.org/adaptcentre/openscience/ontologies/GDPRtEXT#DataActivity> ;
+                                                                     rdfs:label "Data Step"@en ;
+                                                                     rdfs:seeAlso <http://purl.org/adaptcentre/openscience/ontologies/gdprov#DataActivity> .
+
+
+###  http://purl.org/adaptcentre/openscience/ontologies/gdprov#DataStorageActivity
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#DataStorageActivity> rdf:type owl:Class ;
+                                                                                rdfs:subClassOf <http://purl.org/adaptcentre/openscience/ontologies/gdprov#DataActivity> ;
+                                                                                rdfs:comment "Is an activity that stores data."^^xsd:string ;
+                                                                                rdfs:isDefinedBy <http://purl.org/adaptcentre/openscience/ontologies/GDPRtEXT#StoreData> ;
+                                                                                rdfs:label "Data Storage Activity"^^xsd:string ;
+                                                                                rdfs:seeAlso <http://purl.org/adaptcentre/openscience/ontologies/gdprov#DataStorageStep> .
 
 
 ###  http://purl.org/adaptcentre/openscience/ontologies/gdprov#DataStorageStep
 <http://purl.org/adaptcentre/openscience/ontologies/gdprov#DataStorageStep> rdf:type owl:Class ;
                                                                             rdfs:subClassOf <http://purl.org/adaptcentre/openscience/ontologies/gdprov#DataStep> ;
                                                                             rdfs:comment "DataStorageStep stores data within the system"@en ;
-                                                                            rdfs:label "DataStorageStep"@en .
+                                                                            rdfs:isDefinedBy <http://purl.org/adaptcentre/openscience/ontologies/GDPRtEXT#StoreData> ;
+                                                                            rdfs:label "Data Storage Step"@en ;
+                                                                            rdfs:seeAlso <http://purl.org/adaptcentre/openscience/ontologies/gdprov#DataStorageActivity> .
+
+
+###  http://purl.org/adaptcentre/openscience/ontologies/gdprov#DataSubject
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#DataSubject> rdf:type owl:Class ;
+                                                                        rdfs:subClassOf <http://www.w3.org/ns/prov#Agent> ;
+                                                                        rdfs:comment "An individual or entity"^^xsd:string ;
+                                                                        rdfs:isDefinedBy <http://purl.org/adaptcentre/openscience/ontologies/GDPRtEXT#DataSubject> ;
+                                                                        rdfs:label "Data Subject"^^xsd:string .
+
+
+###  http://purl.org/adaptcentre/openscience/ontologies/gdprov#DataTransformationActivity
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#DataTransformationActivity> rdf:type owl:Class ;
+                                                                                       rdfs:subClassOf <http://purl.org/adaptcentre/openscience/ontologies/gdprov#DataActivity> ;
+                                                                                       rdfs:comment "Is an activity that transforms data."^^xsd:string ;
+                                                                                       rdfs:label "Data Transformation Activity"^^xsd:string ;
+                                                                                       rdfs:seeAlso <http://purl.org/adaptcentre/openscience/ontologies/gdprov#DataTransformationStep> .
 
 
 ###  http://purl.org/adaptcentre/openscience/ontologies/gdprov#DataTransformationStep
 <http://purl.org/adaptcentre/openscience/ontologies/gdprov#DataTransformationStep> rdf:type owl:Class ;
                                                                                    rdfs:subClassOf <http://purl.org/adaptcentre/openscience/ontologies/gdprov#DataStep> ;
                                                                                    rdfs:comment "DataTransformationStep transforms data from one form into another."@en ;
-                                                                                   rdfs:label "DataTransformationStep"@en .
+                                                                                   rdfs:label "Data Transformation Step"@en ;
+                                                                                   rdfs:seeAlso <http://purl.org/adaptcentre/openscience/ontologies/gdprov#DataTransformationActivity> .
+
+
+###  http://purl.org/adaptcentre/openscience/ontologies/gdprov#DataUsageActivity
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#DataUsageActivity> rdf:type owl:Class ;
+                                                                              rdfs:subClassOf <http://purl.org/adaptcentre/openscience/ontologies/gdprov#DataActivity> ;
+                                                                              rdfs:comment "Is an activity that uses data. Can also be termed as 'Processing' of data."^^xsd:string ;
+                                                                              rdfs:isDefinedBy <http://purl.org/adaptcentre/openscience/ontologies/GDPRtEXT#UseData> ;
+                                                                              rdfs:label "Data Usage Activity"^^xsd:string ;
+                                                                              rdfs:seeAlso <http://purl.org/adaptcentre/openscience/ontologies/gdprov#DataUsageStep> .
 
 
 ###  http://purl.org/adaptcentre/openscience/ontologies/gdprov#DataUsageStep
 <http://purl.org/adaptcentre/openscience/ontologies/gdprov#DataUsageStep> rdf:type owl:Class ;
                                                                           rdfs:subClassOf <http://purl.org/adaptcentre/openscience/ontologies/gdprov#DataStep> ;
                                                                           rdfs:comment "A DataUsageStep is a DataStep that uses existing data present within the system"@en ;
-                                                                          rdfs:label "DataUsageStep"@en .
+                                                                          rdfs:isDefinedBy <http://purl.org/adaptcentre/openscience/ontologies/GDPRtEXT#Processing> ;
+                                                                          rdfs:label "Data Usage Step"@en ;
+                                                                          rdfs:seeAlso <http://purl.org/adaptcentre/openscience/ontologies/gdprov#DataUsageActivity> .
+
+
+###  http://purl.org/adaptcentre/openscience/ontologies/gdprov#DeAnonymisationActivity
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#DeAnonymisationActivity> rdf:type owl:Class ;
+                                                                                    rdfs:subClassOf <http://purl.org/adaptcentre/openscience/ontologies/gdprov#DataTransformationActivity> ;
+                                                                                    rdfs:comment "Is an activity that deanonymises data."^^xsd:string ;
+                                                                                    rdfs:label "DeAnonymisation Activity"^^xsd:string ;
+                                                                                    rdfs:seeAlso <http://purl.org/adaptcentre/openscience/ontologies/gdprov#DataDeanonymisationStep> .
+
+
+###  http://purl.org/adaptcentre/openscience/ontologies/gdprov#DirectMarketing
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#DirectMarketing> rdf:type owl:Class ;
+                                                                            rdfs:subClassOf <http://purl.org/adaptcentre/openscience/ontologies/gdprov#Marketing> ;
+                                                                            rdfs:comment "Direct Marketing where the marketing is done directly to the data subject."^^xsd:string ;
+                                                                            rdfs:isDefinedBy <http://purl.org/adaptcentre/openscience/ontologies/GDPRtEXT#DirectMarketing> ;
+                                                                            rdfs:label "Direct Marketing"^^xsd:string .
+
+
+###  http://purl.org/adaptcentre/openscience/ontologies/gdprov#GivenConsent
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#GivenConsent> rdf:type owl:Class ;
+                                                                         rdfs:subClassOf <http://purl.org/net/p-plan#Entity> ;
+                                                                         rdfs:comment "Represents the given consent by the data subject."^^xsd:string ;
+                                                                         rdfs:isDefinedBy <http://purl.org/adaptcentre/openscience/ontologies/GDPRtEXT#GivenConsent> ;
+                                                                         rdfs:label "Given Consent"^^xsd:string ;
+                                                                         rdfs:seeAlso <http://purl.org/adaptcentre/openscience/ontologies/gdprov#ConsentAgreement> .
+
+
+###  http://purl.org/adaptcentre/openscience/ontologies/gdprov#GivenConsentTemplate
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#GivenConsentTemplate> rdf:type owl:Class ;
+                                                                                 rdfs:subClassOf <http://purl.org/net/p-plan#Entity> ;
+                                                                                 rdfs:comment "Is the template used to obtain the given consent."^^xsd:string ;
+                                                                                 rdfs:label "Given Consent Template"^^xsd:string ;
+                                                                                 rdfs:seeAlso <http://purl.org/adaptcentre/openscience/ontologies/gdprov#ConsentAgreementTemplate> .
 
 
 ###  http://purl.org/adaptcentre/openscience/ontologies/gdprov#HandleDataBreachProcess
 <http://purl.org/adaptcentre/openscience/ontologies/gdprov#HandleDataBreachProcess> rdf:type owl:Class ;
                                                                                     rdfs:subClassOf <http://purl.org/adaptcentre/openscience/ontologies/gdprov#Process> ;
                                                                                     rdfs:comment "A process that defines the actions that should be undertaken in event of a data breach"^^xsd:string ;
+                                                                                    rdfs:isDefinedBy <http://purl.org/adaptcentre/openscience/ontologies/GDPRtEXT#DataBreach> ;
                                                                                     rdfs:label "HandleDataBreachProcess"^^xsd:string .
+
+
+###  http://purl.org/adaptcentre/openscience/ontologies/gdprov#HandleRightOfDataPortability
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#HandleRightOfDataPortability> rdf:type owl:Class ;
+                                                                                         rdfs:subClassOf <http://purl.org/adaptcentre/openscience/ontologies/gdprov#Process> ;
+                                                                                         rdfs:comment "The process or series of steps that handle the right of data portability."^^xsd:string ;
+                                                                                         rdfs:isDefinedBy <http://purl.org/adaptcentre/openscience/ontologies/GDPRtEXT#RightOfDataPortability> ;
+                                                                                         rdfs:label "Handle Right of Data Portability"^^xsd:string .
+
+
+###  http://purl.org/adaptcentre/openscience/ontologies/gdprov#HandleRightOfErasure
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#HandleRightOfErasure> rdf:type owl:Class ;
+                                                                                 rdfs:subClassOf <http://purl.org/adaptcentre/openscience/ontologies/gdprov#Process> ;
+                                                                                 rdfs:comment "The process or series of steps that handle the right of erasure."^^xsd:string ;
+                                                                                 rdfs:isDefinedBy <http://purl.org/adaptcentre/openscience/ontologies/GDPRtEXT#RightOfErasure> ;
+                                                                                 rdfs:label "Handle Right of Erasure"^^xsd:string .
+
+
+###  http://purl.org/adaptcentre/openscience/ontologies/gdprov#HandleRightToAccessPersonalData
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#HandleRightToAccessPersonalData> rdf:type owl:Class ;
+                                                                                            rdfs:subClassOf <http://purl.org/adaptcentre/openscience/ontologies/gdprov#Process> ;
+                                                                                            rdfs:comment "The process or series of steps that handle the right to access personal data."^^xsd:string ;
+                                                                                            rdfs:isDefinedBy <http://purl.org/adaptcentre/openscience/ontologies/GDPRtEXT#RightOfErasure> ;
+                                                                                            rdfs:label "Handle Right to access Personal Data"^^xsd:string .
+
+
+###  http://purl.org/adaptcentre/openscience/ontologies/gdprov#HandleRightToBasicInfoAboutProcessing
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#HandleRightToBasicInfoAboutProcessing> rdf:type owl:Class ;
+                                                                                                  rdfs:subClassOf <http://purl.org/adaptcentre/openscience/ontologies/gdprov#Process> ;
+                                                                                                  rdfs:comment "The process or series of steps that handle the right to basic information about processing."^^xsd:string ;
+                                                                                                  rdfs:isDefinedBy <http://purl.org/adaptcentre/openscience/ontologies/GDPRtEXT#RightToBasicInformationAboutProcessing> ;
+                                                                                                  rdfs:label "Handle Right to basic information about Processing"^^xsd:string .
+
+
+###  http://purl.org/adaptcentre/openscience/ontologies/gdprov#HandleRightToNoAutomatedProcessing
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#HandleRightToNoAutomatedProcessing> rdf:type owl:Class ;
+                                                                                               rdfs:subClassOf <http://purl.org/adaptcentre/openscience/ontologies/gdprov#Process> ;
+                                                                                               rdfs:comment "The process or series of steps that handle the right to not be processed automatically."^^xsd:string ;
+                                                                                               rdfs:isDefinedBy <http://purl.org/adaptcentre/openscience/ontologies/GDPRtEXT#RightToNotBeEvaluatedThroughAutomatedProcessing> ;
+                                                                                               rdfs:label "Handle Right to not be evaluated through Automated Processing"^^xsd:string .
+
+
+###  http://purl.org/adaptcentre/openscience/ontologies/gdprov#HandleRightToObjectDirectMarketing
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#HandleRightToObjectDirectMarketing> rdf:type owl:Class ;
+                                                                                               rdfs:subClassOf <http://purl.org/adaptcentre/openscience/ontologies/gdprov#Process> ;
+                                                                                               rdfs:comment "The process or series of steps that handle the right to object to direct marketing."^^xsd:string ;
+                                                                                               rdfs:isDefinedBy <http://purl.org/adaptcentre/openscience/ontologies/GDPRtEXT#RightToObjectForDirectMarketting> ;
+                                                                                               rdfs:label "Handle Right to Object to Direct Marketing"^^xsd:string .
+
+
+###  http://purl.org/adaptcentre/openscience/ontologies/gdprov#HandleRightToObjectProcessing
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#HandleRightToObjectProcessing> rdf:type owl:Class ;
+                                                                                          rdfs:subClassOf <http://purl.org/adaptcentre/openscience/ontologies/gdprov#Process> ;
+                                                                                          rdfs:comment "The process or series of steps that handle the right to object to processing."^^xsd:string ;
+                                                                                          rdfs:isDefinedBy <http://purl.org/adaptcentre/openscience/ontologies/GDPRtEXT#RightToObjectToProcessing> ;
+                                                                                          rdfs:label "Handle Right to Object to Processing"^^xsd:string .
+
+
+###  http://purl.org/adaptcentre/openscience/ontologies/gdprov#HandleRightToRectification
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#HandleRightToRectification> rdf:type owl:Class ;
+                                                                                       rdfs:subClassOf <http://purl.org/adaptcentre/openscience/ontologies/gdprov#Process> ;
+                                                                                       rdfs:comment "The process or series of steps that handle the right to rectification of personal data."^^xsd:string ;
+                                                                                       rdfs:isDefinedBy <http://purl.org/adaptcentre/openscience/ontologies/GDPRtEXT#RightToRectification> ;
+                                                                                       rdfs:label "Handle Right to Rectification"^^xsd:string .
+
+
+###  http://purl.org/adaptcentre/openscience/ontologies/gdprov#HandleRightToRestrictProcessing
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#HandleRightToRestrictProcessing> rdf:type owl:Class ;
+                                                                                            rdfs:subClassOf <http://purl.org/adaptcentre/openscience/ontologies/gdprov#Process> ;
+                                                                                            rdfs:comment "The process or series of steps that handle the right to restrict processing."^^xsd:string ;
+                                                                                            rdfs:isDefinedBy <http://purl.org/adaptcentre/openscience/ontologies/GDPRtEXT#RightToRestrictProcessing> ;
+                                                                                            rdfs:label "Handle Right to restrict Processing"^^xsd:string .
+
+
+###  http://purl.org/adaptcentre/openscience/ontologies/gdprov#HandleRightToTransparency
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#HandleRightToTransparency> rdf:type owl:Class ;
+                                                                                      rdfs:subClassOf <http://purl.org/adaptcentre/openscience/ontologies/gdprov#Process> ;
+                                                                                      rdfs:comment "The process or series of steps that handle the right to transparency."^^xsd:string ;
+                                                                                      rdfs:isDefinedBy <http://purl.org/adaptcentre/openscience/ontologies/GDPRtEXT#RightToTransparency> ;
+                                                                                      rdfs:label "Handle Right to Transparency"^^xsd:string .
+
+
+###  http://purl.org/adaptcentre/openscience/ontologies/gdprov#ImpactAssessment
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#ImpactAssessment> rdf:type owl:Class ;
+                                                                             rdfs:subClassOf <http://purl.org/adaptcentre/openscience/ontologies/gdprov#Process> ;
+                                                                             rdfs:comment "Impact Assessment for the organisation"^^xsd:string ,
+                                                                                          "Represents the process or collection of steps representing the Impact Assessment."^^xsd:string ;
+                                                                             rdfs:isDefinedBy <http://purl.org/adaptcentre/openscience/ontologies/GDPRtEXT#ImpactAssessment> ;
+                                                                             rdfs:label "Impact Assessment"^^xsd:string .
+
+
+###  http://purl.org/adaptcentre/openscience/ontologies/gdprov#JointController
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#JointController> rdf:type owl:Class ;
+                                                                            rdfs:subClassOf <http://purl.org/adaptcentre/openscience/ontologies/gdprov#Controller> ;
+                                                                            rdfs:comment "A Joint Controller is where two or more controllers jointly determine the purposes and means of processing."^^xsd:string ;
+                                                                            rdfs:isDefinedBy <http://purl.org/adaptcentre/openscience/ontologies/GDPRtEXT#JointController> ;
+                                                                            rdfs:label "Joint Controller(s)"^^xsd:string .
+
+
+###  http://purl.org/adaptcentre/openscience/ontologies/gdprov#Marketing
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#Marketing> rdf:type owl:Class ;
+                                                                      rdfs:subClassOf <http://purl.org/adaptcentre/openscience/ontologies/gdprov#Process> ;
+                                                                      rdfs:comment "Marketing as a process or collection of steps."^^xsd:string ;
+                                                                      rdfs:isDefinedBy <http://purl.org/adaptcentre/openscience/ontologies/GDPRtEXT#Marketing> ;
+                                                                      rdfs:label "Marketing"^^xsd:string .
+
+
+###  http://purl.org/adaptcentre/openscience/ontologies/gdprov#ModifyConsentActivity
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#ModifyConsentActivity> rdf:type owl:Class ;
+                                                                                  rdfs:subClassOf <http://purl.org/adaptcentre/openscience/ontologies/gdprov#ConsentActivity> ;
+                                                                                  rdfs:comment "Is an activity that modifies given consent."^^xsd:string ;
+                                                                                  rdfs:label "Modify Consent Activity"^^xsd:string ;
+                                                                                  rdfs:seeAlso <http://purl.org/adaptcentre/openscience/ontologies/gdprov#ConsentModificationStep> .
+
+
+###  http://purl.org/adaptcentre/openscience/ontologies/gdprov#MonitorCompliance
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#MonitorCompliance> rdf:type owl:Class ;
+                                                                              rdfs:subClassOf <http://purl.org/adaptcentre/openscience/ontologies/gdprov#Process> ;
+                                                                              rdfs:comment "The process of monitoring compliance as mandated by the GDPR."^^xsd:string ;
+                                                                              rdfs:isDefinedBy <http://purl.org/adaptcentre/openscience/ontologies/GDPRtEXT#MonitorCompliance> ;
+                                                                              rdfs:label "Monitor Compliance"^^xsd:string .
+
+
+###  http://purl.org/adaptcentre/openscience/ontologies/gdprov#NotifyController
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#NotifyController> rdf:type owl:Class ;
+                                                                             rdfs:subClassOf <http://purl.org/adaptcentre/openscience/ontologies/gdprov#DataBreachStep> ;
+                                                                             rdfs:comment "Step that notifies the controller of data breach."^^xsd:string ;
+                                                                             rdfs:isDefinedBy <http://purl.org/adaptcentre/openscience/ontologies/GDPRtEXT#ReportDataBreachToController> ;
+                                                                             rdfs:label "Notify Controller"^^xsd:string ;
+                                                                             rdfs:seeAlso <http://purl.org/adaptcentre/openscience/ontologies/gdprov#NotifyControllerActivity> .
+
+
+###  http://purl.org/adaptcentre/openscience/ontologies/gdprov#NotifyControllerActivity
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#NotifyControllerActivity> rdf:type owl:Class ;
+                                                                                     rdfs:subClassOf <http://purl.org/adaptcentre/openscience/ontologies/gdprov#DataBreachActivity> ;
+                                                                                     rdfs:comment "Is an activity that notifies controller about data breach"^^xsd:string ;
+                                                                                     rdfs:isDefinedBy <http://purl.org/adaptcentre/openscience/ontologies/GDPRtEXT#ReportDataBreachToController> ;
+                                                                                     rdfs:label "Notify Controller Activity"^^xsd:string ;
+                                                                                     rdfs:seeAlso <http://purl.org/adaptcentre/openscience/ontologies/gdprov#NotifyController> .
+
+
+###  http://purl.org/adaptcentre/openscience/ontologies/gdprov#NotifyDPA
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#NotifyDPA> rdf:type owl:Class ;
+                                                                      rdfs:subClassOf <http://purl.org/adaptcentre/openscience/ontologies/gdprov#DataBreachStep> ;
+                                                                      rdfs:comment "Step that notifies the Data Protection Authorities of a data breach."^^xsd:string ;
+                                                                      rdfs:isDefinedBy <http://purl.org/adaptcentre/openscience/ontologies/GDPRtEXT#ReportDataBreachToDPAWithin72Hours> ;
+                                                                      rdfs:label "Notify Data Protection Authority"^^xsd:string ;
+                                                                      rdfs:seeAlso <http://purl.org/adaptcentre/openscience/ontologies/gdprov#NotifyDPAActivity> .
+
+
+###  http://purl.org/adaptcentre/openscience/ontologies/gdprov#NotifyDPAActivity
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#NotifyDPAActivity> rdf:type owl:Class ;
+                                                                              rdfs:subClassOf <http://purl.org/adaptcentre/openscience/ontologies/gdprov#DataBreachActivity> ;
+                                                                              rdfs:comment "Is an activity that notifies data protection authorities about data breach"^^xsd:string ;
+                                                                              rdfs:isDefinedBy <http://purl.org/adaptcentre/openscience/ontologies/GDPRtEXT#ReportDataBreachToDPAWithin72Hours> ;
+                                                                              rdfs:label "Notify DPA Activity"^^xsd:string ;
+                                                                              rdfs:seeAlso <http://purl.org/adaptcentre/openscience/ontologies/gdprov#NotifyDPA> .
+
+
+###  http://purl.org/adaptcentre/openscience/ontologies/gdprov#NotifyDataSubject
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#NotifyDataSubject> rdf:type owl:Class ;
+                                                                              rdfs:subClassOf <http://purl.org/adaptcentre/openscience/ontologies/gdprov#DataBreachStep> ;
+                                                                              rdfs:comment "Step that notifies the data subject of data breach."^^xsd:string ;
+                                                                              rdfs:isDefinedBy <http://purl.org/adaptcentre/openscience/ontologies/GDPRtEXT#NotifyDataSubjectOfBreach> ;
+                                                                              rdfs:label "Notify Data Subject"^^xsd:string ;
+                                                                              rdfs:seeAlso <http://purl.org/adaptcentre/openscience/ontologies/gdprov#NotifyDataSubjectActivity> .
+
+
+###  http://purl.org/adaptcentre/openscience/ontologies/gdprov#NotifyDataSubjectActivity
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#NotifyDataSubjectActivity> rdf:type owl:Class ;
+                                                                                      rdfs:subClassOf <http://purl.org/adaptcentre/openscience/ontologies/gdprov#DataBreachActivity> ;
+                                                                                      rdfs:comment "Is an activity that notifies data subjects about data breach"^^xsd:string ;
+                                                                                      rdfs:isDefinedBy <http://purl.org/adaptcentre/openscience/ontologies/GDPRtEXT#NotifyDataSubjectOfBreach> ;
+                                                                                      rdfs:label "Notify Data Subject Activity"^^xsd:string ;
+                                                                                      rdfs:seeAlso <http://purl.org/adaptcentre/openscience/ontologies/gdprov#NotifyDataSubject> .
 
 
 ###  http://purl.org/adaptcentre/openscience/ontologies/gdprov#PersonalData
 <http://purl.org/adaptcentre/openscience/ontologies/gdprov#PersonalData> rdf:type owl:Class ;
                                                                          rdfs:subClassOf <http://purl.org/adaptcentre/openscience/ontologies/gdprov#Data> ;
                                                                          rdfs:comment "PersonalData is any data pertaining to the user which can contain personally identifiable information or a data set generated by the system using personally identifiable information acquired through direct or indirect means"@en ;
-                                                                         rdfs:label "PersonalData"@en .
+                                                                         rdfs:isDefinedBy <http://purl.org/adaptcentre/openscience/ontologies/GDPRtEXT#PersonalData> ;
+                                                                         rdfs:label "PersonalData"@en ;
+                                                                         rdfs:seeAlso <http://purl.org/adaptcentre/openscience/ontologies/gdprov#PersonalDataEntity> .
+
+
+###  http://purl.org/adaptcentre/openscience/ontologies/gdprov#PersonalDataEntity
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#PersonalDataEntity> rdf:type owl:Class ;
+                                                                               rdfs:subClassOf <http://purl.org/adaptcentre/openscience/ontologies/gdprov#DataEntity> ;
+                                                                               rdfs:comment "Represents a personal data entity."^^xsd:string ;
+                                                                               rdfs:isDefinedBy <http://purl.org/adaptcentre/openscience/ontologies/GDPRtEXT#PersonalData> ;
+                                                                               rdfs:label "Personal Data Entity"^^xsd:string ;
+                                                                               rdfs:seeAlso <http://purl.org/adaptcentre/openscience/ontologies/gdprov#PersonalData> .
 
 
 ###  http://purl.org/adaptcentre/openscience/ontologies/gdprov#Process
@@ -405,39 +899,136 @@ The deletion is expressed as prov:invalidated over the dataset."""@en ;
                                                                     rdfs:label "Process"@en .
 
 
+###  http://purl.org/adaptcentre/openscience/ontologies/gdprov#Processor
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#Processor> rdf:type owl:Class ;
+                                                                      rdfs:subClassOf <http://purl.org/adaptcentre/openscience/ontologies/gdprov#ThirdParty> ;
+                                                                      rdfs:comment "A ThirdPartyDataProcessor is a Third Party entity that acts as a Data Processor"@en ;
+                                                                      rdfs:label <http://purl.org/adaptcentre/openscience/ontologies/GDPRtEXT#Processor> ,
+                                                                                 "Processor"@en .
+
+
+###  http://purl.org/adaptcentre/openscience/ontologies/gdprov#ProcessorRepresentative
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#ProcessorRepresentative> rdf:type owl:Class ;
+                                                                                    rdfs:subClassOf <http://www.w3.org/ns/prov#Agent> ;
+                                                                                    rdfs:comment "A representative of the Processor."^^xsd:string ;
+                                                                                    rdfs:isDefinedBy <http://purl.org/adaptcentre/openscience/ontologies/GDPRtEXT#ProcessorRepresentative> ;
+                                                                                    rdfs:label "Processor Representative"^^xsd:string .
+
+
+###  http://purl.org/adaptcentre/openscience/ontologies/gdprov#ProvideCopyOfPersonalData
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#ProvideCopyOfPersonalData> rdf:type owl:Class ;
+                                                                                      rdfs:subClassOf <http://purl.org/adaptcentre/openscience/ontologies/gdprov#DataStep> ;
+                                                                                      rdfs:comment "A step that provides the data subject with a copy of their personal data."^^xsd:string ;
+                                                                                      rdfs:isDefinedBy <http://purl.org/adaptcentre/openscience/ontologies/GDPRtEXT#ProvideCopyOfPersonalData> ;
+                                                                                      rdfs:label "Provide copy of Personal Data"^^xsd:string .
+
+
+###  http://purl.org/adaptcentre/openscience/ontologies/gdprov#RectifyData
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#RectifyData> rdf:type owl:Class ;
+                                                                        rdfs:subClassOf <http://purl.org/adaptcentre/openscience/ontologies/gdprov#DataStep> ;
+                                                                        rdfs:comment "Rectifies existing data"^^xsd:string ;
+                                                                        rdfs:label <http://purl.org/adaptcentre/openscience/ontologies/GDPRtEXT#RectifyData> ,
+                                                                                   "Rectify Data"^^xsd:string ;
+                                                                        rdfs:seeAlso <http://purl.org/adaptcentre/openscience/ontologies/gdprov#RectifyDataActivity> .
+
+
+###  http://purl.org/adaptcentre/openscience/ontologies/gdprov#RectifyDataActivity
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#RectifyDataActivity> rdf:type owl:Class ;
+                                                                                rdfs:subClassOf <http://purl.org/adaptcentre/openscience/ontologies/gdprov#DataActivity> ;
+                                                                                rdfs:comment "Is an activity that recitifies data."^^xsd:string ;
+                                                                                rdfs:label "Rectify Data Activity"^^xsd:string ;
+                                                                                rdfs:seeAlso <http://purl.org/adaptcentre/openscience/ontologies/gdprov#RectifyData> .
+
+
+###  http://purl.org/adaptcentre/openscience/ontologies/gdprov#ReportDataBreach
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#ReportDataBreach> rdf:type owl:Class ;
+                                                                             rdfs:subClassOf <http://purl.org/adaptcentre/openscience/ontologies/gdprov#HandleDataBreachProcess> ;
+                                                                             rdfs:comment "The process of reporting after a data breach has taken place."^^xsd:string ;
+                                                                             rdfs:isDefinedBy <http://purl.org/adaptcentre/openscience/ontologies/GDPRtEXT#ReportDataBreach> ;
+                                                                             rdfs:label "Report Data Breach"^^xsd:string .
+
+
+###  http://purl.org/adaptcentre/openscience/ontologies/gdprov#SensitiveData
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#SensitiveData> rdf:type owl:Class ;
+                                                                          rdfs:subClassOf <http://purl.org/adaptcentre/openscience/ontologies/gdprov#PersonalData> ;
+                                                                          rdfs:comment "Personal data revealing racial or ethnic origin, political opinions, religious or philosophical beliefs, or trade union membership, and the processing of genetic data, biometric data for the purpose of uniquely identifying a natural person, data concerning health or data concerning a natural person's sex life or sexual orientation."^^xsd:string ;
+                                                                          rdfs:isDefinedBy <http://purl.org/adaptcentre/openscience/ontologies/GDPRtEXT#SensitivePersonalData> ;
+                                                                          rdfs:label "Sensitive Personal Data"^^xsd:string ;
+                                                                          rdfs:seeAlso <http://purl.org/adaptcentre/openscience/ontologies/gdprov#SensitiveDataEntity> .
+
+
+###  http://purl.org/adaptcentre/openscience/ontologies/gdprov#SensitiveDataEntity
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#SensitiveDataEntity> rdf:type owl:Class ;
+                                                                                rdfs:subClassOf <http://purl.org/adaptcentre/openscience/ontologies/gdprov#PersonalDataEntity> ;
+                                                                                rdfs:comment "Is an entity containing sensitive personal information."^^xsd:string ;
+                                                                                rdfs:isDefinedBy <http://purl.org/adaptcentre/openscience/ontologies/GDPRtEXT#SensitivePersonalData> ;
+                                                                                rdfs:label "Sensitive Data Entity"^^xsd:string ;
+                                                                                rdfs:seeAlso <http://purl.org/adaptcentre/openscience/ontologies/gdprov#SensitiveData> .
+
+
+###  http://purl.org/adaptcentre/openscience/ontologies/gdprov#SubProcessor
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#SubProcessor> rdf:type owl:Class ;
+                                                                         rdfs:subClassOf <http://purl.org/adaptcentre/openscience/ontologies/gdprov#Processor> ;
+                                                                         rdfs:comment "A Processor appointed under or by another Processor is a Sub-Processor."^^xsd:string ;
+                                                                         rdfs:isDefinedBy <http://purl.org/adaptcentre/openscience/ontologies/GDPRtEXT#SubProcessor> ;
+                                                                         rdfs:label "Sub-Processor"^^xsd:string .
+
+
 ###  http://purl.org/adaptcentre/openscience/ontologies/gdprov#TermsAndConditions
 <http://purl.org/adaptcentre/openscience/ontologies/gdprov#TermsAndConditions> rdf:type owl:Class ;
                                                                                rdfs:subClassOf <http://purl.org/net/p-plan#Variable> ;
                                                                                rdfs:comment "Terms and Conditions of usage as provided to the user in agreement of provided service"@en ;
-                                                                               rdfs:label "TermsAndConditions"@en .
+                                                                               rdfs:label "TermsAndConditions"@en ;
+                                                                               rdfs:seeAlso <http://purl.org/adaptcentre/openscience/ontologies/gdprov#TermsAndConditionsEntity> .
+
+
+###  http://purl.org/adaptcentre/openscience/ontologies/gdprov#TermsAndConditionsEntity
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#TermsAndConditionsEntity> rdf:type owl:Class ;
+                                                                                     rdfs:subClassOf <http://purl.org/net/p-plan#Entity> ;
+                                                                                     rdfs:comment "Represents the Terms and Conditions entity."^^xsd:string ;
+                                                                                     rdfs:label "Terms and Conditions Entity"^^xsd:string ;
+                                                                                     rdfs:seeAlso <http://purl.org/adaptcentre/openscience/ontologies/gdprov#TermsAndConditions> .
 
 
 ###  http://purl.org/adaptcentre/openscience/ontologies/gdprov#ThirdParty
 <http://purl.org/adaptcentre/openscience/ontologies/gdprov#ThirdParty> rdf:type owl:Class ;
                                                                        rdfs:subClassOf <http://www.w3.org/ns/prov#Agent> ;
                                                                        rdfs:comment "A ThirdParty is any external entitiy associated with some internal activity"@en ;
+                                                                       rdfs:isDefinedBy <http://purl.org/adaptcentre/openscience/ontologies/GDPRtEXT#Entity> ;
                                                                        rdfs:label "ThirdParty"@en .
-
-
-###  http://purl.org/adaptcentre/openscience/ontologies/gdprov#ThirdPartyDataController
-<http://purl.org/adaptcentre/openscience/ontologies/gdprov#ThirdPartyDataController> rdf:type owl:Class ;
-                                                                                     rdfs:subClassOf <http://purl.org/adaptcentre/openscience/ontologies/gdprov#ThirdParty> ;
-                                                                                     rdfs:comment "A ThirdPartyDataController is a Third Party entity that acts as a Data Controller"@en ;
-                                                                                     rdfs:label "ThirdPartyDataController"@en .
-
-
-###  http://purl.org/adaptcentre/openscience/ontologies/gdprov#ThirdPartyDataProcessor
-<http://purl.org/adaptcentre/openscience/ontologies/gdprov#ThirdPartyDataProcessor> rdf:type owl:Class ;
-                                                                                    rdfs:subClassOf <http://purl.org/adaptcentre/openscience/ontologies/gdprov#ThirdParty> ;
-                                                                                    rdfs:comment "A ThirdPartyDataProcessor is a Third Party entity that acts as a Data Processor"@en ;
-                                                                                    rdfs:label "ThirdPartyDataProcessor"@en .
 
 
 ###  http://purl.org/adaptcentre/openscience/ontologies/gdprov#UserIdentifier
 <http://purl.org/adaptcentre/openscience/ontologies/gdprov#UserIdentifier> rdf:type owl:Class ;
                                                                            rdfs:subClassOf <http://purl.org/adaptcentre/openscience/ontologies/gdprov#PersonalData> ;
                                                                            rdfs:comment "An UserIdentifier is a specific way to identify the user through a unique ID or a combination of other attributes"@en ;
-                                                                           rdfs:label "UserIdentifier"@en .
+                                                                           rdfs:label "UserIdentifier"@en ;
+                                                                           rdfs:seeAlso <http://purl.org/adaptcentre/openscience/ontologies/gdprov#UserIdentifierEntity> .
+
+
+###  http://purl.org/adaptcentre/openscience/ontologies/gdprov#UserIdentifierEntity
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#UserIdentifierEntity> rdf:type owl:Class ;
+                                                                                 rdfs:subClassOf <http://purl.org/adaptcentre/openscience/ontologies/gdprov#PersonalDataEntity> ;
+                                                                                 rdfs:comment "Is an entity acting as the user identifier. Or contains an identifier."^^xsd:string ;
+                                                                                 rdfs:label "User Identifier Entity"^^xsd:string ;
+                                                                                 rdfs:seeAlso <http://purl.org/adaptcentre/openscience/ontologies/gdprov#UserIdentifier> .
+
+
+###  http://purl.org/adaptcentre/openscience/ontologies/gdprov#WithdrawConsentActivity
+<http://purl.org/adaptcentre/openscience/ontologies/gdprov#WithdrawConsentActivity> rdf:type owl:Class ;
+                                                                                    rdfs:subClassOf <http://purl.org/adaptcentre/openscience/ontologies/gdprov#ModifyConsentActivity> ;
+                                                                                    rdfs:comment "Is an activity that withdraws given consent. Can also term it so as to depict withdrawal as a modification of consent."^^xsd:string ;
+                                                                                    rdfs:isDefinedBy <http://purl.org/adaptcentre/openscience/ontologies/GDPRtEXT#WithdrawingConsent> ;
+                                                                                    rdfs:label "Withdraw Consent Activity"^^xsd:string ;
+                                                                                    rdfs:seeAlso <http://purl.org/adaptcentre/openscience/ontologies/gdprov#ConsentWithdrawalStep> .
+
+
+###  http://purl.org/net/p-plan#Activity
+<http://purl.org/net/p-plan#Activity> rdf:type owl:Class .
+
+
+###  http://purl.org/net/p-plan#Entity
+<http://purl.org/net/p-plan#Entity> rdf:type owl:Class .
 
 
 ###  http://purl.org/net/p-plan#Plan
