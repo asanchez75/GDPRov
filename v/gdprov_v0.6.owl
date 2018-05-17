@@ -1,0 +1,3294 @@
+<?xml version="1.0"?>
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://purl.org/adaptcentre/openscience/ontologies/gdprov#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     ontologyIRI="http://purl.org/adaptcentre/openscience/ontologies/gdprov#"
+     versionIRI="https://openscience.adaptcentre.ie/ontologies/gdprov/v/gdprov_v0.6.owl">
+    <Prefix name="" IRI="http://purl.org/adaptcentre/openscience/ontologies/gdprov#"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Prefix name="vann" IRI="http://purl.org/vocab/vann/"/>
+    <Prefix name="terms" IRI="http://purl.org/dc/terms/"/>
+    <Prefix name="gdprov" IRI="http://purl.org/adaptcentre/openscience/ontologies/gdprov#"/>
+    <Prefix name="p-plan" IRI="http://purl.org/net/p-plan#"/>
+    <Prefix name="gdprtext" IRI="http://purl.org/adaptcentre/openscience/ontologies/GDPRtEXT#"/>
+    <Import>http://purl.org/net/p-plan#</Import>
+    <Import>http://www.w3.org/ns/prov-o-20130430</Import>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="terms:creator"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#anyURI">http://purl.org/adaptcentre/people/harshvardhan_pandit</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="owl:versionInfo"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#decimal">0.6</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="vann:preferredNamespacePrefix"/>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">gdprov</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="terms:title"/>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">The GDPR Provenance ontology</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="terms:creator"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#anyURI">http://purl.org/adaptcentre/people/dave_lewis</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="terms:created"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#date">2017-08-01</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="terms:modified"/>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">2018-04-06</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="vann:preferredNamespaceUri"/>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">http://purl.org/adaptcentre/openscience/ontologies/gdprov#</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="terms:description"/>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">GDPRov is an OWL2 ontology to express provenance metadata of consent and data lifecycles towards documenting compliance for GDPR.</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="terms:abstract"/>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">The General Data Protection Regulation (GDPR) is an European law governing the use of consent and personal data. Some of its obligations involve concepts related to the lifecycles of consent and personal data. Such obligations are concerned with how the collection, use, processing, sharing, and storing of consent and personal data takes place and provides the motivation for a form of documentation that can demonstrate the required information towards compliance. GDPRov is an OWL2 ontology for representing this information as provenance metadata using terms relevant to the GDPR. It extends PROV-O and P-Plan to represent the lifecyles as an abstract model of how things should happen or will happen (future) as well as instance of what has happened (past). The ontology is being developed as part of contributions towards PhD research by its primary author.</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="terms:license"/>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">https://creativecommons.org/licenses/by/4.0/</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">GDPRov is an ontology for expressing provenance metadata in the context of the General Data Protection Regulation (GDPR) and its compliance. It extends PROV-O and P-Plan. PROV-O is the ontology based on the PROV model, a W3C recommendation, while P-Plan is an extension of PROV-O. PROV is used to define terms or &apos;instances&apos; of what has happened in the past, while P-Plan is used to define the abstract model or &apos;Plan&apos; of things to happen. GDPRov uses P-Plan to create a template/model/plan as an abstract or model representation of a system which is then recorded using PROV-O instances to show something has happened. The aim of the ontology is to enable representation of consent and personal data lifecycles using terms relevant to GDPR and to facilitate expression of this information towards documentation related to compliance.</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="owl:versionIRI"/>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">https://openscience.adaptcentre.ie/ontologies/gdprov/v/gdprov.0.6.owl</Literal>
+    </Annotation>
+    <Declaration>
+        <Class IRI="AutomatedStep"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="ConsentArchivalStep"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="generatesConsentAgreement"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="HandleRightOfDataPortability"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="NotifyControllerActivity"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="isUsedByStep"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="AnonymisedData"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="PersonalDataEntity"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="DataSubject"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="DataTransferActivity"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="AnonymisationActivity"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="p-plan:isStepOfPlan"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.w3.org/ns/prov#Agent"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="ConsentAgreement"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="ArchiveConsentActivity"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="collectsConsentFromAgent"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="HandleSAR"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="generatesData"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="isAnonymisedByStep"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="SubProcessor"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="DataTransformationActivity"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="invalidatesData"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="isConsentAgreementTemplateForStep"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="GivenConsent"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="HandleRightToTransparency"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="p-plan:hasInputVar"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="GivenConsentTemplate"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="isPartOfProcess"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="DeAnonymisationActivity"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="sharesDataWith"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="p-plan:isOutputVarOf"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="terms:creator"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="Processor"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="p-plan:Variable"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="SensitiveDataEntity"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="p-plan:Plan"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="wasSharedBy"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="collectedDataFromAgent"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="ConsentWithdrawalStep"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="HandleRightOfErasure"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="p-plan:isInputVarOf"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="ThirdParty"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="DataActivity"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="DataAccessProcess"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="PseudoAnonymised"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="RectifyDataActivity"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="NotifyController"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="terms:title"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="sharesData"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="collectsDataFromAgent"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="ConsentStep"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="HandleDataBreachProcess"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="hasLegalJustification"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="collectsData"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="ConsentWithdrawalProcess"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="ModifyConsentActivity"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="HandleRightToObjectProcessing"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="hasSharedDataWith"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="HandleRightToObjectDirectMarketing"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="ConsentAcquisitionStep"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="DataAnonymisationStep"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="terms:created"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="DataBreachActivity"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="DataUsageActivity"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="JointController"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="Data"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="DataEntity"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="p-plan:Entity"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="ProvideCopyOfPersonalData"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="DataSharingActivity"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="TermsAndConditions"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="HandleRightToRestrictProcessing"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="ImpactAssessment"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="sharesDataWithThirdParty"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="isGeneratedByStep"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="Process"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="owl:versionIRI"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="DataCollectionStep"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="NotifyDPAActivity"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="DirectMarketing"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="MonitorCompliance"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="TermsAndConditionsEntity"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="PseudoOrganisationalAnonymised"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="transfersDataToRegion"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="HandleRightToRectification"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="isDataCollectedByStep"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="SensitiveData"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="DeAnonymised"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="DataStorageStep"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="isTermsAndConditionsForStep"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="vann:preferredNamespaceUri"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="anonymityLevel"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="vann:preferredNamespacePrefix"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="DataArchivalProcess"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="DataTransferStep"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="DataBreachRecord"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="hasLegalBasis"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="archivesConsentAs"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="UserInputStep"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="DataCollectionActivity"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="AcquireConsentActivity"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="usesConsentAgreement"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="isDataGeneratedBy"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="Anonymised"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="p-plan:Step"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="UserIdentifier"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="ReportDataBreach"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="DataStorageActivity"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="p-plan:Activity"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="CrossBorderDataTransfer"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="ConsentAgreementTemplate"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="usesTermsAndConditions"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="CrossBorderTransferActivity"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="Marketing"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="ControllerRepresentative"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="NotifyDataSubject"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="AnonymisedDataEntity"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="DPO"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="DataDeletionStep"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="UserOutputStep"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="AnonymityLevel"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="NotifyDPA"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="DataStepWithoutProvenance"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="usesConsentAgreementTemplate"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="ConsentActivity"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="HandleRightToAccessPersonalData"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="DataDeletionActivity"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="isJustificationForDataStep"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="generatesAnonymisedData"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="isJustifiedUsingConsentAgreement"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="DataArchivalActivity"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="UserInteractionStep"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="gdprtext:LawfulBasisForProcessing"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="HandleRightToNoAutomatedProcessing"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="WithdrawConsentActivity"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="HandleRightToBasicInfoAboutProcessing"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="RectifyData"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="DataSharingStep"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="DataStep"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="terms:abstract"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="NotifyDataSubjectActivity"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="refersToProcess"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="DataTransformationStep"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="involvesAgent"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="DataErasureProcess"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="PersonalData"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="Controller"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="hasAnonymityLevel"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="transferredDataToRegion"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="ConsentModificationStep"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="ProcessorRepresentative"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="DataUsageStep"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="p-plan:hasOutputVar"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="wasSharedWithThirdParty"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="DataArchivalStep"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="terms:modified"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="UserIdentifierEntity"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="DataDeanonymisationStep"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="terms:license"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="collectedConsentFromAgent"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="usesData"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="DataBreachStep"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="terms:description"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="AppointProcessor"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="DataRectificationProcess"/>
+    </Declaration>
+    <SubClassOf>
+        <Class IRI="AcquireConsentActivity"/>
+        <Class IRI="ConsentActivity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="AnonymisationActivity"/>
+        <Class IRI="DataTransformationActivity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="AnonymisedData"/>
+        <Class IRI="PersonalData"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="AnonymisedData"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="hasAnonymityLevel"/>
+            <Class IRI="AnonymityLevel"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="AnonymisedDataEntity"/>
+        <Class IRI="PersonalDataEntity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="AppointProcessor"/>
+        <Class IRI="Process"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="ArchiveConsentActivity"/>
+        <Class IRI="ConsentActivity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="AutomatedStep"/>
+        <Class abbreviatedIRI="p-plan:Step"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="ConsentAcquisitionStep"/>
+        <Class IRI="ConsentStep"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="ConsentActivity"/>
+        <Class abbreviatedIRI="p-plan:Activity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="ConsentAgreement"/>
+        <Class abbreviatedIRI="p-plan:Variable"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="ConsentAgreementTemplate"/>
+        <Class abbreviatedIRI="p-plan:Variable"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="ConsentArchivalStep"/>
+        <Class IRI="ConsentStep"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="ConsentModificationStep"/>
+        <Class IRI="ConsentStep"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="ConsentStep"/>
+        <Class abbreviatedIRI="p-plan:Step"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="ConsentWithdrawalProcess"/>
+        <Class IRI="Process"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="ConsentWithdrawalStep"/>
+        <Class IRI="ConsentModificationStep"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="Controller"/>
+        <Class IRI="ThirdParty"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="ControllerRepresentative"/>
+        <Class IRI="http://www.w3.org/ns/prov#Agent"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="CrossBorderDataTransfer"/>
+        <Class IRI="DataStep"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="CrossBorderTransferActivity"/>
+        <Class IRI="DataActivity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="DPO"/>
+        <Class IRI="http://www.w3.org/ns/prov#Agent"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="Data"/>
+        <Class abbreviatedIRI="p-plan:Variable"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="DataAccessProcess"/>
+        <Class IRI="Process"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="DataActivity"/>
+        <Class abbreviatedIRI="p-plan:Activity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="DataAnonymisationStep"/>
+        <Class IRI="DataTransformationStep"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="DataArchivalActivity"/>
+        <Class IRI="DataStorageActivity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="DataArchivalActivity"/>
+        <Class IRI="DataTransformationActivity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="DataArchivalProcess"/>
+        <Class IRI="Process"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="DataArchivalStep"/>
+        <Class IRI="DataStorageStep"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="DataArchivalStep"/>
+        <Class IRI="DataTransformationStep"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="DataBreachActivity"/>
+        <Class abbreviatedIRI="p-plan:Activity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="DataBreachRecord"/>
+        <Class abbreviatedIRI="p-plan:Variable"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="DataBreachStep"/>
+        <Class abbreviatedIRI="p-plan:Step"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="DataCollectionActivity"/>
+        <Class IRI="DataActivity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="DataCollectionStep"/>
+        <Class IRI="DataStep"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="DataDeanonymisationStep"/>
+        <Class IRI="DataTransformationStep"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="DataDeletionActivity"/>
+        <Class IRI="DataActivity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="DataDeletionStep"/>
+        <Class IRI="DataStep"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="DataEntity"/>
+        <Class abbreviatedIRI="p-plan:Entity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="DataErasureProcess"/>
+        <Class IRI="Process"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="DataRectificationProcess"/>
+        <Class IRI="Process"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="DataSharingActivity"/>
+        <Class IRI="DataActivity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="DataSharingStep"/>
+        <Class IRI="DataStep"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="DataStep"/>
+        <Class abbreviatedIRI="p-plan:Step"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="DataStepWithoutProvenance"/>
+        <Class IRI="DataStep"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="DataStorageActivity"/>
+        <Class IRI="DataActivity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="DataStorageStep"/>
+        <Class IRI="DataStep"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="DataSubject"/>
+        <Class IRI="http://www.w3.org/ns/prov#Agent"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="DataTransferActivity"/>
+        <Class IRI="DataActivity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="DataTransferStep"/>
+        <Class IRI="DataStep"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="DataTransformationActivity"/>
+        <Class IRI="DataActivity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="DataTransformationStep"/>
+        <Class IRI="DataStep"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="DataUsageActivity"/>
+        <Class IRI="DataActivity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="DataUsageStep"/>
+        <Class IRI="DataStep"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="DeAnonymisationActivity"/>
+        <Class IRI="DataTransformationActivity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="DirectMarketing"/>
+        <Class IRI="Marketing"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="GivenConsent"/>
+        <Class abbreviatedIRI="p-plan:Entity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="GivenConsentTemplate"/>
+        <Class abbreviatedIRI="p-plan:Entity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="HandleDataBreachProcess"/>
+        <Class IRI="Process"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="HandleRightOfDataPortability"/>
+        <Class IRI="Process"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="HandleRightOfErasure"/>
+        <Class IRI="Process"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="HandleRightToAccessPersonalData"/>
+        <Class IRI="Process"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="HandleRightToBasicInfoAboutProcessing"/>
+        <Class IRI="Process"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="HandleRightToNoAutomatedProcessing"/>
+        <Class IRI="Process"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="HandleRightToObjectDirectMarketing"/>
+        <Class IRI="Process"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="HandleRightToObjectProcessing"/>
+        <Class IRI="Process"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="HandleRightToRectification"/>
+        <Class IRI="Process"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="HandleRightToRestrictProcessing"/>
+        <Class IRI="Process"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="HandleRightToTransparency"/>
+        <Class IRI="Process"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="HandleSAR"/>
+        <Class IRI="Process"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="ImpactAssessment"/>
+        <Class IRI="Process"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="JointController"/>
+        <Class IRI="Controller"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="Marketing"/>
+        <Class IRI="Process"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="ModifyConsentActivity"/>
+        <Class IRI="ConsentActivity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="MonitorCompliance"/>
+        <Class IRI="Process"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="NotifyController"/>
+        <Class IRI="DataBreachStep"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="NotifyControllerActivity"/>
+        <Class IRI="DataBreachActivity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="NotifyDPA"/>
+        <Class IRI="DataBreachStep"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="NotifyDPAActivity"/>
+        <Class IRI="DataBreachActivity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="NotifyDataSubject"/>
+        <Class IRI="DataBreachStep"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="NotifyDataSubjectActivity"/>
+        <Class IRI="DataBreachActivity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="PersonalData"/>
+        <Class IRI="Data"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="PersonalDataEntity"/>
+        <Class IRI="DataEntity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="Process"/>
+        <Class abbreviatedIRI="p-plan:Plan"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="Processor"/>
+        <Class IRI="ThirdParty"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="ProcessorRepresentative"/>
+        <Class IRI="http://www.w3.org/ns/prov#Agent"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="ProvideCopyOfPersonalData"/>
+        <Class IRI="DataStep"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="RectifyData"/>
+        <Class IRI="DataStep"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="RectifyDataActivity"/>
+        <Class IRI="DataActivity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="ReportDataBreach"/>
+        <Class IRI="HandleDataBreachProcess"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="SensitiveData"/>
+        <Class IRI="PersonalData"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="SensitiveDataEntity"/>
+        <Class IRI="PersonalDataEntity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="SubProcessor"/>
+        <Class IRI="Processor"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="TermsAndConditions"/>
+        <Class abbreviatedIRI="p-plan:Variable"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="TermsAndConditionsEntity"/>
+        <Class abbreviatedIRI="p-plan:Entity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="ThirdParty"/>
+        <Class IRI="http://www.w3.org/ns/prov#Agent"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="UserIdentifier"/>
+        <Class IRI="PersonalData"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="UserIdentifierEntity"/>
+        <Class IRI="PersonalDataEntity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="UserInputStep"/>
+        <Class IRI="UserInteractionStep"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="UserInteractionStep"/>
+        <Class abbreviatedIRI="p-plan:Step"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="UserOutputStep"/>
+        <Class IRI="UserInteractionStep"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="WithdrawConsentActivity"/>
+        <Class IRI="ModifyConsentActivity"/>
+    </SubClassOf>
+    <DisjointClasses>
+        <Class IRI="ConsentAgreement"/>
+        <Class IRI="ConsentAgreementTemplate"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="ConsentAgreement"/>
+        <Class IRI="Data"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="ConsentAgreement"/>
+        <Class IRI="TermsAndConditions"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="ConsentAgreementTemplate"/>
+        <Class IRI="Data"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="ConsentAgreementTemplate"/>
+        <Class IRI="TermsAndConditions"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="Data"/>
+        <Class IRI="TermsAndConditions"/>
+    </DisjointClasses>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="archivesConsentAs"/>
+        <ObjectProperty abbreviatedIRI="p-plan:hasOutputVar"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="collectedConsentFromAgent"/>
+        <ObjectProperty IRI="involvesAgent"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="collectedDataFromAgent"/>
+        <ObjectProperty IRI="involvesAgent"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="collectsConsentFromAgent"/>
+        <ObjectProperty IRI="involvesAgent"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="collectsData"/>
+        <ObjectProperty abbreviatedIRI="p-plan:hasOutputVar"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="collectsDataFromAgent"/>
+        <ObjectProperty IRI="involvesAgent"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="generatesAnonymisedData"/>
+        <ObjectProperty IRI="generatesData"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="generatesConsentAgreement"/>
+        <ObjectProperty abbreviatedIRI="p-plan:hasOutputVar"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="generatesData"/>
+        <ObjectProperty abbreviatedIRI="p-plan:hasOutputVar"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="isAnonymisedByStep"/>
+        <ObjectProperty IRI="isDataGeneratedBy"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="isConsentAgreementTemplateForStep"/>
+        <ObjectProperty abbreviatedIRI="p-plan:isInputVarOf"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="isDataCollectedByStep"/>
+        <ObjectProperty abbreviatedIRI="p-plan:isOutputVarOf"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="isDataGeneratedBy"/>
+        <ObjectProperty abbreviatedIRI="p-plan:isOutputVarOf"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="isGeneratedByStep"/>
+        <ObjectProperty abbreviatedIRI="p-plan:isOutputVarOf"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="isJustificationForDataStep"/>
+        <ObjectProperty abbreviatedIRI="p-plan:isInputVarOf"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="isJustifiedUsingConsentAgreement"/>
+        <ObjectProperty abbreviatedIRI="p-plan:hasInputVar"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="isPartOfProcess"/>
+        <ObjectProperty abbreviatedIRI="p-plan:isStepOfPlan"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="isTermsAndConditionsForStep"/>
+        <ObjectProperty abbreviatedIRI="p-plan:isInputVarOf"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="isUsedByStep"/>
+        <ObjectProperty abbreviatedIRI="p-plan:isInputVarOf"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="sharesData"/>
+        <ObjectProperty abbreviatedIRI="p-plan:hasInputVar"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="sharesDataWithThirdParty"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="usesConsentAgreement"/>
+        <ObjectProperty abbreviatedIRI="p-plan:hasInputVar"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="usesConsentAgreementTemplate"/>
+        <ObjectProperty abbreviatedIRI="p-plan:hasInputVar"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="usesData"/>
+        <ObjectProperty abbreviatedIRI="p-plan:hasInputVar"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="usesTermsAndConditions"/>
+        <ObjectProperty abbreviatedIRI="p-plan:hasInputVar"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="wasSharedBy"/>
+        <ObjectProperty abbreviatedIRI="p-plan:isInputVarOf"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="wasSharedWithThirdParty"/>
+        <ObjectProperty abbreviatedIRI="p-plan:isInputVarOf"/>
+    </SubObjectPropertyOf>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="collectsData"/>
+        <ObjectProperty IRI="isDataCollectedByStep"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="generatesAnonymisedData"/>
+        <ObjectProperty IRI="isAnonymisedByStep"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="generatesConsentAgreement"/>
+        <ObjectProperty IRI="isGeneratedByStep"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="generatesData"/>
+        <ObjectProperty IRI="isDataGeneratedBy"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="isConsentAgreementTemplateForStep"/>
+        <ObjectProperty IRI="usesConsentAgreementTemplate"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="isJustificationForDataStep"/>
+        <ObjectProperty IRI="isJustifiedUsingConsentAgreement"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="isTermsAndConditionsForStep"/>
+        <ObjectProperty IRI="usesTermsAndConditions"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="isUsedByStep"/>
+        <ObjectProperty IRI="usesData"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="sharesData"/>
+        <ObjectProperty IRI="wasSharedBy"/>
+    </InverseObjectProperties>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="anonymityLevel"/>
+        <Class IRI="DataEntity"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="archivesConsentAs"/>
+        <Class IRI="ConsentArchivalStep"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="collectedConsentFromAgent"/>
+        <Class IRI="AcquireConsentActivity"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="collectedDataFromAgent"/>
+        <Class IRI="DataCollectionActivity"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="collectsConsentFromAgent"/>
+        <Class IRI="ConsentAcquisitionStep"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="collectsData"/>
+        <Class IRI="DataStep"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="collectsDataFromAgent"/>
+        <Class IRI="DataCollectionStep"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="generatesAnonymisedData"/>
+        <Class IRI="DataAnonymisationStep"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="generatesConsentAgreement"/>
+        <Class IRI="ConsentStep"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="generatesData"/>
+        <Class IRI="DataStep"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="hasAnonymityLevel"/>
+        <Class IRI="PersonalData"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="hasLegalJustification"/>
+        <Class abbreviatedIRI="p-plan:Activity"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="hasSharedDataWith"/>
+        <Class IRI="DataSharingActivity"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="invalidatesData"/>
+        <Class IRI="DataDeletionActivity"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="isJustifiedUsingConsentAgreement"/>
+        <Class IRI="DataStep"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="sharesData"/>
+        <Class IRI="DataSharingStep"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="sharesDataWith"/>
+        <Class IRI="DataSharingStep"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="sharesDataWithThirdParty"/>
+        <Class IRI="DataSharingStep"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="transferredDataToRegion"/>
+        <Class IRI="CrossBorderTransferActivity"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="transfersDataToRegion"/>
+        <Class IRI="CrossBorderDataTransfer"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="usesConsentAgreement"/>
+        <Class IRI="ConsentStep"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="usesConsentAgreementTemplate"/>
+        <Class IRI="ConsentAcquisitionStep"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="usesData"/>
+        <Class IRI="DataStep"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="usesTermsAndConditions"/>
+        <Class IRI="ConsentAcquisitionStep"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="wasSharedWithThirdParty"/>
+        <Class IRI="Data"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="anonymityLevel"/>
+        <Class IRI="AnonymityLevel"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="archivesConsentAs"/>
+        <Class IRI="ConsentAgreement"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="collectedConsentFromAgent"/>
+        <Class IRI="http://www.w3.org/ns/prov#Agent"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="collectedDataFromAgent"/>
+        <Class IRI="http://www.w3.org/ns/prov#Agent"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="collectsConsentFromAgent"/>
+        <Class IRI="http://www.w3.org/ns/prov#Agent"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="collectsData"/>
+        <Class IRI="Data"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="collectsDataFromAgent"/>
+        <Class IRI="http://www.w3.org/ns/prov#Agent"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="generatesAnonymisedData"/>
+        <Class IRI="AnonymisedData"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="generatesConsentAgreement"/>
+        <Class IRI="ConsentAgreement"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="generatesData"/>
+        <Class IRI="Data"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="hasAnonymityLevel"/>
+        <Class IRI="AnonymityLevel"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="hasLegalBasis"/>
+        <Class abbreviatedIRI="gdprtext:LawfulBasisForProcessing"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="hasLegalJustification"/>
+        <Class abbreviatedIRI="gdprtext:LawfulBasisForProcessing"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="hasSharedDataWith"/>
+        <Class IRI="http://www.w3.org/ns/prov#Agent"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="invalidatesData"/>
+        <Class IRI="Data"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="involvesAgent"/>
+        <Class IRI="http://www.w3.org/ns/prov#Agent"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="isJustifiedUsingConsentAgreement"/>
+        <Class IRI="ConsentAgreement"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="refersToProcess"/>
+        <Class IRI="Process"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="sharesData"/>
+        <Class IRI="Data"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="sharesDataWith"/>
+        <Class IRI="http://www.w3.org/ns/prov#Agent"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="sharesDataWithThirdParty"/>
+        <Class IRI="ThirdParty"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="usesConsentAgreement"/>
+        <Class IRI="ConsentAgreement"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="usesConsentAgreementTemplate"/>
+        <Class IRI="ConsentAgreementTemplate"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="usesData"/>
+        <Class IRI="Data"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="usesTermsAndConditions"/>
+        <Class IRI="TermsAndConditions"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="wasSharedWithThirdParty"/>
+        <Class IRI="ThirdParty"/>
+    </ObjectPropertyRange>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>AcquireConsentActivity</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Is an activity that acquires consent.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>AcquireConsentActivity</IRI>
+        <AbbreviatedIRI>gdprtext:ObtainingConsent</AbbreviatedIRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>AcquireConsentActivity</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Acquire Consent Activity</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>AcquireConsentActivity</IRI>
+        <IRI>ConsentAcquisitionStep</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>AnonymisationActivity</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Is an activity that anonymises data.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>AnonymisationActivity</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Anonymisation Activity</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>AnonymisationActivity</IRI>
+        <IRI>DataAnonymisationStep</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>Anonymised</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Anonymised represents the Anonymisation level where the data cannot be de-anonymised to retrieve personally identifiable information.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>Anonymised</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Anonymised</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>AnonymisedData</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Represents data that has been Anonymised at some level reflected by the hasAnonymityLevel object property</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>AnonymisedData</IRI>
+        <AbbreviatedIRI>gdprtext:AnonymousData</AbbreviatedIRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>AnonymisedData</IRI>
+        <AbbreviatedIRI>gdprtext:PseudoAnonymousData</AbbreviatedIRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>AnonymisedData</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">AnonymisedData</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>AnonymisedData</IRI>
+        <IRI>AnonymisedDataEntity</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>AnonymisedDataEntity</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Is an entity where personal data has been anonymised to some extent.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>AnonymisedDataEntity</IRI>
+        <AbbreviatedIRI>gdprtext:AnonymousData</AbbreviatedIRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>AnonymisedDataEntity</IRI>
+        <AbbreviatedIRI>gdprtext:PseudoAnonymousData</AbbreviatedIRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>AnonymisedDataEntity</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Anonymised Data Entity</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>AnonymisedDataEntity</IRI>
+        <IRI>AnonymisedData</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>AnonymityLevel</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Provides a way to express the Anonymity Level of AnonymisedData objects through the object property hasAnonymityLevel</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>AnonymityLevel</IRI>
+        <AbbreviatedIRI>gdprtext:AnonymousData</AbbreviatedIRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>AnonymityLevel</IRI>
+        <AbbreviatedIRI>gdprtext:PseudoAnonymousData</AbbreviatedIRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>AnonymityLevel</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">AnonymityLevel</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>AppointProcessor</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Reflects the process(es) used to appoint processors</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>AppointProcessor</IRI>
+        <AbbreviatedIRI>gdprtext:AppointmentOfProcessors</AbbreviatedIRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>AppointProcessor</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Appoint Processor</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>ArchiveConsentActivity</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">An activity that archives given/acquired consent for storage.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>ArchiveConsentActivity</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Archive Consent Activity</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>ArchiveConsentActivity</IRI>
+        <IRI>ConsentArchivalStep</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>AutomatedStep</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2000/01/rdf-schema#Literal">AutomatedStep</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>ConsentAcquisitionStep</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">ConsentAcquisitionStep deals with acquiring consent from the user. It uses Terms and Conditions along with the appropriate Consent Model as the basis of obtaining consent from the user. The output of this step is the consent object agreed upon by the user.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>ConsentAcquisitionStep</IRI>
+        <AbbreviatedIRI>gdprtext:ObtainingConsent</AbbreviatedIRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>ConsentAcquisitionStep</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Consent Acquisition Step</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>ConsentAcquisitionStep</IRI>
+        <IRI>AcquireConsentActivity</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>ConsentActivity</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Is an activity dealing with consent.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>ConsentActivity</IRI>
+        <AbbreviatedIRI>gdprtext:ConsentActivity</AbbreviatedIRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>ConsentActivity</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Consent Activity</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>ConsentActivity</IRI>
+        <IRI>ConsentStep</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>ConsentAgreement</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">ConsentAgreement reflects the consent provided by the user based on the provided Terms and Conditions and Consent Agreement Templates. It is the set of permissions the user has specifically provided or refused to provide. This consent is useful to provide justification of activities that use user data.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>ConsentAgreement</IRI>
+        <AbbreviatedIRI>gdprtext:GivenConsent</AbbreviatedIRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>ConsentAgreement</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">ConsentAgreement</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>ConsentAgreement</IRI>
+        <IRI>GivenConsent</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>ConsentAgreementTemplate</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">This is a template for consent requested from the user.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>ConsentAgreementTemplate</IRI>
+        <AbbreviatedIRI>gdprtext:Consent</AbbreviatedIRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>ConsentAgreementTemplate</IRI>
+        <AbbreviatedIRI>gdprtext:ObligationForObtainingConsent</AbbreviatedIRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>ConsentAgreementTemplate</IRI>
+        <AbbreviatedIRI>gdprtext:ValidConsent</AbbreviatedIRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>ConsentAgreementTemplate</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">ConsentAgreementTemplate</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>ConsentAgreementTemplate</IRI>
+        <IRI>GivenConsentTemplate</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>ConsentArchivalStep</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">ConsentArchivalStep archives acquired consent to form a record of the consent given by the user.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>ConsentArchivalStep</IRI>
+        <AbbreviatedIRI>gdprtext:DemonstratingConsent</AbbreviatedIRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>ConsentArchivalStep</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Consent Archival Step</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>ConsentArchivalStep</IRI>
+        <IRI>ArchiveConsentActivity</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>ConsentModificationStep</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">ConsentModificationStep deals with modifications to the consent by the user. It invalidates the previous consent object and produces a new updated consent object that represents the modified consent.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>ConsentModificationStep</IRI>
+        <AbbreviatedIRI>gdprtext:ObligationForObtainingConsent</AbbreviatedIRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>ConsentModificationStep</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Consent Modification Step</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>ConsentModificationStep</IRI>
+        <IRI>ModifyConsentActivity</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>ConsentStep</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">A ConsentStep acts/interacts with/uses Consent</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>ConsentStep</IRI>
+        <AbbreviatedIRI>gdprtext:ConsentActivity</AbbreviatedIRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>ConsentStep</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Consent Step</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>ConsentStep</IRI>
+        <IRI>ConsentActivity</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>ConsentWithdrawalProcess</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">A ConsentWithdrawalProcess deals with the withdrawal of consent by the user and the corresponding activity carried out within the system</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>ConsentWithdrawalProcess</IRI>
+        <AbbreviatedIRI>gdprtext:WithdrawingConsent</AbbreviatedIRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>ConsentWithdrawalProcess</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Consent Withdrawal Process</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>ConsentWithdrawalProcess</IRI>
+        <IRI>ConsentWithdrawalStep</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>ConsentWithdrawalStep</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">ConsentWithdrawalStep deals with withdrawal of consent</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>ConsentWithdrawalStep</IRI>
+        <AbbreviatedIRI>gdprtext:CanBeWithdrawnEasilyConsentObligation</AbbreviatedIRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>ConsentWithdrawalStep</IRI>
+        <AbbreviatedIRI>gdprtext:WithdrawingConsent</AbbreviatedIRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>ConsentWithdrawalStep</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Consent Withdrawal Step</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>ConsentWithdrawalStep</IRI>
+        <IRI>WithdrawConsentActivity</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>Controller</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">A ThirdPartyDataController is a Third Party entity that acts as a Data Controller</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>Controller</IRI>
+        <AbbreviatedIRI>gdprtext:Controller</AbbreviatedIRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>Controller</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Controller</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>ControllerRepresentative</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">A Representative of the Controller</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>ControllerRepresentative</IRI>
+        <AbbreviatedIRI>gdprtext:ControllerRepresentative</AbbreviatedIRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>ControllerRepresentative</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Controller Representative</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>CrossBorderDataTransfer</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Reflects cross-border transfer of data</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>CrossBorderDataTransfer</IRI>
+        <AbbreviatedIRI>gdprtext:CrossBorderTransfer</AbbreviatedIRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>CrossBorderDataTransfer</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Cross-border Data Transfer</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>CrossBorderDataTransfer</IRI>
+        <IRI>CrossBorderTransferActivity</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>CrossBorderTransferActivity</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Is an activity that transfer data across borders (as defined in the GDPR).</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>CrossBorderTransferActivity</IRI>
+        <AbbreviatedIRI>gdprtext:CrossBorderTransfer</AbbreviatedIRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>CrossBorderTransferActivity</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Cross Border Transfer Activity</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>CrossBorderTransferActivity</IRI>
+        <IRI>CrossBorderDataTransfer</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>DPO</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">The Data Protection Officer appointed to an organisation.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>DPO</IRI>
+        <AbbreviatedIRI>gdprtext:DPO</AbbreviatedIRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>DPO</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Data Protection Officer (DPO)</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>Data</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Represents class of data collected or generated through various activities</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>Data</IRI>
+        <AbbreviatedIRI>gdprtext:Data</AbbreviatedIRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>Data</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Data</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>Data</IRI>
+        <IRI>DataEntity</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>DataAccessProcess</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">A DataAccessProcess corresponds to the request made by an user for access to their data within the system. This process is responsible for handling the request process and providing the appropriate data to the end user.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>DataAccessProcess</IRI>
+        <AbbreviatedIRI>gdprtext:ProvideCopyOfPersonalData</AbbreviatedIRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>DataAccessProcess</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Data Access Process</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>DataActivity</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Is an activity involving data.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>DataActivity</IRI>
+        <AbbreviatedIRI>gdprtext:DataActivity</AbbreviatedIRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>DataActivity</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Data Activity</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>DataActivity</IRI>
+        <IRI>DataStep</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>DataAnonymisationStep</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">DataAnonymisationStep anonymises data by transforming it from one form to another along the anonymisation chain.
+Anonymisation can be represented as a spectrum going from raw user data to pseudo-anonymised data that can be de-anonymised by the same agent/organisation to pseudo-anonymous data that cannot be deanonymised internally, but may be done by external agents who have access to other data, and finally to completely anonymised data.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>DataAnonymisationStep</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Data Anonymisation Step</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>DataAnonymisationStep</IRI>
+        <IRI>AnonymisationActivity</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>DataArchivalActivity</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Is an activity that archives data. Archival is transformation of data into some form for storage.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>DataArchivalActivity</IRI>
+        <AbbreviatedIRI>gdprtext:ArchiveData</AbbreviatedIRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>DataArchivalActivity</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Data Archival Activity</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>DataArchivalActivity</IRI>
+        <IRI>DataArchivalStep</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>DataArchivalProcess</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">A DataArchivalProcess describes the process of data archival</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>DataArchivalProcess</IRI>
+        <AbbreviatedIRI>gdprtext:ArchiveData</AbbreviatedIRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>DataArchivalProcess</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Data Archival Process</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>DataArchivalStep</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">DataArchivalStep archives data by transforming it and storing it</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>DataArchivalStep</IRI>
+        <AbbreviatedIRI>gdprtext:ArchiveData</AbbreviatedIRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>DataArchivalStep</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Data Archival Step</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>DataArchivalStep</IRI>
+        <IRI>DataArchivalActivity</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>DataBreachActivity</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Is an activity dealing with data breach.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>DataBreachActivity</IRI>
+        <AbbreviatedIRI>gdprtext:ReportDataBreach</AbbreviatedIRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>DataBreachActivity</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Data Breach Activity</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>DataBreachActivity</IRI>
+        <IRI>DataBreachStep</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>DataBreachRecord</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">A record of a data breach.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>DataBreachRecord</IRI>
+        <AbbreviatedIRI>gdprtext:MaintainRecordOfBreach</AbbreviatedIRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>DataBreachRecord</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Data Breach Record</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>DataBreachStep</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Step representing an action associated with data breach.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>DataBreachStep</IRI>
+        <AbbreviatedIRI>gdprtext:ReportDataBreach</AbbreviatedIRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>DataBreachStep</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Data Breach Step</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>DataBreachStep</IRI>
+        <IRI>DataBreachActivity</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>DataCollectionActivity</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Is an activity that collects or acquires data.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>DataCollectionActivity</IRI>
+        <AbbreviatedIRI>gdprtext:CollectionOfPersonalData</AbbreviatedIRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>DataCollectionActivity</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Data Collection Activity</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>DataCollectionActivity</IRI>
+        <IRI>DataCollectionStep</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>DataCollectionStep</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">DataCollectionStep collects data from the user</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>DataCollectionStep</IRI>
+        <AbbreviatedIRI>gdprtext:CollectionOfPersonalData</AbbreviatedIRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>DataCollectionStep</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Data Collection Step</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>DataCollectionStep</IRI>
+        <IRI>DataCollectionActivity</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>DataDeanonymisationStep</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">DataDeanonymisationStep deanonymises data by transforming it from one form to another along the anonymisation chain.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>DataDeanonymisationStep</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Data Deanonymisation Step</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>DataDeanonymisationStep</IRI>
+        <IRI>DeAnonymisationActivity</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>DataDeletionActivity</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Is an activity that deletes or erases data.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>DataDeletionActivity</IRI>
+        <AbbreviatedIRI>gdprtext:EraseData</AbbreviatedIRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>DataDeletionActivity</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Data Deletion Activity</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>DataDeletionActivity</IRI>
+        <IRI>DataDeletionStep</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>DataDeletionStep</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">DataDeletionStep deletes data from within the system;
+The deletion is expressed as prov:invalidated over the dataset.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>DataDeletionStep</IRI>
+        <AbbreviatedIRI>gdprtext:EraseData</AbbreviatedIRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>DataDeletionStep</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Data Deletion Step</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>DataDeletionStep</IRI>
+        <IRI>DataDeletionActivity</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>DataEntity</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Represents a data entity.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>DataEntity</IRI>
+        <AbbreviatedIRI>gdprtext:Data</AbbreviatedIRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>DataEntity</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Data Entity</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>DataEntity</IRI>
+        <IRI>Data</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>DataErasureProcess</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">A DataErasureProcess is responsible for handling the data erasure of a data subject.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>DataErasureProcess</IRI>
+        <AbbreviatedIRI>gdprtext:EraseData</AbbreviatedIRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>DataErasureProcess</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Data Erasure Process</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>DataRectificationProcess</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">A DataRectificationProcess describes the process of data rectification, which is the correction of data already present within the system</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>DataRectificationProcess</IRI>
+        <AbbreviatedIRI>gdprtext:RectifyData</AbbreviatedIRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>DataRectificationProcess</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Data Rectification Process</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>DataSharingActivity</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Is an activity that shares data.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>DataSharingActivity</IRI>
+        <AbbreviatedIRI>gdprtext:ShareDataWithThirdParty</AbbreviatedIRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>DataSharingActivity</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Data Sharing Activity</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>DataSharingActivity</IRI>
+        <IRI>DataSharingStep</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>DataSharingStep</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">DataSharingStep shares data with another agent/organisation. These may be internal or external entities.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>DataSharingStep</IRI>
+        <AbbreviatedIRI>gdprtext:ShareDataWithThirdParty</AbbreviatedIRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>DataSharingStep</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Data Sharing Step</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>DataSharingStep</IRI>
+        <IRI>DataSharingActivity</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>DataStep</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">A DataStep deals with data</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>DataStep</IRI>
+        <AbbreviatedIRI>gdprtext:DataActivity</AbbreviatedIRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>DataStep</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Data Step</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>DataStep</IRI>
+        <IRI>DataActivity</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>DataStorageActivity</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Is an activity that stores data.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>DataStorageActivity</IRI>
+        <AbbreviatedIRI>gdprtext:StoreData</AbbreviatedIRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>DataStorageActivity</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Data Storage Activity</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>DataStorageActivity</IRI>
+        <IRI>DataStorageStep</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>DataStorageStep</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">DataStorageStep stores data within the system</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>DataStorageStep</IRI>
+        <AbbreviatedIRI>gdprtext:StoreData</AbbreviatedIRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>DataStorageStep</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Data Storage Step</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>DataStorageStep</IRI>
+        <IRI>DataStorageActivity</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>DataSubject</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">An individual or entity</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>DataSubject</IRI>
+        <AbbreviatedIRI>gdprtext:DataSubject</AbbreviatedIRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>DataSubject</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Data Subject</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>DataTransferStep</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2000/01/rdf-schema#Literal">DataTransferStep</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>DataTransformationActivity</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Is an activity that transforms data.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>DataTransformationActivity</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Data Transformation Activity</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>DataTransformationActivity</IRI>
+        <IRI>DataTransformationStep</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>DataTransformationStep</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">DataTransformationStep transforms data from one form into another.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>DataTransformationStep</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Data Transformation Step</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>DataTransformationStep</IRI>
+        <IRI>DataTransformationActivity</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>DataUsageActivity</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Is an activity that uses data. Can also be termed as &apos;Processing&apos; of data.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>DataUsageActivity</IRI>
+        <AbbreviatedIRI>gdprtext:UseData</AbbreviatedIRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>DataUsageActivity</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Data Usage Activity</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>DataUsageActivity</IRI>
+        <IRI>DataUsageStep</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>DataUsageStep</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">A DataUsageStep is a DataStep that uses existing data present within the system</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>DataUsageStep</IRI>
+        <AbbreviatedIRI>gdprtext:Processing</AbbreviatedIRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>DataUsageStep</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Data Usage Step</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>DataUsageStep</IRI>
+        <IRI>DataUsageActivity</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>DeAnonymisationActivity</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Is an activity that deanonymises data.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>DeAnonymisationActivity</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">DeAnonymisation Activity</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>DeAnonymisationActivity</IRI>
+        <IRI>DataDeanonymisationStep</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>DeAnonymised</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">DeAnonymised represents the Anonymisation level where the data is completely de-anonymised and contains directly accessible personally identifiable information.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>DeAnonymised</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">DeAnonymised</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>DirectMarketing</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Direct Marketing where the marketing is done directly to the data subject.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>DirectMarketing</IRI>
+        <AbbreviatedIRI>gdprtext:DirectMarketing</AbbreviatedIRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>DirectMarketing</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Direct Marketing</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>GivenConsent</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Represents the given consent by the data subject.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>GivenConsent</IRI>
+        <AbbreviatedIRI>gdprtext:GivenConsent</AbbreviatedIRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>GivenConsent</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Given Consent</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>GivenConsent</IRI>
+        <IRI>ConsentAgreement</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>GivenConsentTemplate</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Is the template used to obtain the given consent.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>GivenConsentTemplate</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Given Consent Template</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>GivenConsentTemplate</IRI>
+        <IRI>ConsentAgreementTemplate</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>HandleDataBreachProcess</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">A process that defines the actions that should be undertaken in event of a data breach</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>HandleDataBreachProcess</IRI>
+        <AbbreviatedIRI>gdprtext:DataBreach</AbbreviatedIRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>HandleDataBreachProcess</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">HandleDataBreachProcess</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>HandleRightOfDataPortability</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">The process or series of steps that handle the right of data portability.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>HandleRightOfDataPortability</IRI>
+        <AbbreviatedIRI>gdprtext:RightOfDataPortability</AbbreviatedIRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>HandleRightOfDataPortability</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Handle Right of Data Portability</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>HandleRightOfErasure</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">The process or series of steps that handle the right of erasure.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>HandleRightOfErasure</IRI>
+        <AbbreviatedIRI>gdprtext:RightOfErasure</AbbreviatedIRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>HandleRightOfErasure</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Handle Right of Erasure</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>HandleRightToAccessPersonalData</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">The process or series of steps that handle the right to access personal data.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>HandleRightToAccessPersonalData</IRI>
+        <AbbreviatedIRI>gdprtext:RightOfErasure</AbbreviatedIRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>HandleRightToAccessPersonalData</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Handle Right to access Personal Data</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>HandleRightToBasicInfoAboutProcessing</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">The process or series of steps that handle the right to basic information about processing.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>HandleRightToBasicInfoAboutProcessing</IRI>
+        <AbbreviatedIRI>gdprtext:RightToBasicInformationAboutProcessing</AbbreviatedIRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>HandleRightToBasicInfoAboutProcessing</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Handle Right to basic information about Processing</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>HandleRightToNoAutomatedProcessing</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">The process or series of steps that handle the right to not be processed automatically.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>HandleRightToNoAutomatedProcessing</IRI>
+        <AbbreviatedIRI>gdprtext:RightToNotBeEvaluatedThroughAutomatedProcessing</AbbreviatedIRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>HandleRightToNoAutomatedProcessing</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Handle Right to not be evaluated through Automated Processing</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>HandleRightToObjectDirectMarketing</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">The process or series of steps that handle the right to object to direct marketing.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>HandleRightToObjectDirectMarketing</IRI>
+        <AbbreviatedIRI>gdprtext:RightToObjectForDirectMarketting</AbbreviatedIRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>HandleRightToObjectDirectMarketing</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Handle Right to Object to Direct Marketing</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>HandleRightToObjectProcessing</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">The process or series of steps that handle the right to object to processing.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>HandleRightToObjectProcessing</IRI>
+        <AbbreviatedIRI>gdprtext:RightToObjectToProcessing</AbbreviatedIRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>HandleRightToObjectProcessing</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Handle Right to Object to Processing</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>HandleRightToRectification</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">The process or series of steps that handle the right to rectification of personal data.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>HandleRightToRectification</IRI>
+        <AbbreviatedIRI>gdprtext:RightToRectification</AbbreviatedIRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>HandleRightToRectification</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Handle Right to Rectification</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>HandleRightToRestrictProcessing</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">The process or series of steps that handle the right to restrict processing.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>HandleRightToRestrictProcessing</IRI>
+        <AbbreviatedIRI>gdprtext:RightToRestrictProcessing</AbbreviatedIRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>HandleRightToRestrictProcessing</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Handle Right to restrict Processing</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>HandleRightToTransparency</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">The process or series of steps that handle the right to transparency.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>HandleRightToTransparency</IRI>
+        <AbbreviatedIRI>gdprtext:RightToTransparency</AbbreviatedIRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>HandleRightToTransparency</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Handle Right to Transparency</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>HandleSAR</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2000/01/rdf-schema#Literal">HandleSAR</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>ImpactAssessment</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Impact Assessment for the organisation</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>ImpactAssessment</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Represents the process or collection of steps representing the Impact Assessment.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>ImpactAssessment</IRI>
+        <AbbreviatedIRI>gdprtext:ImpactAssessment</AbbreviatedIRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>ImpactAssessment</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Impact Assessment</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>JointController</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">A Joint Controller is where two or more controllers jointly determine the purposes and means of processing.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>JointController</IRI>
+        <AbbreviatedIRI>gdprtext:JointController</AbbreviatedIRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>JointController</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Joint Controller(s)</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>Marketing</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Marketing as a process or collection of steps.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>Marketing</IRI>
+        <AbbreviatedIRI>gdprtext:Marketing</AbbreviatedIRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>Marketing</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Marketing</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>ModifyConsentActivity</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Is an activity that modifies given consent.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>ModifyConsentActivity</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Modify Consent Activity</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>ModifyConsentActivity</IRI>
+        <IRI>ConsentModificationStep</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>MonitorCompliance</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">The process of monitoring compliance as mandated by the GDPR.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>MonitorCompliance</IRI>
+        <AbbreviatedIRI>gdprtext:MonitorCompliance</AbbreviatedIRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>MonitorCompliance</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Monitor Compliance</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>NotifyController</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Step that notifies the controller of data breach.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>NotifyController</IRI>
+        <AbbreviatedIRI>gdprtext:ReportDataBreachToController</AbbreviatedIRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>NotifyController</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Notify Controller</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>NotifyController</IRI>
+        <IRI>NotifyControllerActivity</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>NotifyControllerActivity</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Is an activity that notifies controller about data breach</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>NotifyControllerActivity</IRI>
+        <AbbreviatedIRI>gdprtext:ReportDataBreachToController</AbbreviatedIRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>NotifyControllerActivity</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Notify Controller Activity</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>NotifyControllerActivity</IRI>
+        <IRI>NotifyController</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>NotifyDPA</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Step that notifies the Data Protection Authorities of a data breach.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>NotifyDPA</IRI>
+        <AbbreviatedIRI>gdprtext:ReportDataBreachToDPAWithin72Hours</AbbreviatedIRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>NotifyDPA</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Notify Data Protection Authority</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>NotifyDPA</IRI>
+        <IRI>NotifyDPAActivity</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>NotifyDPAActivity</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Is an activity that notifies data protection authorities about data breach</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>NotifyDPAActivity</IRI>
+        <AbbreviatedIRI>gdprtext:ReportDataBreachToDPAWithin72Hours</AbbreviatedIRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>NotifyDPAActivity</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Notify DPA Activity</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>NotifyDPAActivity</IRI>
+        <IRI>NotifyDPA</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>NotifyDataSubject</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Step that notifies the data subject of data breach.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>NotifyDataSubject</IRI>
+        <AbbreviatedIRI>gdprtext:NotifyDataSubjectOfBreach</AbbreviatedIRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>NotifyDataSubject</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Notify Data Subject</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>NotifyDataSubject</IRI>
+        <IRI>NotifyDataSubjectActivity</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>NotifyDataSubjectActivity</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Is an activity that notifies data subjects about data breach</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>NotifyDataSubjectActivity</IRI>
+        <AbbreviatedIRI>gdprtext:NotifyDataSubjectOfBreach</AbbreviatedIRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>NotifyDataSubjectActivity</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Notify Data Subject Activity</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>NotifyDataSubjectActivity</IRI>
+        <IRI>NotifyDataSubject</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>PersonalData</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">PersonalData is any data pertaining to the user which can contain personally identifiable information or a data set generated by the system using personally identifiable information acquired through direct or indirect means</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>PersonalData</IRI>
+        <AbbreviatedIRI>gdprtext:PersonalData</AbbreviatedIRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>PersonalData</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">PersonalData</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>PersonalData</IRI>
+        <IRI>PersonalDataEntity</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>PersonalDataEntity</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Represents a personal data entity.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>PersonalDataEntity</IRI>
+        <AbbreviatedIRI>gdprtext:PersonalData</AbbreviatedIRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>PersonalDataEntity</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Personal Data Entity</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>PersonalDataEntity</IRI>
+        <IRI>PersonalData</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>Process</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">A Process describes a &apos;Plan&apos; of action for carrying out a particular activity that uses or is related to Data or Consent</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>Process</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Process</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>Processor</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">A ThirdPartyDataProcessor is a Third Party entity that acts as a Data Processor</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>Processor</IRI>
+        <AbbreviatedIRI>gdprtext:Processor</AbbreviatedIRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>Processor</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Processor</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>ProcessorRepresentative</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">A representative of the Processor.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>ProcessorRepresentative</IRI>
+        <AbbreviatedIRI>gdprtext:ProcessorRepresentative</AbbreviatedIRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>ProcessorRepresentative</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Processor Representative</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>ProvideCopyOfPersonalData</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">A step that provides the data subject with a copy of their personal data.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>ProvideCopyOfPersonalData</IRI>
+        <AbbreviatedIRI>gdprtext:ProvideCopyOfPersonalData</AbbreviatedIRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>ProvideCopyOfPersonalData</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Provide copy of Personal Data</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>PseudoAnonymised</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">PseudoAnonymised represents the Anonymisation level where the data is anonymised but cannot be de-anonymised without additional data which is NOT accessible to the data-holding organisation to retrieve personally identifiable information.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>PseudoAnonymised</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">PseudoAnonymised</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>PseudoOrganisationalAnonymised</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">PseudoOrganisationalAnonymised represents the Anonymisation level where the data is anonymised but cannot be de-anonymised without additional data which is accessible to the data-holding organisation to recreate the de-anonymised information.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>PseudoOrganisationalAnonymised</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">PseudoOrganisationalOrganised</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>RectifyData</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Rectifies existing data</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>RectifyData</IRI>
+        <AbbreviatedIRI>gdprtext:RectifyData</AbbreviatedIRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>RectifyData</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Rectify Data</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>RectifyData</IRI>
+        <IRI>RectifyDataActivity</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>RectifyDataActivity</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Is an activity that recitifies data.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>RectifyDataActivity</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Rectify Data Activity</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>RectifyDataActivity</IRI>
+        <IRI>RectifyData</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>ReportDataBreach</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">The process of reporting after a data breach has taken place.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>ReportDataBreach</IRI>
+        <AbbreviatedIRI>gdprtext:ReportDataBreach</AbbreviatedIRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>ReportDataBreach</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Report Data Breach</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>SensitiveData</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Personal data revealing racial or ethnic origin, political opinions, religious or philosophical beliefs, or trade union membership, and the processing of genetic data, biometric data for the purpose of uniquely identifying a natural person, data concerning health or data concerning a natural person&apos;s sex life or sexual orientation.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>SensitiveData</IRI>
+        <AbbreviatedIRI>gdprtext:SensitivePersonalData</AbbreviatedIRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>SensitiveData</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Sensitive Personal Data</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>SensitiveData</IRI>
+        <IRI>SensitiveDataEntity</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>SensitiveDataEntity</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Is an entity containing sensitive personal information.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>SensitiveDataEntity</IRI>
+        <AbbreviatedIRI>gdprtext:SensitivePersonalData</AbbreviatedIRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>SensitiveDataEntity</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Sensitive Data Entity</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>SensitiveDataEntity</IRI>
+        <IRI>SensitiveData</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>SubProcessor</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">A Processor appointed under or by another Processor is a Sub-Processor.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>SubProcessor</IRI>
+        <AbbreviatedIRI>gdprtext:SubProcessor</AbbreviatedIRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>SubProcessor</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Sub-Processor</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>TermsAndConditions</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Terms and Conditions of usage as provided to the user in agreement of provided service</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>TermsAndConditions</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">TermsAndConditions</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>TermsAndConditions</IRI>
+        <IRI>TermsAndConditionsEntity</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>TermsAndConditionsEntity</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Represents the Terms and Conditions entity.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>TermsAndConditionsEntity</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Terms and Conditions Entity</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>TermsAndConditionsEntity</IRI>
+        <IRI>TermsAndConditions</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>ThirdParty</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">A ThirdParty is any external entitiy associated with some internal activity</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>ThirdParty</IRI>
+        <AbbreviatedIRI>gdprtext:Entity</AbbreviatedIRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>ThirdParty</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">ThirdParty</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>UserIdentifier</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">An UserIdentifier is a specific way to identify the user through a unique ID or a combination of other attributes</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>UserIdentifier</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">UserIdentifier</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>UserIdentifier</IRI>
+        <IRI>UserIdentifierEntity</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>UserIdentifierEntity</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Is an entity acting as the user identifier. Or contains an identifier.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>UserIdentifierEntity</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">User Identifier Entity</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>UserIdentifierEntity</IRI>
+        <IRI>UserIdentifier</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>WithdrawConsentActivity</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Is an activity that withdraws given consent. Can also term it so as to depict withdrawal as a modification of consent.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>WithdrawConsentActivity</IRI>
+        <AbbreviatedIRI>gdprtext:WithdrawingConsent</AbbreviatedIRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>WithdrawConsentActivity</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Withdraw Consent Activity</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>WithdrawConsentActivity</IRI>
+        <IRI>ConsentWithdrawalStep</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>anonymityLevel</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">anonymity level</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="owl:deprecated"/>
+        <IRI>anonymityLevel</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>archivesConsentAs</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Archives the consent into some entity</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>archivesConsentAs</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">archives consent as</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>collectsData</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Links data obtained (collected) by the step/activity that acquired it</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>collectsData</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">collectsData</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>generatesAnonymisedData</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Indicates that an DataAnonymisationStep transforms a Data object into AnonymisedData</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>generatesAnonymisedData</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">generatesAnonymisedData</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>generatesConsentAgreement</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Generates ConsentAgreement which is a the consent granted by the user based on the ConsentAgreementTemplate through a ConsentAcquisitionStep</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>generatesConsentAgreement</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">generatesConsentAgreement</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>generatesData</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">produces data</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>generatesData</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">generatesData</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>hasAnonymityLevel</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Indicates the anonymity level of an AnonymisedData object using instances of the AnonymityLevel class</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>hasAnonymityLevel</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">hasAnonymityLevel</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>hasLegalBasis</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2000/01/rdf-schema#Literal">hasLegalBasis</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>hasLegalJustification</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">has legal justification</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="owl:deprecated"/>
+        <IRI>hasLegalJustification</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>hasSharedDataWith</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2000/01/rdf-schema#Literal">hasSharedDataWith</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>isAnonymisedByStep</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">isAnonymisedByStep</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>isConsentAgreementTemplateForStep</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">isConsentAgreementTemplateForStep</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>isDataCollectedByStep</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">isDataCollectedByStep</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>isDataGeneratedBy</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">isDataGeneratedByStep</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>isGeneratedByStep</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">isGeneratedByStep</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>isJustificationForDataStep</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">isJustificationForDataStep</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>isJustifiedUsingConsentAgreement</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">justifies use of data by step through specified consent agreement</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>isJustifiedUsingConsentAgreement</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">isJustifiedUsingConsentAgreement</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>isPartOfProcess</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2000/01/rdf-schema#Literal">isPartOfProcess</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>isTermsAndConditionsForStep</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">isTermsAndConditionsForStep</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>isUsedByStep</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">isUsedByStep</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>sharesData</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Indicates sharing of Data through a DataStep</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>sharesData</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">sharesData</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>sharesDataWith</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">sharesDataWith</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>sharesDataWithThirdParty</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Shares data with a third party</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>sharesDataWithThirdParty</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">sharesDataWithThirdParty</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="owl:deprecated"/>
+        <IRI>sharesDataWithThirdParty</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>transferredDataToRegion</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2000/01/rdf-schema#Literal">transferredDataToRegion</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>transfersDataToRegion</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2000/01/rdf-schema#Literal">transfersDataToRegion</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>usesConsentAgreement</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">uses Consent Agreement entity</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>usesConsentAgreement</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">uses Consent Agreement</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>usesConsentAgreementTemplate</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">links a Consent Acquisition Step with the Consent Agreement Template used to acquire consent</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>usesConsentAgreementTemplate</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">usesConsentAgreementTemplate</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>usesData</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">links step with data used</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>usesData</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">usesData</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>usesTermsAndConditions</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Links a Consent Acquisition Step with the Terms and Conditions presented to the user when acquiring Consent</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>usesTermsAndConditions</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">usesTermsAndConditions</Literal>
+    </AnnotationAssertion>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 4.2.8.20170104-2310) https://github.com/owlcs/owlapi -->
+

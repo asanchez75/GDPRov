@@ -50,6 +50,18 @@
     
 
 
+    <!-- http://purl.org/adaptcentre/openscience/ontologies/gdprov#archivesConsentAs -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/adaptcentre/openscience/ontologies/gdprov#archivesConsentAs">
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/net/p-plan#hasOutputVar"/>
+        <rdfs:domain rdf:resource="http://purl.org/adaptcentre/openscience/ontologies/gdprov#ConsentArchivalStep"/>
+        <rdfs:range rdf:resource="http://purl.org/adaptcentre/openscience/ontologies/gdprov#ConsentAgreement"/>
+        <rdfs:comment>Archives the consent into some entity</rdfs:comment>
+        <rdfs:label>archives consent as</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://purl.org/adaptcentre/openscience/ontologies/gdprov#collectsData -->
 
     <owl:ObjectProperty rdf:about="http://purl.org/adaptcentre/openscience/ontologies/gdprov#collectsData">
@@ -109,6 +121,15 @@
         <rdfs:range rdf:resource="http://purl.org/adaptcentre/openscience/ontologies/gdprov#AnonymityLevel"/>
         <rdfs:comment>Indicates the anonymity level of an AnonymisedData object using instances of the AnonymityLevel class</rdfs:comment>
         <rdfs:label>hasAnonymityLevel</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/adaptcentre/openscience/ontologies/gdprov#hasLegalJustification -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/adaptcentre/openscience/ontologies/gdprov#hasLegalJustification">
+        <rdfs:domain rdf:resource="http://purl.org/net/p-plan#Activity"/>
+        <rdfs:range rdf:resource="http://purl.org/adaptcentre/openscience/ontologies/GDPRtEXT#LawfulBasisForProcessing"/>
     </owl:ObjectProperty>
     
 
@@ -217,11 +238,23 @@
     <!-- http://purl.org/adaptcentre/openscience/ontologies/gdprov#sharesDataWithThirdParty -->
 
     <owl:ObjectProperty rdf:about="http://purl.org/adaptcentre/openscience/ontologies/gdprov#sharesDataWithThirdParty">
-        <rdfs:subPropertyOf rdf:resource="http://purl.org/net/p-plan#hasInputVar"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
         <rdfs:domain rdf:resource="http://purl.org/adaptcentre/openscience/ontologies/gdprov#DataSharingStep"/>
         <rdfs:range rdf:resource="http://purl.org/adaptcentre/openscience/ontologies/gdprov#ThirdParty"/>
         <rdfs:comment>Shares data with a third party</rdfs:comment>
         <rdfs:label>sharesDataWithThirdParty</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/adaptcentre/openscience/ontologies/gdprov#usesConsentAgreement -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/adaptcentre/openscience/ontologies/gdprov#usesConsentAgreement">
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/net/p-plan#hasInputVar"/>
+        <rdfs:domain rdf:resource="http://purl.org/adaptcentre/openscience/ontologies/gdprov#ConsentStep"/>
+        <rdfs:range rdf:resource="http://purl.org/adaptcentre/openscience/ontologies/gdprov#ConsentAgreement"/>
+        <rdfs:comment>uses Consent Agreement entity</rdfs:comment>
+        <rdfs:label>uses Consent Agreement</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -315,6 +348,12 @@
     
 
 
+    <!-- http://purl.org/adaptcentre/openscience/ontologies/GDPRtEXT#LawfulBasisForProcessing -->
+
+    <owl:Class rdf:about="http://purl.org/adaptcentre/openscience/ontologies/GDPRtEXT#LawfulBasisForProcessing"/>
+    
+
+
     <!-- http://purl.org/adaptcentre/openscience/ontologies/gdprov#AcquireConsentActivity -->
 
     <owl:Class rdf:about="http://purl.org/adaptcentre/openscience/ontologies/gdprov#AcquireConsentActivity">
@@ -342,6 +381,12 @@
 
     <owl:Class rdf:about="http://purl.org/adaptcentre/openscience/ontologies/gdprov#AnonymisedData">
         <rdfs:subClassOf rdf:resource="http://purl.org/adaptcentre/openscience/ontologies/gdprov#PersonalData"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/adaptcentre/openscience/ontologies/gdprov#hasAnonymityLevel"/>
+                <owl:someValuesFrom rdf:resource="http://purl.org/adaptcentre/openscience/ontologies/gdprov#AnonymityLevel"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <rdfs:comment>Represents data that has been Anonymised at some level reflected by the hasAnonymityLevel object property</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://purl.org/adaptcentre/openscience/ontologies/GDPRtEXT#AnonymousData"/>
         <rdfs:isDefinedBy rdf:resource="http://purl.org/adaptcentre/openscience/ontologies/GDPRtEXT#PseudoAnonymousData"/>
@@ -816,6 +861,14 @@ The deletion is expressed as prov:invalidated over the dataset.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://purl.org/adaptcentre/openscience/ontologies/GDPRtEXT#DataActivity"/>
         <rdfs:label xml:lang="en">Data Step</rdfs:label>
         <rdfs:seeAlso rdf:resource="http://purl.org/adaptcentre/openscience/ontologies/gdprov#DataActivity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/adaptcentre/openscience/ontologies/gdprov#DataStepWithoutProvenance -->
+
+    <owl:Class rdf:about="http://purl.org/adaptcentre/openscience/ontologies/gdprov#DataStepWithoutProvenance">
+        <rdfs:subClassOf rdf:resource="http://purl.org/adaptcentre/openscience/ontologies/gdprov#DataStep"/>
     </owl:Class>
     
 
@@ -1382,6 +1435,30 @@ The deletion is expressed as prov:invalidated over the dataset.</rdfs:comment>
         <rdfs:comment>Is an entity acting as the user identifier. Or contains an identifier.</rdfs:comment>
         <rdfs:label>User Identifier Entity</rdfs:label>
         <rdfs:seeAlso rdf:resource="http://purl.org/adaptcentre/openscience/ontologies/gdprov#UserIdentifier"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/adaptcentre/openscience/ontologies/gdprov#UserInputStep -->
+
+    <owl:Class rdf:about="http://purl.org/adaptcentre/openscience/ontologies/gdprov#UserInputStep">
+        <rdfs:subClassOf rdf:resource="http://purl.org/adaptcentre/openscience/ontologies/gdprov#UserInteractionStep"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/adaptcentre/openscience/ontologies/gdprov#UserInteractionStep -->
+
+    <owl:Class rdf:about="http://purl.org/adaptcentre/openscience/ontologies/gdprov#UserInteractionStep">
+        <rdfs:subClassOf rdf:resource="http://purl.org/net/p-plan#Step"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/adaptcentre/openscience/ontologies/gdprov#UserOutputStep -->
+
+    <owl:Class rdf:about="http://purl.org/adaptcentre/openscience/ontologies/gdprov#UserOutputStep">
+        <rdfs:subClassOf rdf:resource="http://purl.org/adaptcentre/openscience/ontologies/gdprov#UserInteractionStep"/>
     </owl:Class>
     
 
